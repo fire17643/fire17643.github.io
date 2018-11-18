@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>海丁微名片</title>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" href="css/um.css">
+		<link rel="stylesheet" href="css/common.css">
+		<script src="js/bind.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/checkanswer.js"></script>
+		<script>$isWeb = true</script>
+		<script>
+			function $pageReady(){
+				alert("webview ready");
+			}
+			
+			$(function() {
+			});
+		</script>
+	</head>
+	<body>
+		<div class="um-page active" id="index">
+			<div class="um-header" >
+				<h3>查看答案</h3>
+			</div>
+			<div class="um-content">
+				<form data-um-repeat="form">
+					<p class="questions mt20" data-um-bindfield="title">《劳动法》规定，国家实行的标准工作时间为劳动者的规定时间不得超过()。(单选题)</p>
+					<span class="none qid" data-um-bindfield="qid"></span>
+					<div class="correct">正确答案是：<span class="um-red" data-um-bindfield="answer">C</span></div>
+					<div class="err">你的答案是：<span class="um-red" data-um-bindfield="chose">C</span></div>
+					<div class="tips">答案备注：<span data-um-bindfield="tips"></span></div>
+					<div class="activity um-box-vc">
+						<span class="up" data-um-bindfield="remark.agree">送花</span>
+						<span class="down" data-um-bindfield="remark.against">扔鸡蛋</span>
+						<span class="report">举报</span>
+					</div>
+				</form>
+				<div class="row">
+					<a href="index.html" class="btn um-btn mt10 submit">返回群友录</a>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>

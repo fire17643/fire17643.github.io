@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+#main {
+  width: 350px;
+  height: 350px;
+  border: 1px solid #c3c3c3;
+  display: flex;
+  flex-direction: row;
+}
+
+#main div {
+  width: 50px;
+  height: 50px;
+}
+</style>
+</head>
+<body>
+
+<div id="main">
+  <div style="background-color:coral;">A</div>
+  <div style="background-color:lightblue;">B</div>
+  <div style="background-color:khaki;">C</div>
+  <div style="background-color:pink;">D</div>
+  <div style="background-color:lightgrey;">E</div>
+  <div style="background-color:lightgreen;">F</div>
+</div>
+
+<p>点击“尝试一下”按钮设置 flexDirection 属性的值为 "column-reverse"。</p>
+
+<button onclick="myFunction()">尝试一下</button>
+
+<script>
+function myFunction()
+{
+document.getElementById("main").style.flexDirection = "column-reverse";
+}
+</script>
+
+<p><b>注意：</b>Internet Explorer 和 Safari 不支持 flexDirection 属性。</p>
+
+</body>
+</html>	

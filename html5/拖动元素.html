@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>鼠标拖动层JS</title>
+<style type="text/css">
+<!--
+body{margin:0px;padding:0px;font-size:12px;background:#eee;line-height:20px;}
+.bodyer{width:760px;margin:20px auto auto;border:1px dotted #ccc;background:#fff;}
+.t_rt{text-align:right;}
+h1,h2,h3,h4,h5,h6{font-weight:bold;margin:0px;padding:0px;font-size:12px;}
+ul,li{margin:0px;padding:0px;}
+li{list-style-type:none;}
+h1{margin:10px;padding-right:10px;padding-bottom:5px;border-bottom:1px dotted #ccc;}
+.preview{margin:10px;padding:10px;overflow:hidden;background:#eee;}
+.cont{padding:10px;}
+.cls{clear:both;}
+.hidden{display:none;}
+#sourse{border:1px dotted #ccc;width:600px;height:300px;margin:0px auto;}
+.textDiv{margin:10px 40px 10px;text-align:center;}
+h2{margin:0px 10px;background:#ccc;padding:5px;}
+.example{margin:10px;background:#FFF;border:1px dotted #ccc;padding:10px;}
+.authorInfo{width:760px; margin:10px auto 10px;text-align:center;}
+.c_666{color:#666;}
+.red{color:red;}
+.scrolldoorFrame{width:600px;border:1px solid #FFF;margin:0px auto;overflow:hidden;position:relative;height:400px;}
+.scrollUl{width:400px;border-bottom:1px solid #CCC;overflow:hidden;height:35px;}
+.scrollUl li{float:left;}
+.bor03{border:1px solid #ccc;border-top-width:0px;}
+.sd01{cursor:pointer;border:1px solid #CCC;background:#FFF;margin:5px;padding:2px;font-weight:bold;}
+.sd02{cursor:pointer;border:0px solid #CCC;margin:5px;padding:2px;}
+-->
+</style>
+<script type="text/javascript">
+function dragClass(){
+	this.mouseState = document.all ? 1 : 0 ;
+	this.x;
+	this.y;
+	this.dragId = null;
+	this.index = 100;
+	document.onselectstart = function(){return false;};
+}
+dragClass.prototype = {
+	dragStar:function(dragId,moveId){//拖动入口函数
+		var _this = this;
+		_this.$(dragId).style.cursor = "move";
+		_this.$(dragId).onmousedown = function(e){
+			var e = e ? e : event;
+			//_this.$(moveId).style.zIndex = _this.index++;
+			if(e.button == _this.mouseState)
+			{
+				_this.setDragInfo(e,moveId,moveId);
+				_this.dragPro(moveId);
+			}
+		},
+		_this.$(moveId).onmousedown = function(e){
+			_this.$(moveId).style.zIndex = _this.index++;
+		},
+		_this.$(dragId).onmouseup = function(){
+			_this.clearDragId();
+		}
+		document.onmouseup = function(){
+			_this.clearDragId();
+		}
+	},
+	setDragInfo:function(e,dragId,moveId){//拖动初始化
+		this.x = e.clientX;
+		this.y = e.clientY;
+		this.dragId = dragId;
+		if(this.$(moveId).style.position != "absolute")
+		{
+			this.$(moveId).style.width = this.$(moveId).offsetWidth;
+			this.$(moveId).style.height = this.$(moveId).offsetHeight;
+			this.$(moveId).style.position = "absolute";
+			this.$(moveId).style.left = this.$(moveId).offsetLeft;
+			this.$(moveId).style.top = this.$(moveId).offsetTop;
+		}
+	},
+	clearDragId:function(){ //清除拖动ID
+		this.dragId = null;
+	},
+	dragPro:function(moveId){
+		var _this = this;
+		document.onmousemove = function(e){
+			var e = e ? e : event;
+			if(e.button == _this.mouseState && _this.dragId != null)
+			{
+				var x = e.clientX;
+				var y = e.clientY;
+				_this.$(moveId).style.left = (_this.$(moveId).offsetLeft + (x - _this.x)) + "px";
+				_this.$(moveId).style.top = (_this.$(moveId).offsetTop + (y - _this.y)) + "px";
+				_this.x = x;
+				_this.y = y;
+				//alert(_this.$(dragId).style.left);
+			}
+		}
+	},
+	$:function(o){//获取对象
+		if(typeof(o) == "string")
+		{
+			if(document.getElementById(o))
+			{
+				return document.getElementById(o);
+			}
+			else
+			{
+				alert("errId \""+ o + "\"!");
+				return false;
+			}
+		}
+		else
+		{
+			return o;
+		}
+	}
+}
+window.onload = function(){
+	var c = new dragClass();
+	c.dragStar("b","a");
+	c.dragStar("d","c");
+}
+</script>
+</head>
+<body>
+<div class="bodyer">
+	<h1 class="t_rt">
+		鼠标拖动层封装类
+	</h1>
+	<h2>
+		效果预览
+	</h2>
+	<div class="preview">
+		<div class="scrolldoorFrame">
+			<div id="a" style="width:200px;height:150px;background:#FFF;border:1px solid #DDD;">
+				<div id="b" style="height:20px;margin:1px;line-height:22px;overflow:hidden;background:#999;font-size:12px;font-weight:bold;color:#FFF;padding-left:15px;">
+				拖动层1
+				</div>
+				&nbsp;&nbsp;&nbsp;&nbsp;移动层
+			</div>
+			<div id="c" style="width:200px;height:150px;background:#FFF;border:1px solid #DDD;">
+				<div id="d" style="height:20px;margin:1px;line-height:22px;overflow:hidden;background:#999;font-size:12px;font-weight:bold;color:#FFF;padding-left:15px;">
+				拖动层2
+				</div>
+				&nbsp;&nbsp;&nbsp;&nbsp;移动层
+			</div>
+		</div>
+	</div>
+	<h2>
+		源代码
+	</h2>
+	<div class="textDiv">
+		<textarea id="sourse">
+function dragClass(){
+	this.mouseState = document.all ? 1 : 0 ;
+	this.x;
+	this.y;
+	this.dragId = null;
+	this.index = 100;
+	document.onselectstart = function(){return false;};
+}
+dragClass.prototype = {
+	dragStar:function(dragId,moveId){//拖动入口函数
+		var _this = this;
+		_this.$(dragId).onmousedown = function(e){
+			var e = e ? e : event;
+			if(e.button == _this.mouseState)
+			{
+				_this.setDragInfo(e,moveId,moveId);
+				_this.dragPro(moveId);
+			}
+		}
+		_this.$(dragId).onmouseup = function(){
+			_this.clearDragId();
+		}
+		document.onmouseup = function(){
+			_this.clearDragId();
+		}
+	},
+	setDragInfo:function(e,dragId,moveId){//拖动初始化
+		this.x = e.clientX;
+		this.y = e.clientY;
+		this.dragId = dragId;
+		if(this.$(moveId).style.position != "absolute")
+		{
+			this.$(moveId).style.width = this.$(moveId).offsetWidth;
+			this.$(moveId).style.height = this.$(moveId).offsetHeight;
+			this.$(moveId).style.position = "absolute";
+			this.$(moveId).style.left = this.$(moveId).offsetLeft;
+			this.$(moveId).style.top = this.$(moveId).offsetTop;
+		}
+		this.$(moveId).style.zIndex = this.index++;
+	},
+	clearDragId:function(){ //清除拖动ID
+		this.dragId = null;
+	},
+	dragPro:function(moveId){
+		var _this = this;
+		document.onmousemove = function(e){
+			var e = e ? e : event;
+			if(e.button == _this.mouseState && _this.dragId != null)
+			{
+				var x = e.clientX;
+				var y = e.clientY;
+				_this.$(moveId).style.left = (_this.$(moveId).offsetLeft + (x - _this.x)) + "px";
+				_this.$(moveId).style.top = (_this.$(moveId).offsetTop + (y - _this.y)) + "px";
+				_this.x = x;
+				_this.y = y;
+				//alert(_this.$(dragId).style.left);
+			}
+		}
+	},
+	$:function(o){//获取对象
+		if(typeof(o) == "string")
+		{
+			if(document.getElementById(o))
+			{
+				return document.getElementById(o);
+			}
+			else
+			{
+				alert("errId \""+ o + "\"!");
+				return false;
+			}
+		}
+		else
+		{
+			return o;
+		}
+	}
+}
+		</textarea>
+	</div>
+	<h2>
+		使用方法
+	</h2>
+  <div class="preview">
+		1.把以上代码引进你的页面 &lt;script type="text/javascript" src="dragClass.js"&gt;&lt;/script&gt;<br/>
+		2.在页面的"&lt;/body&gt;"标签前加入以下代码:<br/>
+		<div class="example">
+			&lt;script type="text/javascript"&gt;<br/>
+			window.onload = function(){<br />
+	var c = new dragClass();//创建对象<br />
+	c.dragStar("拖动id","移动层id");<br />
+}<br/>
+			&lt;/script&gt;
+		</div>
+		其中sd方法中的参数为:<br/>
+			参数一 "拖动id":鼠标经过时候鼠标样式变成移动样式模样的元素的id<br/>
+			参数二 "移动层id":即将移动的元素的id<br/>
+		<span class="red">3.建议移动层是绝对定位(position:absolute;).</span>
+  </div>
+</div>
+</body>
+</html>

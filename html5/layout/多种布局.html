@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>两列右侧自适应布局</title>
+		<style>
+		/* 两栏三栏自适应布局  */
+		/* 两栏布局  主栏左 侧栏右 */
+		.g-mn1{float:left;width:100%;margin-right:-200px;}
+		.g-mnc1{margin-right:210px;}
+		.g-sd1{float:right;width:200px;}
+		/* 两栏布局  主栏右 侧栏左*/
+		.g-mn2{float:right;width:100%;margin-left:-200px;}
+		.g-mnc2{margin-left:210px;}
+		.g-sd2{float:left;width:200px;}
+		/* 三栏布局  主栏右 两侧栏左*/
+		.g-mn3{float:right;width:100%;margin-left:-520px;}
+		.g-mnc3{margin-left:520px;}
+		.g-sd3a{float:left;width:300px;margin-right:10px;}
+		.g-sd3b{float:left;width:200px;}
+		/* 三栏布局  主栏中 两侧栏分居左右*/
+		.g-mn4{float:right;width:100%;margin-left:-200px;}
+		.g-mnc4{margin-left:210px;}
+		.g-sd4{float:left;width:200px;}
+		.g-mn5{float:left;width:100%;margin-right:-200px;}
+		.g-mnc5{margin-right:210px;}
+		.g-sd5{float:right;width:200px;}
+		</style>
+	</head>
+	<body>
+		<div class="g-bd">
+			<div class="g-mn1">
+				<div class="g-mnc1">
+					<p>主栏1内容区</p>
+				</div>
+			</div>
+			<div class="g-sd1">
+				<p>侧栏1内容区</p>
+			</div>
+		</div>
+		<div class="g-bd">
+			<div class="g-mn2">
+				<div class="g-mnc2">
+					<p>主栏2内容区</p>
+				</div>
+			</div>
+			<div class="g-sd2">
+				<p>侧栏2内容区</p>
+			</div>
+		</div>
+		<div class="g-bd">
+			<div class="g-mn4">
+				<div class="g-mnc4">
+					<div class="g-mn5">
+						<div class="g-mnc5">
+							<p>主栏5内容区</p>
+						</div>
+					</div>
+					<div class="g-sd5">
+						<p>侧栏5内容区</p>
+					</div>
+				</div>
+			</div>
+			<div class="g-sd4">
+				<p>侧栏4内容区</p>
+			</div>
+		</div>
+		<div class="g-bd">
+			<div class="g-mn3">
+				<div class="g-mnc3">
+					<p>主栏3内容区</p>
+				</div>
+			</div>
+			<div class="g-sd3a">
+				<p>侧栏a内容区</p>
+			</div>
+			<div class="g-sd3b">
+				<p>侧栏b内容区</p>
+			</div>
+		</div>
+	</body>
+</html>

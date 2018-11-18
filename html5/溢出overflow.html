@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<!--<script src="js/head.load.min.js" data-headjs-load="js/init.js"></script>
+		
+		<script>
+			head.ready(function(){
+				UModal.alert({
+							ok:function(){
+								UModal.alert("yes");
+							}
+						})
+			})
+		</script>
+		-->
+		<link rel="stylesheet" href="css/um.css">
+		<script src="js/jquery.min.js"></script>
+		<script src="js/UM.Base.js"></script>
+		<script src="js/um.js"></script>
+		<script>
+			$(function(){
+				UM.page.defaults.transition = "cube";
+			})
+		</script>
+		<style>
+			/*.um-page {
+			background: url(img/bg.jpg) no-repeat;
+			-webkit-background-size: cover;
+			background-size: cover;
+			}
+			.um-page:nth-child(2) {
+				background-image: background: -webkit-linear-gradient(rgb(102, 135, 23) 10%, rgb(92, 137, 227) 95%);
+			background-image: background: -o-linear-gradient(rgb(102, 135, 23) 10%, rgb(92, 137, 227) 95%);
+			background-image: background: linear-gradient(rgb(102, 135, 23) 10%, rgb(92, 137, 227) 95%);
+			background: -webkit-linear-gradient(rgb(102, 135, 23) 10%, rgb(92, 137, 227) 95%);
+			background: -o-linear-gradient(rgb(102, 135, 23) 10%, rgb(92, 137, 227) 95%);
+			background: linear-gradient(rgb(102, 135, 23) 10%, rgb(92, 137, 227) 95%);
+			
+			}
+			.um-header, .um-footer {
+				background-color: transparent !important;
+			} */
+			.um-header {
+				position: fixed;
+				width: 100%;
+				top: 0;
+				left: 0;
+			}
+			.um-content {
+				margin-top: 44px;
+			}
+			div.ocean{
+       position:relative;
+
+       background-color:blue;
+
+       width:120px;
+
+       height:120px;
+
+       }
+
+   div.land{
+
+       width:100px;
+
+       height:100px;
+
+       background-color:red;
+
+       overflow:hidden;
+
+       }
+p.joke{
+
+       width:150px;
+
+       height:110px;
+
+       margin-top:30px;
+
+       margin-left:30px;
+
+       background-color:yellow;
+
+       }
+   p.joke{
+       position:absolute;
+
+       width:150px;
+
+       height:110px;
+
+       top:30px;
+
+       left:30px;
+
+       background-color:yellow;
+
+       }
+		</style>
+	</head>
+	<body>
+	<div class="ocean">
+       <div class="land">
+           <p class="joke">
+                   Mrs. Smith couldn’t get her husband to exercise.
+
+                   She asked Mrs. Jones what she should do. Jones replied,
+
+                   "Tape the remote control between his toes."
+
+           </p>
+       </div>
+   </div>
+	</body>
+</html>

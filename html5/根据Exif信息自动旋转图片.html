@@ -1,0 +1,55 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>根据Exif信息自动旋转图片 - Jerry Qu's HTML document</title>
+    </head>
+    <body>
+    <h2>根据Exif信息自动旋转图片</h2>
+    <p><a href="http://www.imququ.com/post/95.html">返回相关文章详情</a></p>
+    <p style="height:400px;"><img id="img" src="http://qgy18.imququ.com/lab/jsexif/test.jpg" width="400" /></p>
+    <p><input type="button" value="加载中..." id="btn" disabled /></p> 
+    <p>exif:</p>
+    <div id="console"></div>
+    <script type="text/javascript" src="http://qgy18.imququ.com/lab/jsexif/binaryajax.js"></script>
+    <script type="text/javascript" src="http://qgy18.imququ.com/lab/jsexif/exif.js"></script>
+    <script type="text/javascript" src="http://qgy18.imququ.com/lab/jsexif/rotate.js"></script>
+
+    <script type="text/javascript">
+        var btn = document.getElementById('btn');
+        BinaryAjax('http://qgy18.imququ.com/lab/jsexif/test.jpg', function(o) {
+            var oExif = EXIF.readFromBinaryFile(o.binaryResponse),
+                orientation = oExif.Orientation;
+                html = [];
+
+            html.push('<ol>');
+            for(var key in oExif) {
+                var val = oExif[key];
+                html.push('<li>', key, '&nbsp;&nbsp;:&nbsp;&nbsp;<em>');
+                html.push(val, '</em></li>');
+            }
+            html.push('</ol>');
+            document.getElementById('console').innerHTML = html.join('');
+
+            btn.value = '自动旋转';
+            btn.disabled = false;
+            btn.onclick = function() {
+                var img = document.getElementById('img');
+                switch(orientation) {
+                    case 6:
+                        Rotate(img, '90deg');
+                        break;
+                    case 3:
+                        Rotate(img, '180deg');
+                        break;
+                    case 8:
+                        Rotate(img, '270deg');
+                        break;
+                }
+                btn.disabled = true;
+            };
+        });
+    </script>
+    </body>
+</html>

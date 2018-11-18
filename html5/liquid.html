@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>liquid</title>
+<meta name="author" content="hongru.chen" />
+<style type="text/css">
+html {overflow:hidden}
+body {margin:0; padding:0; position:absolute; height:100%; width: 100%}
+#wrap {position:absolute; left:50%; top:50%; width:300px; height:300px; margin-left:-150px; margin-top:-150px;}
+.drop {position: absolute;font-size: 0;width: 1px;height: 1px;overflow: hidden;background: blue;}
+</style>
+<script type="text/javascript">
+var Liquid = function () {
+var wp, parts, space, obj = [], grid, nw, nh, gw, gh, flag = false;
+var addEvent = function (o, e, f) {
+o.addEventListener ? o.addEventListener(e, f, false) : o.attachEvent('on'+e, function(){f.call(o)});
+}
+var init = function (o) {
+wp = document.getElementById(o.id);
+parts = o.parts ? o.parts : 500;
+space = o.space ? o.space : 3;
+document.onselectstart = function () { return false; }
+wp.ondrag = function () { return false; }
+//start
+for (var i=0; i<parts; i++) {obj[i] = new Drop()}
+(function () {
+nw = wp.offsetWidth;
+nh = wp.offsetHeight;
+gw = Math.round(nw/space);
+gh = Math.round(nh/space);
+grid = new Array(gw * gh);
+for (var i=0; i<parts; i++) obj[i].boundary();
+for (var i=0; i<parts; i++) obj[i].move();
+setTimeout(arguments.callee, 1);
+})();
+}
+/* main function */
+var Drop = function () {
+var o = document.createElement('span');
+o.className = 'drop';
+wp.appendChild(o);
+this.x = Math.random()*50 + 50;
+this.y = Math.random()*50 + 50;
+this.vx = this.vy = this.dx = this.dy = 0;
+this.sty = o.style;
+}
+Drop.prototype = {
+move : function () {
+if (flag) {
+this.x += this.dx;
+this.vx += this.dx;
+this.vy += this.dy;
+var opa = Math.random()+.4, wh = Math.ceil(Math.random()*2);
+this.sty.opacity = opa>1 ? 1 : opa;
+this.sty.width = wh + 'px';
+this.sty.height = 3-wh + 'px';
+}
+this.y += this.dy;
+this.dx = this.dy = 0;
+// set position
+this.sty.left = Math.round(this.x) + 'px';
+this.sty.top = Math.round(this.y) + 'px';
+},
+boundary : function () {
+//gravity
+this.vy += .06;
+this.x += this.vx;
+this.y += this.vy;
+//set boundary
+if (this.x < space*.5) this.dx += (space * .5 - this.x);
+else if (this.x > nw - space * .5) this.dx -= (this.x - nw + space * .5);
+if (this.y < space * .5) this.dy += (space * .5 - this.y);
+else if (this.y > nh - space * .5) {this.dy -= (this.y - nh + space * .5); flag = true;}
+var gx = Math.round(this.x / space);
+var gy = Math.round(this.y / space);
+/* ---- neightbors constraints ---- */
+for (var ix = gx - 1; ix <= gx + 1; ix++) { 
+for (var iy = gy - 1; iy <= gy + 1; iy++) {
+var g = grid[iy * gw + ix] || [];
+for (j = 0, l = g.length; j < l; j++) {
+var that = g[j];
+var dx = that.x - this.x;
+var dy = that.y - this.y;
+var d = Math.sqrt(dx * dx + dy * dy);
+if (d < space && d > 0) {
+dx = (dx / d) * (space - d) * .25;
+dy = (dy / d) * (space - d) * .25;
+this.dx -= dx;
+this.dy -= dy;
+that.dx += dx;
+that.dy += dy;
+}
+}
+}
+}
+/* ---- update neighbors list ---- */
+if (!grid[gy * gw + gx]) grid[gy * gw + gx] = [this];
+else grid[gy * gw + gx].push(this);
+}
+}
+return init;
+}();
+</script></head>
+<body>
+     <div id="wrap"></div>
+<script type="text/javascript">
+window.onload = function () {
+Liquid({
+id: 'wrap',
+space: 4,
+parts: 500
+})
+}
+</script></body>
+</html>

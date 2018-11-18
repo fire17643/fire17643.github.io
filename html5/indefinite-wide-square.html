@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+</head>
+<body>
+<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+	}
+	.img{
+		display:inline-block;
+		margin: 1%;
+		width: 30%;
+		background: #ff6600;
+	}
+	.img img{
+		width: 100%;
+		display: block;
+	}
+</style>
+	<div class="img">
+		<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAAWdEVYdENyZWF0aW9uIFRpbWUAMDMvMDYvMTVjL2fvAAAADUlEQVQImWP4//8/AwAI/AL+hc2rNAAAAABJRU5ErkJggg==" />
+	</div>
+	<div class="img">
+		<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAAWdEVYdENyZWF0aW9uIFRpbWUAMDMvMDYvMTVjL2fvAAAADUlEQVQImWP4//8/AwAI/AL+hc2rNAAAAABJRU5ErkJggg==" />
+	</div>
+	<div class="img">
+		<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAAWdEVYdENyZWF0aW9uIFRpbWUAMDMvMDYvMTVjL2fvAAAADUlEQVQImWP4//8/AwAI/AL+hc2rNAAAAABJRU5ErkJggg==" />
+	</div>
+
+
+<style type="text/css">
+	.box{
+		display:inline-block;
+		margin: 1%;
+		width: 30%;
+		background: #ff6600;
+	}
+	.box::after{
+		display: block;
+		padding-top: 100%;
+		content : '';
+	}
+</style>
+	<div class="box">
+	</div>
+	<div class="box">
+	</div>
+	<div class="box">
+	</div>
+</body>
+</html>

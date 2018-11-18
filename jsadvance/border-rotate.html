@@ -1,0 +1,223 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>图片翻转</title>
+<style type="text/css" rel="stylesheet">
+#container{width:600px; height:500px; background:white; position:relative;}
+.borderWrap{position:absolute; border-style:solid; border-color:white; border-width:0 0 0 0; z-index:10; height:100px; width:0;}
+.turnImg{position:absolute;z-index:1; width:150px; height:100px;}
+
+#borderWrapper1{ left:100px; top:100px;}
+#borderWrapper2{ left:300px; top:100px;}
+#borderWrapper4{ left:100px; top:300px;}
+#borderWrapper3{ left:300px; top:300px;}
+
+#turnImg1{left:100px; top:100px;}
+#turnImg2{left:300px; top:100px;}
+#turnImg3{left:100px; top:300px;}
+#turnImg4{left:300px; top:300px;}
+</style>
+</head>
+
+<body>
+
+<div id="container">
+<div id="borderWrapper1" class="borderWrap"></div>
+<img id="turnImg1" class="turnImg" src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=4159400832,2265664304&fm=173&app=25&f=JPEG?w=218&h=146&s=CB0AAA4446375035162211C50300109A" />
+<div id="borderWrapper2" class="borderWrap"></div>
+<img id="turnImg2" class="turnImg" src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=4159400832,2265664304&fm=173&app=25&f=JPEG?w=218&h=146&s=CB0AAA4446375035162211C50300109A" />
+
+<div id="borderWrapper3" class="borderWrap"></div>
+<img id="turnImg3" class="turnImg" src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=4159400832,2265664304&fm=173&app=25&f=JPEG?w=218&h=146&s=CB0AAA4446375035162211C50300109A" />
+
+<div id="borderWrapper4" class="borderWrap"></div>
+<img id="turnImg4" class="turnImg" src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=4159400832,2265664304&fm=173&app=25&f=JPEG?w=218&h=146&s=CB0AAA4446375035162211C50300109A" />
+
+</div>
+
+
+</body>
+<script>
+var overturnImg=(function(){
+
+    var _overturnImg=function(imgId,wrapperId,options){
+        this.init(imgId,wrapperId,options);
+    
+    }
+    _overturnImg.prototype=(function(){
+        
+        var dirObj={//方向对应的扩大border
+            'RTL':{preHalf:'right',afterHalf:'left'},
+            'LTR':{preHalf:'left',afterHalf:'right'},
+            'TTB':{preHalf:'top',afterHalf:'bottom'},
+            'BTT':{preHalf:'bottom',afterHalf:'top'}        
+        }
+    
+        
+        
+        var $=function(id){return document.getElementById(id);};
+        var emptyFunction=function(){};
+    
+        
+        var changeTurningStyle=function(self){
+        
+            var timeId;
+            var speed=self.speed;
+            var img=self.img;
+            var borderWrapper=self.borderWrapper;
+            var bwWidth,imgWidth,bwHeight,imgHeight,bwTop,imgTop,bwLeft,imgLeft,bwOther2Width;
+            var dir=self.direction;
+            var preHalf=true;
+            var enhanceBorder='border-'+dirObj[dir]['preHalf']+'-';//根据旋转方向映射出需要被扩大的border        
+            bwWidth=imgWidth=img.clientWidth;
+            bwHeight=imgHeight=img.clientHeight;
+            bwOther2Width=0;
+            bwTop=imgTop=img.offsetTop;
+            bwLeft=imgLeft=img.offsetLeft;
+    
+            return function(){
+                
+                var reduceBorder;                
+                if(dir=='RTL'||dir=='LTR'){
+            
+                    if(preHalf){
+                    
+                        bwOther2Width+=speed;
+                        bwWidth-=speed*2;
+                        bwLeft+=speed;
+                        bwTop-=speed;
+        
+                        if(bwWidth<=0){
+                            preHalf=false;
+                            self.onHalfLoop(self);
+                            enhanceBorder='border-'+dirObj[dir]['afterHalf']+'-';//根据旋转方向映射出需要被扩大的border
+                        }        
+                        
+                    }
+                else{
+                        
+                    bwOther2Width-=speed;
+                    bwWidth+=speed*2;
+                    bwLeft-=speed;
+                    bwTop+=speed;
+                    
+                    if(bwWidth>=imgWidth){
+                        preHalf=true;
+                        enhanceBorder='border-'+dirObj[dir]['preHalf']+'-';//根据旋转方向映射出需要被扩大的border
+                        self.onFullLoop(self);
+                    }    
+                }
+                    
+                    borderWrapper.style.cssText=enhanceBorder+'width:'+bwWidth+'px;'
+                                                +enhanceBorder+'color:transparent;'
+                                                +'width:0;'
+                                                +'border-top-width:'+bwOther2Width+'px;'
+                                                +'border-bottom-width:'+bwOther2Width+'px;'
+                                                +'top:'+bwTop+'px;'
+                                                +'left:'+bwLeft+'px;';
+                                                
+                    img.style.cssText='height:'+(bwOther2Width*2+bwHeight)+'px;'
+                                      +'width:'+Math.max(0,bwWidth)+'px;'
+                                      +'top:'+bwTop+'px;'
+                                      +'left:'+bwLeft+'px;';
+                    
+                
+                }
+                else if(dir=='TTB'||'BTT'){
+                    if(preHalf){
+                        
+                        bwOther2Width+=speed;
+                        bwHeight-=speed*2;
+                        bwLeft-=speed;
+                        bwTop+=speed;
+                    
+                        if(bwHeight<=0){
+                            preHalf=false;
+                            enhanceBorder='border-'+dirObj[dir]['afterHalf']+'-';//根据旋转方向映射出需要被扩大的border
+                            self.onHalfLoop(self);
+                        }        
+                        
+                    }
+                    else{
+                    
+                        bwOther2Width-=speed;
+                        bwHeight+=speed*2;
+                        bwLeft+=speed;
+                        bwTop-=speed;
+                        
+                        if(bwHeight>=imgHeight){
+                            preHalf=true;
+                            enhanceBorder='border-'+dirObj[dir]['preHalf']+'-';//根据旋转方向映射出需要被扩大的border
+                            self.onFullLoop(self);
+                        }    
+                    }
+                    
+                    borderWrapper.style.cssText=enhanceBorder+'width:'+bwHeight+'px;'
+                                                +enhanceBorder+'color:transparent;'
+                                                +'height:0;'
+                                                +'width:'+bwWidth+'px;'
+                                                +'border-left-width:'+bwOther2Width+'px;'
+                                                +'border-right-width:'+bwOther2Width+'px;'
+                                                +'top:'+bwTop+'px;'
+                                                +'left:'+bwLeft+'px;';
+                    img.style.cssText='width:'+(bwOther2Width*2+bwWidth)+'px;'
+                                      +'height:'+Math.max(0,bwHeight)+'px;'
+                                      +'top:'+bwTop+'px;'
+                                      +'left:'+bwLeft+'px;'
+                                      
+                                     
+                    
+                }
+                timeId=window.setTimeout(arguments.callee,20);
+                
+            }
+                    
+            
+        }
+    
+        return{
+            /*    初始化    */
+            init:function(imgId,wrapperId,options){
+                var strArr=[];
+                var ags=arguments||[];
+                var ag;
+                for(var i=0,len=ags.length;i<len;i++){        //参数修复
+                    ag=arguments[i];
+                    (typeof ag=='string')?strArr.push(ag):options=ag;
+                }
+                imgId=ags[0];
+                wrapperId=ags[1];
+                
+                options=options||{};
+                
+                this.img=$(imgId||'turnImg');//获取要翻转的图片元素
+                this.borderWrapper=$(wrapperId||'borderWrapper');//获取制造翻转的div元素
+                this.speed=options.speed||2;
+                this.direction=options.direction||'RTL';
+                this.onHalfLoop=options.onHalfLoop||emptyFunction;
+                this.onFullLoop=options.onFullLoop||emptyFunction;
+            
+            
+            },
+            run:function(){
+                changeTurningStyle(this)();
+            }
+        
+        };
+    })();
+    
+    return _overturnImg;
+
+})();
+var b=new overturnImg('turnImg1','borderWrapper1');
+b.run();
+var b2=new overturnImg('turnImg2','borderWrapper2',{direction:'TTB'});
+b2.run();
+var b3=new overturnImg('turnImg3','borderWrapper3',{direction:'BTT'});
+b3.run();
+var b4=new overturnImg('turnImg4','borderWrapper4',{direction:'LTR'});
+b4.run();
+
+</script>

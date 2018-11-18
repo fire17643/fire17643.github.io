@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>迅雷2009页面重构工程师面试题 - 习题与演示 - CSS魔法</title>
+<meta http-equiv="X-UA-Compatible" content="IE=7">
+<meta name="Keywords" content="HTML, HTML5, CSS, CSS3, JS, JavaScript, jQuery, Canvas, Web标准, Web App, IE, Firefox, Safari, Opera, Chrome, 浏览器, W3C, API, 规范, 教程, 参考, 手册, 网页, 主页, 页面, 网站, 代码, 重构, 标签, 标记, 表格, 布局, 跨浏览器, 兼容性, 调试, 跨平台, Hack, 语义化, 可用性, 可访问性, 用户体验, Flash, 互联网, 电子商务, 前端, 前台, 数据库, 服务器, 设计, 开发, 编程, 程序, 脚本, 搜索引擎, SEO, Google">
+<meta name="Description" content="这是一个CSS面试题/练习题/演示/教程的演示页面，涉及HTML/XHTML/CSS/JavaScript等网页制作技术，遵循Web标准，力推CSS布局与网站重构，关注网页的可用性/可访问性/用户体验。">
+<style>
+* {margin:0;padding:0;}
+ol,ul {list-style:none;}
+a:link,a:visited {text-decoration:none;}
+a:hover,a:focus,a:active {text-decoration:underline;}
+.clearfix,.clear {display:inline-block;}
+.clearfix,.clear {display:block;}
+.clearfix:after,.clear:after {content:'';display:block;clear:both;height:0px;}
+
+body {
+	font: 12px/1.5 Arial, Helvetica, sans-serif;
+	color: #666;
+	background: white;
+}
+#dv_demo {
+	margin: 0 auto;
+	margin-top: 20px;
+	width: 318px;
+	line-height: 20px;
+	border: 1px solid #fc9;
+}
+#dv_demo ol {
+	padding-left: 23px;
+	width: 14em;
+	background: url(img/bg.png) no-repeat 2px 4px;
+}
+#dv_demo li {
+	clear: both;
+}
+#dv_demo li a {
+	float: left; _display: inline;
+	max-width: 14em;
+	white-space: nowrap;
+	_white-space: normal;  /** 超长就换行，第二行被裁掉 @ IE6 **/
+	_height: 20px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	color: #333;
+	_background: transparent;  /** 解决莫名占据高度bug @ IE6 **/
+}
+#dv_demo li span {
+	_position: relative;  /** 应付父容器hasLayout裁切bug @ IE6 **/
+	float: left; _display: inline;
+	margin-right: -99px;
+	padding-left: 10px;
+	font-size: 10px;
+	color: #999;
+}
+
+
+/* --------------------------------------------- */
+/** Note **/
+#dv_note,
+#dv_back {
+	clear: both;
+	margin: 0 auto;
+	padding-top: 20px;
+	width: 600px;
+}
+h2 {
+	font-size: 100%;
+}
+#dv_note ul {
+	margin-left: 1em;
+	padding-left: 2em;
+	padding-bottom: 1em;
+	list-style: disc;
+}
+#dv_note li {
+	padding-top: 3px;
+}
+#dv_note code {
+	padding: 0 3px;
+	font-family: 'Courier New',monospace;
+	background: #eee;
+}
+#dv_back a {
+	color: black;
+}
+
+</style>
+</head>
+
+<body>
+<div id="dv_demo">
+	<ol class="clearfix">
+		<li><a href="http://www.cssmagic.net/">CSS教程大全</a><span>2008-03-14</span></li>
+		<li><a href="###">最昂贵内衣惊艳出炉</a><span>2008-03-14</span></li>
+		<li><a href="###">【组图】让人喷饭的日常用品大收罗</a><span>2008-03-14</span></li>
+		<li><a href="###">世界上头发最长的美女令人叹为止</a><span>2008-03-14</span></li>
+		<li><a href="###">世界八大最喜欢吃人的恐怖生物大全</a><span>2008-03-14</span></li>
+		<li><a href="###">体育比赛中让人惊奇的瞬间</a><span>2008-03-14</span></li>
+		<li><a href="###">独家新闻：虹虹顺利产下龙凤胎</a><span>2008-03-14</span></li>
+		<li><a href="http://www.cssmagic.net/">CSS练习题精选</a><span>2008-03-14</span></li>
+		<li><a href="###">“亚洲小姐”选美</a><span>2008-03-14</span></li>
+		<li><a href="http://www.cssmagic.net/">Web标准与前端开发面试题</a><span>2008-03-14</span></li>
+	</ol>
+</div>
+<div id="dv_note">
+	<h2>需求说明：</h2>
+	<ul>
+		<li>时间日期紧跟标题其后，距离标题 10px。当标题过长时，超长部分截断，但是时间必须显示完整。</li>
+		<li>合理的结构方便程序输出。</li>
+		<li>纯 CSS 布局，兼容主流浏览器平台。</li>
+	</ul>
+	<h2>解题说明：</h2>
+	<ul>
+		<li>这道题有多种解法，能解决问题就好。</li>
+		<li>为增加解题难度，本方案无 CSS Expression，避免可能存在的资源大量消耗的情况。</li>
+		<li>为增加解题难度，本方案无定位操作，节省资源。（不过在 IE6 下需要相对定位来应付某个 bug。）</li>
+		<li>为增加解题难度，本方案实现了对超长标题进行省略号截断。（不过 IE6 和 FF 除外。这两个活宝，一个不支持 <code>max-width</code>，一个不支持省略号截断。）</li>
+	</ul>
+</div>
+</body>
+</html>

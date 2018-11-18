@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    * {
+    margin: 0;
+    padding: 0;
+    }
+    a {
+    text-decoration: none;
+    color: #000;
+    }
+    .keyboard {
+    
+    display: block;
+    border-top: 1px solid #3d4652;
+    width: 320px;
+    height: 209px;
+    padding-top: 6px;
+    box-shadow: 0px 1px 0px rgba(255,255,255,0.2) inset;
+    background-image: linear-gradient(bottom, rgb(145,153,164) 100%, rgb(110,118,131) 50%, rgb(71,80,94) 0%);
+    background-image: -o-linear-gradient(bottom, rgb(145,153,164) 100%, rgb(110,118,131) 50%, rgb(71,80,94) 0%);
+    background-image: -moz-linear-gradient(bottom, rgb(145,153,164) 100%, rgb(110,118,131) 50%, rgb(71,80,94) 0%);
+    background-image: -webkit-linear-gradient(bottom, rgb(145,153,164) 100%, rgb(110,118,131) 50%, rgb(71,80,94) 0%);
+    background-image: -ms-linear-gradient(bottom, rgb(145,153,164) 100%, rgb(110,118,131) 50%, rgb(71,80,94) 0%);
+    background-image: -webkit-gradient( linear, left bottom, left top, color-stop(1, rgb(145,153,164)), color-stop(0.5, rgb(110,118,131)), color-stop(0, rgb(71,80,94)) );
+    border-radius: 0px 0px 4px 4px;
+    display: block;
+    }
+    .keyboard ul:nth-child(1), .keyboard ul:nth-child(3) {
+    margin-left: 0px;
+    }
+    .keyboard ul:nth-child(2) {
+  margin-left: 14px;
+}
+.keyboard ul li.left {
+  margin-right: 8px;
+}
+.keyboard ul li.dark a, .keyboard ul li.dark.disabled a:active {
+  font-size: 16.5px;
+  min-width: 36px !important;
+  color: #fff;
+  text-shadow: 0px -1px 0px rgba(0,0,0,0.5);
+  background-image: linear-gradient(bottom, rgb(128,136,147) 100%, rgb(105,114,126) 50%, rgb(80,89,102) 0%);
+  background-image: -o-linear-gradient(bottom, rgb(128,136,147) 100%, rgb(105,114,126) 50%, rgb(80,89,102) 0%);
+  background-image: -moz-linear-gradient(bottom, rgb(128,136,147) 100%, rgb(105,114,126) 50%, rgb(80,89,102) 0%);
+  background-image: -webkit-linear-gradient(bottom, rgb(128,136,147) 100%, rgb(105,114,126) 50%, rgb(80,89,102) 0%);
+  background-image: -ms-linear-gradient(bottom, rgb(128,136,147) 100%, rgb(105,114,126) 50%, rgb(80,89,102) 0%);
+  background-image: -webkit-gradient( linear, left bottom, left top, color-stop(1, rgb(128,136,147)), color-stop(0.5, rgb(105,114,126)), color-stop(0, rgb(80,89,102)) );
+}
+.keyboard ul li a, .keyboard ul li.dark a:active {
+  /* text-shadow: 0px 1px 0px rgba(255,255,255,0.8); */
+  padding: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-width: 26px;
+  min-height: 30px;
+  padding-top: 8px;
+  margin: 0px;
+  text-align: center;
+  /* font-family: 'HelveticaNeue-Bold', 'HelveticaNeue', Helvetia, Arial; */
+  border-radius: 3px;
+  box-shadow: 0px 1px 0px rgba(255,255,255,0.2) inset, 0px 2px 4px rgba(0,0,0,0.8);
+  background-image: linear-gradient(bottom, rgb(249,249,250) 100%, rgb(236,237,238) 50%, rgb(221,223,225) 0%);
+  background-image: -o-linear-gradient(bottom, rgb(249,249,250) 100%, rgb(236,237,238) 50%, rgb(221,223,225) 0%);
+  background-image: -moz-linear-gradient(bottom, rgb(249,249,250) 100%, rgb(236,237,238) 50%, rgb(221,223,225) 0%);
+  background-image: -webkit-linear-gradient(bottom, rgb(249,249,250) 100%, rgb(236,237,238) 50%, rgb(221,223,225) 0%);
+  background-image: -ms-linear-gradient(bottom, rgb(249,249,250) 100%, rgb(236,237,238) 50%, rgb(221,223,225) 0%);
+  background-image: -webkit-gradient( linear, left bottom, left top, color-stop(1, rgb(249,249,250)), color-stop(0.5, rgb(236,237,238)), color-stop(0, rgb(221,223,225)) );
+}
+.tabs-icon, .icon, .tabs-icon:after {
+  content: " icon" !important;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  display: block;
+  text-indent: -9999px;
+  width: 24px;
+  height: 24px;
+  color: #fff;
+}
+.keyboard ul li.side {
+  width: 22%;
+}
+.keyboard ul li.middle {
+  width: 48%;
+  font-size: 16.5px;
+}
+.keyboard ul li.dark a:active, .keyboard ul li.middle a {
+  color: #525b68;
+}
+.active-key .letter {
+  display: block;
+  width: 52px;
+  height: 40px;
+  margin-top: 5px;
+  font-size: 45px;
+  padding-top: 16px;
+  text-align: center;
+  font-family: 'HelveticaNeue-Bold', 'HelveticaNeue', Helvetia, Arial;
+  border-radius: 6px 6px 4px 4px;
+  box-shadow: 0px -1px 0px rgba(255,255,255,0.2) inset, 0px 6px 8px rgba(0,0,0,0.8);
+  background-image: linear-gradient(bottom, rgb(249,249,250) 100%, rgb(236,237,238) 50%, rgb(186,187,189) 0%);
+  background-image: -o-linear-gradient(bottom, rgb(249,249,250) 100%, rgb(236,237,238) 50%, rgb(186,187,189) 0%);
+  background-image: -moz-linear-gradient(bottom, rgb(249,249,250) 100%, rgb(236,237,238) 50%, rgb(186,187,189) 0%);
+  background-image: -webkit-linear-gradient(bottom, rgb(249,249,250) 100%, rgb(236,237,238) 50%, rgb(186,187,189) 0%);
+  background-image: -ms-linear-gradient(bottom, rgb(249,249,250) 100%, rgb(236,237,238) 50%, rgb(186,187,189) 0%);
+  background-image: -webkit-gradient( linear, left bottom, left top, color-stop(1, rgb(249,249,250)), color-stop(0.5, rgb(236,237,238)), color-stop(0, rgb(186,187,189)) );
+}
+.active-key .bottom {
+  z-index: 10;
+  display: block;
+  width: 32px;
+  left: 10px;
+  height: 38px;
+  position: absolute;
+  border-radius: 0px 0px 6px 6px;
+  background-image: linear-gradient(bottom, rgb(192,193,195) 100%, rgb(214,216,218) 0%);
+  background-image: -o-linear-gradient(bottom, rgb(192,193,195) 100%, rgb(214,216,218) 0%);
+  background-image: -moz-linear-gradient(bottom, rgb(192,193,195) 100%, rgb(214,216,218) 0%);
+  background-image: -webkit-linear-gradient(bottom, rgb(192,193,195) 100%, rgb(214,216,218) 0%);
+  background-image: -ms-linear-gradient(bottom, rgb(192,193,195) 100%, rgb(214,216,218) 0%);
+  background-image: -webkit-gradient( linear, left bottom, left top, color-stop(1, rgb(192,193,195)), color-stop(0, rgb(214,216,218)) );
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.8);
+}
+.active-key {
+  text-shadow: 0px 1px 0px rgba(255,255,255,0.8);
+  display: block;
+  width: 52px;
+  height: 105px;
+  display: block;
+  position: relative;
+}
+.keyboard ul li.right {
+  margin-left: 8px;
+}
+.keyboard ul li:last-child {
+  margin-right: 0;
+}
+
+    .keyboard ul {
+    width: 100%;
+    height: 42px;
+    float: left;
+    display: block;
+    }
+    .keyboard ul li {
+    float: left;
+    display: block;
+    margin: 3px;
+    font-size: 22px;
+    }
+    .keyboard ul li a, .keyboard ul li.dark a:active {
+    text-shadow: 0px 1px 0px rgba(255,255,255,0.8);
+    padding: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-width: 26px;
+    min-height: 30px;
+    padding-top: 8px;
+    margin: 0px;
+    text-align: center;
+    font-family: 'HelveticaNeue-Bold', 'HelveticaNeue', Helvetia, Arial;
+    border-radius: 3px;
+    box-shadow: 0px 1px 0px rgba(255,255,255,0.2) inset, 0px 2px 4px rgba(0,0,0,0.8);
+    background-image: linear-gradient(bottom, rgb(249,249,250) 100%, rgb(236,237,238) 50%, rgb(221,223,225) 0%);
+    background-image: -o-linear-gradient(bottom, rgb(249,249,250) 100%, rgb(236,237,238) 50%, rgb(221,223,225) 0%);
+    background-image: -moz-linear-gradient(bottom, rgb(249,249,250) 100%, rgb(236,237,238) 50%, rgb(221,223,225) 0%);
+    background-image: -webkit-linear-gradient(bottom, rgb(249,249,250) 100%, rgb(236,237,238) 50%, rgb(221,223,225) 0%);
+    background-image: -ms-linear-gradient(bottom, rgb(249,249,250) 100%, rgb(236,237,238) 50%, rgb(221,223,225) 0%);
+    background-image: -webkit-gradient( linear, left bottom, left top, color-stop(1, rgb(249,249,250)), color-stop(0.5, rgb(236,237,238)), color-stop(0, rgb(221,223,225)) );
+    }
+    </style>
+  </head>
+  <body>
+    <div class="keyboard">
+      <ul>
+        <li><a href="#">Q</a></li>
+        <li><a href="#">W</a></li>
+        <li><a href="#">E</a></li>
+        <li><a href="#">R</a></li>
+        <li><a href="#">T</a></li>
+        <li><a href="#">Y</a></li>
+        <li><a href="#">U</a></li>
+        <li><a href="#">I</a></li>
+        <li><a href="#">O</a></li>
+        <li><a href="#">P</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">A</a></li>
+        <li><a href="#">S</a></li>
+        <li><a href="#">D</a></li>
+        <li><a href="#">F</a></li>
+        <li><a href="#">G</a></li>
+        <li><a href="#">H</a></li>
+        <li><a href="#">J</a></li>
+        <li><a href="#">K</a></li>
+        <li><a href="#">L</a></li>
+      </ul>
+      <ul>
+        <li class="dark left"><a href="#"><span class="tabs-icon icon-shift">Shift</span></a></li>
+        <li><a href="#">Z</a></li>
+        <li><a href="#">X</a></li>
+        <li><a href="#">C</a></li>
+        <li><a href="#">V</a></li>
+        <li><a href="#">B</a></li>
+        <li><a href="#">N</a></li>
+        <li><a href="#">M</a></li>
+        <li class="dark right"><a href="#"><span class="tabs-icon icon-backspace">Backspace</span></a></li>
+      </ul>
+      <ul>
+        <li class="dark side"><a href="#">.?123</a></li>
+        <li class="middle"><a href="#">Space</a></li>
+        <li class="dark disabled side"><a href="#">Search</a></li>
+      </ul>
+    </div>
+    
+    <span class="active-key">
+      <span class="letter">X</span>
+      <span class="bottom"></span>
+    </span>
+  </body>
+</html>

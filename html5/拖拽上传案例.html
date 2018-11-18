@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽上传案例</title>
+<style>
+    * {margin: 0;padding: 0; font: 14px/1.5 '\5fae\8f6f\96c5\9ed1', sans-serif;}
+    .up-area {margin: 50px auto;border: 1px dashed #ccc;background-color: #eee;width: 600px;height: 400px;line-height: 400px;text-align: center;color: #666;cursor: pointer;}
+    .up-area:hover {background-color: #ddd;}
+    .console {margin: 0 auto;width: 600px;height: 400px;}
+</style>
+</head>
+<body>
+    <input type="file" name="" id="J_UploadFile" style="display: none;">
+    <div class="up-area" id="J_UploadArea">
+        点击此处或拖入文件进行上传
+    </div>
+    <div class="console" id="J_Console"></div>
+<script>
+(function(){
+    var area = document.getElementById("J_UploadArea"),
+        file = document.getElementById("J_UploadFile"),
+        consoleDiv = document.getElementById("J_Console");
+    function uploadFile(fs) {
+        var html = '[', fArr = [];
+        console.log(fs);
+        for (var i = 0, len = fs.length; i < len; i++) {
+            var str = '{';
+            for (var j in fs[i]) {
+                str += '"' + j + '": "' + fs[i][j] + '",';
+            }
+            str = str.replace(/,$/, '}');
+            fArr.push(str);
+        }
+        html += fArr.join(',') + ']';
+        consoleDiv.innerHTML = html;
+    }
+    area.onclick = function() {
+        console.log('click');
+        file.click();
+    };
+    file.onchange = function() {
+        uploadFile(this.files);
+    };
+    area.ondragenter = function(ev) {
+        this.className = 'up-area hover';
+        ev.preventDefault();
+    };
+    area.ondragover = function(ev) {
+        ev.preventDefault();
+    };
+    area.ondrop = function(ev) {
+        ev.preventDefault();
+        console.log('drop');
+        var dt = ev.dataTransfer;
+        this.className = 'up-area';
+        uploadFile(dt.files);
+    };
+})();
+</script>
+</body>
+</html>

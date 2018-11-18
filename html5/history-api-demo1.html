@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>HTML5 History API - pushState | Expert Developer</title>
+		<style type="text/css">
+		body{padding-top:60px;padding-bottom:40px;}
+		h2{font-family:'Junge',serif;font-weight:400;text-shadow:1px 1px 3px #CCC;}
+		.nav-tabs a{font-size:18px;}
+		#contentHolder h2{font-size:26px;}
+		#contentHolder p{font-family:'Junge',serif;font-size:18px;}
+		</style>
+	</head>
+	<body>
+	</div>
+	<div class="container">
+		<div class="well" style="padding-left:60px;">
+			<ul class="nav nav-tabs" role="tablist">
+				<li><a href="home.html" class="historyAPI">Home</a></li>
+				<li><a href="about.html" class="historyAPI">About</a></li>
+				<li><a href="contact.html" class="historyAPI">Contact Us</a></li>
+			</ul>
+			<div class="well" id="contentHolder" style="box-shadow:inset 0 0px 0px rgba(0, 0, 0, 0); border: 0px none;">
+		</div>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script type="text/javascript">
+			jQuery('document').ready(function(){
+				
+				jQuery('.historyAPI').on('click', function(e){
+					e.preventDefault();
+					var href = $(this).attr('href');
+					
+					// Getting Content
+					getContent(href, true);
+					
+					jQuery('.historyAPI').parent().removeClass('active');
+					$(this).parent().addClass('active');
+				});
+				
+			});
+			
+			// Adding popstate event listener to handle browser back button
+			window.addEventListener("popstate", function(e) {
+				
+				// Update Content
+				getContent(location.pathname, false);
+				jQuery('.historyAPI').parent().removeClass('active');
+				$('a[href="'+e.state.location+'"]').parent().addClass('active');
+				
+			});
+			
+			function getContent(url, addEntry) {
+				$.get(url)
+				.done(function( data ) {
+					
+					// Updating Content on Page
+					$('#contentHolder').html(data);
+					
+					if(addEntry == true) {
+						
+						var stateData = {
+							"location": url
+							}
+						
+						// Add History Entry using pushState
+							history.pushState(stateData, null, url);
+					}
+					
+					
+				});
+			}
+	</script>
+</body>
+</html>

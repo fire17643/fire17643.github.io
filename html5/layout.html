@@ -1,0 +1,270 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="Keywoeywords" content="margin 负值,双飞翼布局,自适应,tab,垂直居中" />
+<meta name="Description" content="CSS盒模型中，margin是我们老熟悉的一个属性了， 它的负值你用过吗？ 你知道margin负值的秘密武器吗？我们一起看看吧！" />
+<title>margin负值 – 一个秘密武器-Demo (margin 负值,双飞翼布局,自适应,tab,垂直居中)  云路科技</title>
+<style type="text/css">
+/* 全局重置 */
+* { margin:0; padding:0; }
+body { font: 12px/1.333 微软雅黑, tahoma, arial, 宋体, sans-serif; }
+ul{ list-style:none outside none; }
+h1, h2, h3 { font-weight:normal; font-size:100%; }
+a { text-decoration:none; color:#555; vertical-align:middle;/* 防止IE6焦点框扩大 */ }
+a:hover { -moz-transition:color .2s linear, background-color .2s linear;
+-webkit-transition:color .2s linear, background-color .2s linear;
+-o-transition:color .2s linear, background-color .2s linear;
+transition:color .2s linear, background-color .2s linear;
+}
+.clearfix:after { clear:both; content:"."; display:block; height:0; visibility:hidden; }
+.clearfix { *zoom:1;}
+.title { font-size:22px; text-align:center; color:#333; padding:10px 0; margin-top:10px; }
+.warp { margin:20px; border:1px solid #DDD; }
+/* tab导航 */
+.ui-tab-trigger { border-bottom:1px solid #CCC; background:#F5F5F5; padding:15px 10px 0; font-size:0; }
+.ui-tab-trigger-item { font-size:14px; text-align:center; border-radius: 5px 5px 0 0; display:block; height:30px; line-height:30px; float:
+left; padding:0 10px; margin:0 10px -1px 0; box-shadow:2px 0 3px rgba(0, 0, 0, .2), -1px 0 1px rgba(0, 0, 0, .1); outline-offset:-3px;/* firefox 阴影导致焦点框扩大 */ border-top:3px solid #F5F5F5; _position:relative; word-wrap:normal; white-space:nowrap; }
+.ui-tab-trigger-item:hover { background:#D1E2FE; border-top-color:#D1E2FE; }
+.ui-tab-trigger-item-current { background:#FFF; border-style:solid; border-width:3px 1px 1px; border-color:#BAD7E8 #CCC #FFF; box-shadow:none; outline-offset:0; }
+.ui-tab-trigger-item-current:hover { background:#FFF; color:#06C; }
+/* tab内容 */
+.ui-tab-cnt-item { display:none; padding:25px 20px; color:#06C; position:relative; min-height:260px; height:auto !important; height:200px; }
+.ui-tab-cnt-item-current { display:block; width:100%; }
+/* 水平列表 */
+.nav-list { overflow:hidden; }
+.nav-list-item { float:left; *display:inline; font-size:12px; padding:0 10px 0 10px; border-left:1px solid #AAA; margin-left: -1px; }
+/* 修复iphone safari 不能完全隐藏边框的bug */
+@media  screen and (max-device-width: 480px){
+.nav-list-item { margin-left:-2px; }
+.ui-tab-trigger-item { margin-bottom:-2px; }
+}
+/* 垂直列表 */
+.news-list { overflow:hidden; _position:relative; zoom:1; }
+.news-list-item { border-top:1px dashed #DDD; padding:11px 10px 10px; margin-top:-1px; }
+/* 多栏自适应布局 */
+.w960 { width:960px; margin-left:auto; margin-right:auto; background:#F6F6F6; }
+#widthAuto { width:100%; }
+#togglePageId { padding:0 10px; }
+.ui-tab-cnt-item h2 { font-size:14px; font-weight:normal; padding:10px; }
+.test-box, .test-box-big, .test-box-small { padding:20px 10px; text-align:center; color:#555; border:1px solid #CCC; }
+.test-box { min-height:100px; height:auto !important; height:100px; }
+.grid-c2, .grid-c2f, .grid-c3, .grid-c3d { *zoom:1;
+}
+.col-main { float: left; width: 100%; }
+.col-side, .col-extra { float: left; }
+.col-side { background:#FFF2E6; width:200px; }
+.col-extra { background:#FFD9EC; width:230px; }
+.col-main-warp { background:#DFE8FD; }
+.grid-c2 .col-side { margin-left:-100%; }
+.grid-c2 .col-main-warp { margin-left: 210px; }
+.grid-c2f .col-main-warp { margin-right: 210px; }
+.grid-c2f .col-side { margin-left:-200px; }
+.grid-c3 .col-main-warp { margin: 0 240px 0 210px; }
+.grid-c3 .col-side { margin-left: -100%; }
+.grid-c3 .col-extra { margin-left:-230px; }
+.grid-c3d .col-main-warp { margin-right:450px; }
+.grid-c3d .col-side { margin-left: -440px; }
+.grid-c3d .col-extra { margin-left:-230px; }
+.grid-c3d .test-box, .grid-c3d .test-box-big, .grid-c3d .test-box-small { border:0 none; }
+/* 产品列表 */
+.goods { margin:10px auto; width:600px; border:1px solid #AAA; padding:10px 0; }
+.goods-list { font-size:0; letter-spacing:-5px; margin-right:-24px; }
+.goods-list-item { margin:10px 24px 10px 0; font-size:12px; letter-spacing:normal; display:inline-block; *display:inline;
+*zoom:1;
+width:130px; line-height:150px; text-align:center; border:1px solid #CCC; background:#FFF2E6; vertical-align:top; }
+/* 水平垂直居中 */
+.vertical-center { border:1px solid #AAA; height:220px; width:600px; text-align:center; position:absolute; top:50%; left:50%; margin-top:-110px; margin-left:-300px; background:#EFEFEF; }
+/* 模拟表格线 */
+.feed-list { font-size:0; letter-spacing:-5px; border-radius:9px; border:1px solid #999; overflow:hidden; _position:relative; zoom:1; /*IE6 margin负值导致的层级bug, IE6还会有高宽奇偶数bug */ }
+.feed-list-item { display:inline-block; *display:inline;
+*zoom:1;
+letter-spacing:normal; padding:10px 0 11px; text-align:center; vertical-align:middle; border-right:1px solid #DDD; border-bottom:1px solid #DDD; margin-right:-1px; margin-bottom:-1px; width:50%; *width:49.99%; /* 解决IE6/7奇偶数bug */
+}
+.feed-list-item a { font-size:14px; padding:2px 3px; }
+.num-tex { display:block; color:#666; font:18px/1.5 Georgia, Constantia, Tahoma, Arial; }
+/* 多栏等高 */
+.equalheight { overflow: hidden; }
+/* 等高 */
+.equalheight-item { margin-bottom: -9999px; padding-bottom: 9999px; }
+</style>
+</head>
+
+<body>
+<div class="header">
+  <h1 class="title"><a href="http://www.iyunlu.com/view/css-xhtml/52.html" title="返回文章">返回文章：margin负值 – 一个秘密武器</a></h1>
+</div>
+<div class="warp">
+  <dl class="ui-tab">
+    <dt class="ui-tab-trigger clearfix"> <a href="#tab-content1" class="ui-tab-trigger-item ui-tab-trigger-item-current">横向列表</a> <a href="#tab-content2" class="ui-tab-trigger-item">纵向列表</a> <a href="#tab-content3" class="ui-tab-trigger-item">两栏自适应布局</a> <a href="#tab-content4" class="ui-tab-trigger-item">三栏自适应布局</a> <a href="#tab-content5" class="ui-tab-trigger-item">多栏等高</a> <a href="#tab-content6" class="ui-tab-trigger-item">产品列表</a> <a href="#tab-content7" class="ui-tab-trigger-item">水平垂直居中</a> <a href="#tab-content8" class="ui-tab-trigger-item">模拟表格线</a></dt>
+    <dd id="tab-content1" class="ui-tab-cnt-item ui-tab-cnt-item-current">
+      <ul class="nav-list clearfix">
+        <li class="nav-list-item"><a href="##">关于我们</a></li>
+        <li class="nav-list-item"><a href="##">关于我们</a></li>
+        <li class="nav-list-item"><a href="##">关于我们</a></li>
+        <li class="nav-list-item"><a href="##">关于我们</a></li>
+      </ul>
+    </dd>
+    <dd id="tab-content2" class="ui-tab-cnt-item">
+      <ul class="news-list clearfix">
+        <li class="news-list-item"><a href="##">margin负值之美</a></li>
+        <li class="news-list-item"><a href="##">margin负值之美</a></li>
+        <li class="news-list-item"><a href="##">margin负值之美</a></li>
+        <li class="news-list-item"><a href="##">margin负值之美</a></li>
+        <li class="news-list-item"><a href="##">margin负值之美</a></li>
+      </ul>
+    </dd>
+    <dd id="tab-content3" class="ui-tab-cnt-item">
+      <div class="grid-c2 clearfix">
+        <h2>两栏：.grid-c2</h2>
+        <div class="col-main">
+          <div class="col-main-warp">
+            <div class="test-box">main<span class="width">750px</span></div>
+          </div>
+        </div>
+        <div class="col-side">
+          <div class="test-box-big">side<span class="width">200px</span></div>
+        </div>
+      </div>
+      <div class="grid-c2f clearfix">
+        <h2>两栏：.grid-c2f</h2>
+        <div class="col-main">
+          <div class="col-main-warp">
+            <div class="test-box">main<span class="width">750px</span></div>
+          </div>
+        </div>
+        <div class="col-side">
+          <div class="test-box-big">side<span class="width">200px</span></div>
+        </div>
+      </div>
+    </dd>
+    <dd id="tab-content4" class="ui-tab-cnt-item">
+      <div class="w960" id="width">
+        <div class="grid-c3 clearfix" id="bar">
+          <h2>三栏：.grid-c3<a href="##" id="togglePageId">宽度切换</a></h2>
+          <div class="col-main">
+            <div class="col-main-warp">
+              <div class="test-box">main<span class="width">510px</span></div>
+            </div>
+          </div>
+          <div class="col-side">
+            <div class="test-box-big">side<span class="width">200px</span></div>
+          </div>
+          <div class="col-extra">
+            <div class="test-box-small">extra<span class="width">230px</span></div>
+          </div>
+        </div>
+      </div>
+    </dd>
+    <dd id="tab-content5" class="ui-tab-cnt-item">
+      <div class="grid-c3d clearfix  equalheight">
+        <h2>三栏等高：.grid-c3d</h2>
+        <div class="col-main equalheight-item">
+          <div class="col-main-warp">
+            <div class="test-box">main<span class="width">510px</span></div>
+          </div>
+        </div>
+        <div class="col-side equalheight-item">
+          <div class="test-box-big">side<span class="width">200px</span></div>
+        </div>
+        <div class="col-extra equalheight-item">
+          <div class="test-box-small">extra<span class="width">230px</span></div>
+        </div>
+      </div>
+    </dd>
+    <dd id="tab-content6" class="ui-tab-cnt-item">
+      <div class="goods">
+        <ul class="goods-list">
+          <li class="goods-list-item"><a href="##">margin负值之美</a></li>
+          <li class="goods-list-item"><a href="##">margin负值之美</a></li>
+          <li class="goods-list-item"><a href="##">margin负值之美</a></li>
+          <li class="goods-list-item"><a href="##">margin负值之美</a></li>
+          <li class="goods-list-item"><a href="##">margin负值之美</a></li>
+          <li class="goods-list-item"><a href="##">margin负值之美</a></li>
+          <li class="goods-list-item"><a href="##">margin负值之美</a></li>
+        </ul>
+      </div>
+    </dd>
+    <dd id="tab-content7" class="ui-tab-cnt-item">
+      <div class="vertical-center"></div>
+    </dd>
+    <dd id="tab-content8" class="ui-tab-cnt-item">
+      <ul class="feed-list">
+        <li class="feed-list-item"><span class="num-tex">138</span><a href="##" title="关注">关注</a></li>
+        <li class="feed-list-item"><span class="num-tex">106</span><a href="##" title="关注">关注</a></li>
+        <li class="feed-list-item"><span class="num-tex">23</span><a href="##" title="关注">关注</a></li>
+        <li class="feed-list-item"><span class="num-tex">59</span><a href="##" title="关注">关注</a></li>
+        <li class="feed-list-item"><span class="num-tex">59</span><a href="##" title="关注">关注</a></li>
+      </ul>
+    </dd>
+  </dl>
+</div>
+<script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
+<script> 
+var artTabs = function (bar, config) {
+	var gid = function (id) {return document.getElementById(id)};
+	
+	config = config || {};
+	var bar = typeof bar === 'string' ? gid(bar) : bar,
+		className = config.className || 'ui-tab-trigger-item ui-tab-trigger-item-current',
+		callback = config.callback || function () {},
+		isMouseover = config.isMouseover,
+		
+		buttons = bar.getElementsByTagName('a'),
+		selectButton = buttons[
+			config.index ||
+			function () {
+				var ret = 0;
+				for (i = 0; i < buttons.length; i++) {
+					if (buttons[i].className === className) ret = i;
+				};
+				return ret;
+			}()
+		],
+		showContent = gid(selectButton.href.split('#')[1]),
+		target,
+		fn = function (event) {
+			event = event || window.event;
+			target = event.target || event.srcElement;
+			
+			if (target.nodeName.toLowerCase() === 'a') {
+				showContent.style.display = 'none';
+				showContent = gid(target.href.split('#')[1]);
+				showContent.style.display = 'block';
+				selectButton.className = 'ui-tab-trigger-item';// 默认class
+				selectButton = target;
+				target.className = className;
+				target.focus();
+				callback(selectButton, showContent);
+				return false;
+			};
+		};
+ 
+	if (isMouseover) bar.onmouseover = fn;
+	bar.onclick = fn;// click事件至少能保证手持设备可以使用
+};
+ 
+// 给jQuery添加插件
+jQuery.fn.artTabs = function (config) {
+	return this.each(function () {
+		artTabs(this, config);
+	});
+};
+ 
+ 
+// 演示代码
+jQuery('.ui-tab > dt').artTabs();
+
+//宽度切换
+	window.onload = function() {
+		var trigger = document.getElementById('togglePageId');
+		trigger.onclick = function() {
+			var page = document.getElementById('bar').parentNode;
+			page.id = (page.id == 'width') ? 'widthAuto' : 'width';
+			return false;
+		}
+	};
+</script>
+</body>
+</html>

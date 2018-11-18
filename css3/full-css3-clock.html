@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>纯 CSS3 动画实现的时钟</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <style>
+.clock{
+    width: 540px;
+    height: 540px;
+    border-radius: 540px;-moz-border-radius: 540px;
+    background: #000;
+    box-sizing: border-box;-moz-box-sizing: border-box;
+    padding: 45px;
+    position: relative;
+    box-shadow: #333 0 10px 15px, #999 0 5px 10px inset;-moz-box-shadow: #333 0 10px 15px, #999 0 5px 10px inset;
+    margin: 20px;
+}
+/************* 表盘的样式 ******************/
+.clock-dial{
+    width: 450px;
+    height: 450px;
+    border-radius: 100%;-moz-border-radius: 100%;
+    background: #DEDEDE;
+    position: relative;
+    counter-reset: clockcounter;
+    box-shadow: #000 0 0 15px inset;-moz-box-shadow: #000 0 0 15px inset;
+}
+.clock-dial span{
+    display: block;
+    width: 2px;
+    height: 50%;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin: 0 0 0 -1px;
+    -webkit-transform-origin: center bottom;-moz-transform-origin: center bottom;
+}
+
+.clock-dial span:before{
+    content:' ';
+    display: block;
+    height: 13px;
+    width: 2px;
+    background: #353535;
+    margin: 10px 0 0 0;
+}
+
+/** 四个大刻度 **/
+.clock-dial span:nth-child(5n){
+    width: 6px;
+    margin-left: -3px;
+}
+.clock-dial span:nth-child(5n):before{
+    height: 32px;
+    width: 6px;
+    border-radius: 0 0 5px 5px;-moz-border-radius: 0 0 5px 5px;
+}
+/** end 四个大刻度 **/
+/** 12 个数字 **/
+.clock-dial span:nth-child(5n):after{
+    content: counter(clockcounter); 
+    counter-increment:clockcounter;
+    font: 50px/1 Georgia;
+    font-weight: bold;
+    font-style: italic;
+    color: #494949;
+    position: absolute;
+    left: -30px;
+    width: 60px;
+    text-align: center;
+}
+.clock-dial span:nth-child(5):after{    -webkit-transform: rotate(-30deg);-moz-transform: rotate(-30deg);}
+.clock-dial span:nth-child(10):after{    -webkit-transform: rotate(-60deg);-moz-transform: rotate(-60deg);}
+.clock-dial span:nth-child(15):after{    -webkit-transform: rotate(-90deg);-moz-transform: rotate(-90deg);}
+.clock-dial span:nth-child(20):after{    -webkit-transform: rotate(-120deg);-moz-transform: rotate(-120deg);}
+.clock-dial span:nth-child(25):after{    -webkit-transform: rotate(-150deg);-moz-transform: rotate(-150deg);}
+.clock-dial span:nth-child(30):after{    -webkit-transform: rotate(-180deg);-moz-transform: rotate(-180deg);}
+.clock-dial span:nth-child(35):after{    -webkit-transform: rotate(-210deg);-moz-transform: rotate(-210deg);}
+.clock-dial span:nth-child(40):after{    -webkit-transform: rotate(-240deg);-moz-transform: rotate(-240deg);}
+.clock-dial span:nth-child(45):after{    -webkit-transform: rotate(-270deg);-moz-transform: rotate(-270deg);}
+.clock-dial span:nth-child(50):after{    -webkit-transform: rotate(-300deg);-moz-transform: rotate(-300deg);}
+.clock-dial span:nth-child(55):after{    -webkit-transform: rotate(-330deg);-moz-transform: rotate(-330deg);}
+.clock-dial span:nth-child(60):after{    -webkit-transform: rotate(-360deg);-moz-transform: rotate(-360deg);}
+/** end 12 个数字 **/
+/** 各个刻度的定位 **/
+
+.clock-dial span:nth-child(1){
+    -webkit-transform: rotate(6deg);-moz-transform: rotate(6deg);
+}
+.clock-dial span:nth-child(2){
+    -webkit-transform: rotate(12deg);-moz-transform: rotate(12deg);
+}
+.clock-dial span:nth-child(3){
+    -webkit-transform: rotate(18deg);-moz-transform: rotate(18deg);
+}
+.clock-dial span:nth-child(4){
+    -webkit-transform: rotate(24deg);-moz-transform: rotate(24deg);
+}
+.clock-dial span:nth-child(5){
+    -webkit-transform: rotate(30deg);-moz-transform: rotate(30deg);
+}
+.clock-dial span:nth-child(6){
+    -webkit-transform: rotate(36deg);-moz-transform: rotate(36deg);
+}
+.clock-dial span:nth-child(7){
+    -webkit-transform: rotate(42deg);-moz-transform: rotate(42deg);
+}
+.clock-dial span:nth-child(8){
+    -webkit-transform: rotate(48deg);-moz-transform: rotate(48deg);
+}
+.clock-dial span:nth-child(9){
+    -webkit-transform: rotate(54deg);-moz-transform: rotate(54deg);
+}
+.clock-dial span:nth-child(10){
+    -webkit-transform: rotate(60deg);-moz-transform: rotate(60deg);
+}
+/*********************************************************/
+.clock-dial span:nth-child(11){
+    -webkit-transform: rotate(66deg);-moz-transform: rotate(66deg);
+}
+.clock-dial span:nth-child(12){
+    -webkit-transform: rotate(72deg);-moz-transform: rotate(72deg);
+}
+.clock-dial span:nth-child(13){
+    -webkit-transform: rotate(78deg);-moz-transform: rotate(78deg);
+}
+.clock-dial span:nth-child(14){
+    -webkit-transform: rotate(84deg);-moz-transform: rotate(84deg);
+}
+.clock-dial span:nth-child(15){
+    -webkit-transform: rotate(90deg);-moz-transform: rotate(90deg);
+}
+.clock-dial span:nth-child(16){
+    -webkit-transform: rotate(96deg);-moz-transform: rotate(96deg);
+}
+.clock-dial span:nth-child(17){
+    -webkit-transform: rotate(102deg);-moz-transform: rotate(102deg);
+}
+.clock-dial span:nth-child(18){
+    -webkit-transform: rotate(108deg);-moz-transform: rotate(108deg);
+}
+.clock-dial span:nth-child(19){
+    -webkit-transform: rotate(114deg);-moz-transform: rotate(114deg);
+}
+.clock-dial span:nth-child(20){
+    -webkit-transform: rotate(120deg);-moz-transform: rotate(120deg);
+}
+/*********************************************************/
+.clock-dial span:nth-child(21){
+    -webkit-transform: rotate(126deg);-moz-transform: rotate(126deg);
+}
+.clock-dial span:nth-child(22){
+    -webkit-transform: rotate(132deg);-moz-transform: rotate(132deg);
+}
+.clock-dial span:nth-child(23){
+    -webkit-transform: rotate(138deg);-moz-transform: rotate(138deg);
+}
+.clock-dial span:nth-child(24){
+    -webkit-transform: rotate(144deg);-moz-transform: rotate(144deg);
+}
+.clock-dial span:nth-child(25){
+    -webkit-transform: rotate(150deg);-moz-transform: rotate(150deg);
+}
+.clock-dial span:nth-child(26){
+    -webkit-transform: rotate(156deg);-moz-transform: rotate(156deg);
+}
+.clock-dial span:nth-child(27){
+    -webkit-transform: rotate(162deg);-moz-transform: rotate(162deg);
+}
+.clock-dial span:nth-child(28){
+    -webkit-transform: rotate(168deg);-moz-transform: rotate(168deg);
+}
+.clock-dial span:nth-child(29){
+    -webkit-transform: rotate(174deg);-moz-transform: rotate(174deg);
+}
+.clock-dial span:nth-child(30){
+    -webkit-transform: rotate(180deg);-moz-transform: rotate(180deg);
+}
+/*********************************************************/
+.clock-dial span:nth-child(31){
+    -webkit-transform: rotate(186deg);-moz-transform: rotate(186deg);
+}
+.clock-dial span:nth-child(32){
+    -webkit-transform: rotate(192deg);-moz-transform: rotate(192deg);
+}
+.clock-dial span:nth-child(33){
+    -webkit-transform: rotate(198deg);-moz-transform: rotate(198deg);
+}
+.clock-dial span:nth-child(34){
+    -webkit-transform: rotate(204deg);-moz-transform: rotate(204deg);
+}
+.clock-dial span:nth-child(35){
+    -webkit-transform: rotate(210deg);-moz-transform: rotate(210deg);
+}
+.clock-dial span:nth-child(36){
+    -webkit-transform: rotate(216deg);-moz-transform: rotate(216deg);
+}
+.clock-dial span:nth-child(37){
+    -webkit-transform: rotate(222deg);-moz-transform: rotate(222deg);
+}
+.clock-dial span:nth-child(38){
+    -webkit-transform: rotate(228deg);-moz-transform: rotate(228deg);
+}
+.clock-dial span:nth-child(39){
+    -webkit-transform: rotate(234deg);-moz-transform: rotate(234deg);
+}
+.clock-dial span:nth-child(40){
+    -webkit-transform: rotate(240deg);-moz-transform: rotate(240deg);
+}
+/*********************************************************/
+.clock-dial span:nth-child(41){
+    -webkit-transform: rotate(246deg);-moz-transform: rotate(246deg);
+}
+.clock-dial span:nth-child(42){
+    -webkit-transform: rotate(252deg);-moz-transform: rotate(252deg);
+}
+.clock-dial span:nth-child(43){
+    -webkit-transform: rotate(258deg);-moz-transform: rotate(258deg);
+}
+.clock-dial span:nth-child(44){
+    -webkit-transform: rotate(264deg);-moz-transform: rotate(264deg);
+}
+.clock-dial span:nth-child(45){
+    -webkit-transform: rotate(270deg);-moz-transform: rotate(270deg);
+}
+.clock-dial span:nth-child(46){
+    -webkit-transform: rotate(276deg);-moz-transform: rotate(276deg);
+}
+.clock-dial span:nth-child(47){
+    -webkit-transform: rotate(282deg);-moz-transform: rotate(282deg);
+}
+.clock-dial span:nth-child(48){
+    -webkit-transform: rotate(288deg);-moz-transform: rotate(288deg);
+}
+.clock-dial span:nth-child(49){
+    -webkit-transform: rotate(294deg);-moz-transform: rotate(294deg);
+}
+.clock-dial span:nth-child(50){
+    -webkit-transform: rotate(300deg);-moz-transform: rotate(300deg);
+}
+/*********************************************************/
+.clock-dial span:nth-child(51){
+    -webkit-transform: rotate(306deg);-moz-transform: rotate(306deg);
+}
+.clock-dial span:nth-child(52){
+    -webkit-transform: rotate(312deg);-moz-transform: rotate(312deg);
+}
+.clock-dial span:nth-child(53){
+    -webkit-transform: rotate(318deg);-moz-transform: rotate(318deg);
+}
+.clock-dial span:nth-child(54){
+    -webkit-transform: rotate(324deg);-moz-transform: rotate(324deg);
+}
+.clock-dial span:nth-child(55){
+    -webkit-transform: rotate(330deg);-moz-transform: rotate(330deg);
+}
+.clock-dial span:nth-child(56){
+    -webkit-transform: rotate(336deg);-moz-transform: rotate(336deg);
+}
+.clock-dial span:nth-child(57){
+    -webkit-transform: rotate(342deg);-moz-transform: rotate(342deg);
+}
+.clock-dial span:nth-child(58){
+    -webkit-transform: rotate(348deg);-moz-transform: rotate(348deg);
+}
+.clock-dial span:nth-child(59){
+    -webkit-transform: rotate(354deg);-moz-transform: rotate(354deg);
+}
+.clock-dial span:nth-child(60){
+    -webkit-transform: rotate(360deg);-moz-transform: rotate(360deg);
+}
+/** end 各个刻度的定位 **/
+/************* end 表盘的样式 ******************/
+
+/************* 指针的样式 ******************/
+.clock-pointer{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.clock-pointer div{
+    background: #000;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    -webkit-transform-origin: center bottom;-moz-transform-origin: center bottom;
+}
+.clock-pointer div:nth-child(1){
+    border-radius: 10px 10px 0 0;-moz-border-radius: 10px 10px 0 0;
+    width: 20px;
+    height: 110px;
+    margin: -110px 0 0 -10px;
+    -webkit-animation: hour-update 43200s linear infinite;-moz-animation: hour-update 43200s linear infinite;
+}
+.clock-pointer div:nth-child(2){
+    border-radius: 5px 5px 0 0;-moz-border-radius: 5px 5px 0 0;
+    width: 10px;
+    height: 180px;
+    margin: -180px 0 0 -5px;
+    -webkit-animation: minute-update 3600s linear infinite;-moz-animation: minute-update 3600s linear infinite;
+}
+.clock-pointer div:nth-child(3){
+    border-radius: 5px 5px 0 0;-moz-border-radius: 5px 5px 0 0;
+    width: 6px;
+    height: 190px;
+    margin: -190px 0 0 -3px;
+    background: #AD251E;
+    -webkit-animation: second-update 60s step-end infinite;-moz-animation: second-update 60s step-end infinite;
+}
+.clock-pointer div:nth-child(3):before{
+    content: ' ';
+    background: #AD251E;
+    display: block;
+    width: 6px;
+    height: 30px;
+    position: absolute;
+    left: 0;
+    bottom: -30px;
+}
+.clock-pointer div:nth-child(3):after{
+    content: ' ';
+    border-radius: 3px;-moz-border-radius: 3px;
+    background: #AD251E;
+    display: block;
+    width: 12px;
+    height: 40px;
+    position: absolute;
+    left: -3px;
+    bottom: -60px;
+}
+.clock-pointer div:nth-child(4){
+    background: #AD251E;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 24px;
+    height: 24px;
+    margin: -12px 0 0 -12px;
+    border-radius: 12px;-moz-border-radius: 12px;
+}
+/************* end 指针的样式 ******************/
+
+/************* 时针的动画 ******************/
+@-webkit-keyframes hour-update{
+    0%{ -webkit-transform: rotate(0deg); }
+    100%{ -webkit-transform: rotate(360deg); }
+}
+@-moz-keyframes hour-update{
+    0%{ -webkit-transform: rotate(0deg); }
+    100%{ -webkit-transform: rotate(360deg); }
+}
+/************* end 时针的动画 ******************/
+/************* 分针的动画 ******************/
+@-webkit-keyframes minute-update{
+    0%{ -webkit-transform: rotate(0deg); }
+    100%{ -webkit-transform: rotate(360deg); }
+}
+@-moz-keyframes minute-update{
+    0%{ -webkit-transform: rotate(0deg); }
+    100%{ -webkit-transform: rotate(360deg); }
+}
+/************* end 分针的动画 ******************/
+/************* 秒针的动画 ******************/
+@-webkit-keyframes second-update{
+    0%{ -webkit-transform: rotate(0deg);}
+    1.667%{ -webkit-transform: rotate(6deg);}
+    3.333%{ -webkit-transform: rotate(12deg);}
+    5%{ -webkit-transform: rotate(18deg);}
+    6.667%{ -webkit-transform: rotate(24deg);}
+    8.333%{ -webkit-transform: rotate(30deg);}
+    10%{ -webkit-transform: rotate(36deg);}
+    11.667%{ -webkit-transform: rotate(42deg);}
+    13.333%{ -webkit-transform: rotate(48deg);}
+    15%{ -webkit-transform: rotate(54deg);}
+    16.667%{ -webkit-transform: rotate(60deg);}
+    18.333%{ -webkit-transform: rotate(66deg);}
+    20%{ -webkit-transform: rotate(72deg);}
+    21.667%{ -webkit-transform: rotate(78deg);}
+    23.333%{ -webkit-transform: rotate(84deg);}
+    25%{ -webkit-transform: rotate(90deg);}
+    26.667%{ -webkit-transform: rotate(96deg);}
+    28.333%{ -webkit-transform: rotate(102deg);}
+    30%{ -webkit-transform: rotate(108deg);}
+    31.667%{ -webkit-transform: rotate(114deg);}
+    33.333%{ -webkit-transform: rotate(120deg);}
+    35%{ -webkit-transform: rotate(126deg);}
+    36.667%{ -webkit-transform: rotate(132deg);}
+    38.333%{ -webkit-transform: rotate(138deg);}
+    40%{ -webkit-transform: rotate(144deg);}
+    41.667%{ -webkit-transform: rotate(150deg);}
+    43.333%{ -webkit-transform: rotate(156deg);}
+    45%{ -webkit-transform: rotate(162deg);}
+    46.667%{ -webkit-transform: rotate(168deg);}
+    48.333%{ -webkit-transform: rotate(174deg);}
+    50%{ -webkit-transform: rotate(180deg);}
+    51.667%{ -webkit-transform: rotate(186deg);}
+    53.333%{ -webkit-transform: rotate(192deg);}
+    55%{ -webkit-transform: rotate(198deg);}
+    56.667%{ -webkit-transform: rotate(204deg);}
+    58.333%{ -webkit-transform: rotate(210deg);}
+    60%{ -webkit-transform: rotate(216deg);}
+    61.667%{ -webkit-transform: rotate(222deg);}
+    63.333%{ -webkit-transform: rotate(228deg);}
+    65%{ -webkit-transform: rotate(234deg);}
+    66.667%{ -webkit-transform: rotate(240deg);}
+    68.333%{ -webkit-transform: rotate(246deg);}
+    70%{ -webkit-transform: rotate(252deg);}
+    71.667%{ -webkit-transform: rotate(258deg);}
+    73.333%{ -webkit-transform: rotate(264deg);}
+    75%{ -webkit-transform: rotate(270deg);}
+    76.667%{ -webkit-transform: rotate(276deg);}
+    78.333%{ -webkit-transform: rotate(282deg);}
+    80%{ -webkit-transform: rotate(288deg);}
+    81.667%{ -webkit-transform: rotate(294deg);}
+    83.333%{ -webkit-transform: rotate(300deg);}
+    85%{ -webkit-transform: rotate(306deg);}
+    86.667%{ -webkit-transform: rotate(312deg);}
+    88.333%{ -webkit-transform: rotate(318deg);}
+    90%{ -webkit-transform: rotate(324deg);}
+    91.667%{ -webkit-transform: rotate(330deg);}
+    93.333%{ -webkit-transform: rotate(336deg);}
+    95%{ -webkit-transform: rotate(342deg);}
+    96.667%{ -webkit-transform: rotate(348deg);}
+    98.333%{ -webkit-transform: rotate(354deg);}
+    100%{ -webkit-transform: rotate(360deg);}
+}
+@-moz-keyframes second-update{
+    0%{ -moz-transform: rotate(0deg);}
+    1.667%{ -moz-transform: rotate(6deg);}
+    3.333%{ -moz-transform: rotate(12deg);}
+    5%{ -moz-transform: rotate(18deg);}
+    6.667%{ -moz-transform: rotate(24deg);}
+    8.333%{ -moz-transform: rotate(30deg);}
+    10%{ -moz-transform: rotate(36deg);}
+    11.667%{ -moz-transform: rotate(42deg);}
+    13.333%{ -moz-transform: rotate(48deg);}
+    15%{ -moz-transform: rotate(54deg);}
+    16.667%{ -moz-transform: rotate(60deg);}
+    18.333%{ -moz-transform: rotate(66deg);}
+    20%{ -moz-transform: rotate(72deg);}
+    21.667%{ -moz-transform: rotate(78deg);}
+    23.333%{ -moz-transform: rotate(84deg);}
+    25%{ -moz-transform: rotate(90deg);}
+    26.667%{ -moz-transform: rotate(96deg);}
+    28.333%{ -moz-transform: rotate(102deg);}
+    30%{ -moz-transform: rotate(108deg);}
+    31.667%{ -moz-transform: rotate(114deg);}
+    33.333%{ -moz-transform: rotate(120deg);}
+    35%{ -moz-transform: rotate(126deg);}
+    36.667%{ -moz-transform: rotate(132deg);}
+    38.333%{ -moz-transform: rotate(138deg);}
+    40%{ -moz-transform: rotate(144deg);}
+    41.667%{ -moz-transform: rotate(150deg);}
+    43.333%{ -moz-transform: rotate(156deg);}
+    45%{ -moz-transform: rotate(162deg);}
+    46.667%{ -moz-transform: rotate(168deg);}
+    48.333%{ -moz-transform: rotate(174deg);}
+    50%{ -moz-transform: rotate(180deg);}
+    51.667%{ -moz-transform: rotate(186deg);}
+    53.333%{ -moz-transform: rotate(192deg);}
+    55%{ -moz-transform: rotate(198deg);}
+    56.667%{ -moz-transform: rotate(204deg);}
+    58.333%{ -moz-transform: rotate(210deg);}
+    60%{ -moz-transform: rotate(216deg);}
+    61.667%{ -moz-transform: rotate(222deg);}
+    63.333%{ -moz-transform: rotate(228deg);}
+    65%{ -moz-transform: rotate(234deg);}
+    66.667%{ -moz-transform: rotate(240deg);}
+    68.333%{ -moz-transform: rotate(246deg);}
+    70%{ -moz-transform: rotate(252deg);}
+    71.667%{ -moz-transform: rotate(258deg);}
+    73.333%{ -moz-transform: rotate(264deg);}
+    75%{ -moz-transform: rotate(270deg);}
+    76.667%{ -moz-transform: rotate(276deg);}
+    78.333%{ -moz-transform: rotate(282deg);}
+    80%{ -moz-transform: rotate(288deg);}
+    81.667%{ -moz-transform: rotate(294deg);}
+    83.333%{ -moz-transform: rotate(300deg);}
+    85%{ -moz-transform: rotate(306deg);}
+    86.667%{ -moz-transform: rotate(312deg);}
+    88.333%{ -moz-transform: rotate(318deg);}
+    90%{ -moz-transform: rotate(324deg);}
+    91.667%{ -moz-transform: rotate(330deg);}
+    93.333%{ -moz-transform: rotate(336deg);}
+    95%{ -moz-transform: rotate(342deg);}
+    96.667%{ -moz-transform: rotate(348deg);}
+    98.333%{ -moz-transform: rotate(354deg);}
+    100%{ -moz-transform: rotate(360deg);}
+}
+/************* end 秒针的动画 ******************/
+    </style>
+</head>
+<body>
+    <div class="clock">
+        <div class="clock-dial">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <div class="clock-pointer">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0, width=device-width"/>
+	<link rel="apple-touch-icon-precomposed" href="http://www.uimaker.com/uploads/allimg/130516/1_130516084927_2.png" />
+	<link rel="apple-touch-startup-image" href="http://www.kaoder.com/upload/attach/000/238/238061.jpg" />
+	<style>
+	body{
+		font-size: 20px;
+		padding: 200px 0;
+	}
+	div{
+		margin: .5em;
+	}
+	</style>
+	<link rel="apple-touch-icon-precomposed" href="http://www.xxx.com/App_icon_114.png" />
+	<link rel="apple-touch-startup-image" href="http://www.uimaker.com/uploads/allimg/130516/1_130516084927_2.png" />
+</head>
+<body>
+	<div>上传图片<input name="img"  type="file" accept="image/*"/></div>
+	<div>上传视频<input name="video"  type="file" accept="video/*"></div>
+	<div><a href="tel:10010">打电话给我</a> </div>
+	<div><a href="sms:10010">发短信</a> </div>
+	<div><a href="mailto:huangzwa@yonyou.com">发邮件</a> </div>
+	<div id="standone"></div>
+	<div id="scrollTop"></div>
+	<script>
+	setTimeout(scrollTo,0,0,0);
+	document.getElementById("scrollTop").innerHTML = "document.body.scrollTop:" + document.body.scrollTop +
+	"<br>window.scrollY : " + window.scrollY; 
+	document.getElementById("standone").innerHTML = navigator.standalone ?"从主屏启动":"浏览器启动";
+	</script>
+	<input list="cars" />
+<datalist id="cars">
+	<option value="BMW">
+	<option value="Ford">
+	<option value="Volvo">
+</datalist>
+<details>
+<summary>Copyright 2011.</summary>
+<p>All pages and graphics on this web site are the property of W3School.</p>
+</details>
+<p>Do not forget to buy <mark>milk</mark> today.</p>
+下载进度：
+<progress value="22" max="100">
+</progress>
+
+<p><b>注释：</b>Internet Explorer 9 以及更早的版本不支持 <progress> 标签。</p>
+<p>
+我们在每天早上 <time>9:00</time> 开始营业。
+</p>
+
+<p>
+我在 <time datetime="2010-02-14">情人节</time> 有个约会。
+</p>
+
+定义了邮件的标题为 前端笔记
+<a href="mailto:liudy102@163.com?subject=前端笔记">前端笔记</a>
+
+定义了邮件的标题为 前端笔记 和内容为 为你的设计寻找，最专业的前端技术。
+<a href="mailto:liudy102@163.com?subject=前端笔记&body=为你的设计寻找，最专业的前端技术。">前端笔记</a>
+
+定义抄送
+<a href="mailto:liudy102@163.com?cc=liudy102@126.com&bcc=12580@gmail.com">前端笔记</a>
+
+<style>p{
+    padding-left:45px;
+}
+strong{
+    margin-left:-45px;
+}</style>
+<p><strong>简介：</strong>该写点什么好呢？好头痛，一个能把value念成“哇柳”的中老年人，猛然觉得没文化好可怕。</p>
+</body>
+</html>

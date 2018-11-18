@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	p {
+		margin: 30px;
+	}
+	</style>
+</head>
+<body>
+	<p>item 01###########</p>
+	<p>item 02###########</p>
+
+	<div>
+		<p>item #001</p>
+	</div>
+	<div>
+		<p>item #002</p>
+	</div>
+	发生折叠需要是相邻的非浮动元素；
+折叠发生在垂直外边距上，即margin-top/margin-bottom；
+折叠后取其中最大的那个margin值作为最终值
+
+若div设置overflow:hidden|auto,其内的P元素不折叠
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  var slice = Array.prototype.slice, 
+
+  compose = function() {
+
+    var funcs = slice.call(arguments);
+
+    return function() {
+
+      var args = slice.call(arguments);
+      for (var i=funcs.length-1; i >= 0; i--) {
+
+        args = [funcs[i].apply(this, args)];
+console.log(args)
+      }
+      return args[0];
+
+    };
+
+  };
+var sayHi    = function(name){ return 'hi, ' + name; };
+var sayLove  = function(name){ return 'I love '+ name; };
+var sayTo = compose(sayHi, sayLove);
+sayTo('岑安'); //hi, I love 岑安
+</script>
+</body>
+</html>

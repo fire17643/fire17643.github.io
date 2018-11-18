@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>canvas生成图片</title>
+</head>
+<body>
+<script src="http://s1.pp.itc.cn/ux_cloud_atlas/js/lib/requirejs/require-jquery-1.7.2.js"></script>
+<script type="text/javascript" src="http://www.caihong.cc/demo/src/jquery.qrcode.js"></script>
+<script type="text/javascript" src="http://www.caihong.cc/demo/src/qrcode.js"></script>
+<h2>Render in canvas</h2>
+<div id="Canvas"></div>
+<script>
+	jQuery('#Canvas').qrcode({
+		text: "http://www.icss.club"
+	});
+//qr
+	var Canvas = $('canvas')[0];
+	var CRC = Canvas.getContext('2d');
+	var img = new Image();
+	img.onload = function(){
+	    draw(this);
+		showPic();
+	};
+	img.src = 'http://www.caihong.cc/demo/src/logo.png';
+	function draw(obj){
+	  CRC.drawImage(obj,100,100);
+	}
+//img
+	function showPic(){
+	var dataUrl = $('canvas')[0].toDataURL('image/png');
+        var newImg = '<h2>create Img </h2>';
+		newImg += '<img src="' + dataUrl + '">';
+        $('body').append(newImg);
+	}
+</script>
+</body>
+</html>

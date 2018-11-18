@@ -1,0 +1,187 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="description" content="CSS3 cross-fade属性使用测试 » 张鑫旭-鑫空间-鑫生活" />
+<meta name="description" content="张鑫旭web前端学习实例页面 CSS3 cross-fade属性使用测试" />
+<meta name="keywords" content="CSS3 ,cross-fade, background-image, opacity, 半透明" />
+<meta name="author" content="张鑫旭, zhangxixnu" />
+<title>CSS3 cross-fade属性使用测试 » 张鑫旭-鑫空间-鑫生活</title>
+<link rel="stylesheet" href="../css/demo.css" type="text/css" />
+<link rel="stylesheet" href="../css/hl.css" type="text/css" />
+<style>
+input[type='range'] {
+	width: 300px;
+}
+.test_box {
+	width: 512px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 20px;
+}
+.test_image {
+	width: 512px;
+	height: 360px;
+	position: relative;
+	overflow: hidden;
+}
+.test_image img {
+	position: absolute;
+}
+.test_div {
+	padding: 20px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	background-color: #f0f0f0;
+	text-align: center;
+	font-size: 16px;
+	color: #666;
+}
+</style>
+</head>
+
+<body>
+<div id="header">
+	<a href="http://www.zhangxinxu.com/" class="logo" title="回到鑫空间-鑫生活首页">
+    	<img src="http://www.zhangxinxu.com/php/image/zxx_home_logo.png" border="0" />
+    </a>
+</div>
+<div id="main">
+	<h1>CSS3 cross-fade属性使用测试实例页面</h1>
+    <div id="body" class="light">
+    	<div id="content" class="show">
+        	<h3>展示</h3>
+            <div class="article_new"><a href="http://www.zhangxinxu.com/wordpress/?p=2671">回到相关文章 »</a></div>
+            <div class="demo">
+            	<div class="test_box">
+                	<p>cross-fade的百分比值：<input id="rangeCrossFade" type="range" value="50" min="0" max="100" step="10" /> <span id="valueCrossFade">50</span>%</p>
+                    <div id="crossFadeImage" class="test_image"></div>
+                    <div class="test_div">以上为cross-fade实例，下为opacity测试实例</div>
+                    <p>opacity的百分比值：<input id="rangeOpacity" type="range" value="50" min="0" max="100" step="10" /> <span id="valueOpacity">50</span>%</p>
+                    <div id="opacityImage" class="test_image"></div>
+                </div>
+            </div>
+            <h3>代码</h3>
+            <h5>HTML代码：</h5>
+            <pre name="code" class="html">
+&lt;p>cross-fade的百分比值：&lt;input id="rangeCrossFade" type="range" value="50" min="0" max="100" step="10" /> &lt;span id="valueCrossFade">50&lt;/span>%&lt;/p>
+&lt;div id="crossFadeImage" class="test_image">&lt;/div>
+&lt;div class="test_div">以上为cross-fade实例，下为opacity测试实例&lt;/div>
+&lt;p>opacity的百分比值：&lt;input id="rangeOpacity" type="range" value="50" min="0" max="100" step="10" /> &lt;span id="valueOpacity">50&lt;/span>%&lt;/p>
+&lt;div id="opacityImage" class="test_image">&lt;/div>
+            </pre>
+            <h5>JS代码：</h5>
+            <pre name="code" class="js">
+(function() {
+    if (typeof window.screenX === "number") {
+        var $ = function(selector) {
+            return document.querySelector(selector);
+        };
+        // 元素们
+        var eleCrossFadeImage = $("#crossFadeImage"), eleCrossFadeRange = $("#rangeCrossFade"), eleCrossFadeValue = $("#valueCrossFade");
+        
+        var funCrossFade = function() {
+            var value = eleCrossFadeRange.value;
+            eleCrossFadeValue.innerHTML = value;
+            ["-webkit-", "-moz-", "-ms-", "-o-", ""].forEach(function(prefix) {
+                eleCrossFadeImage.style.backgroundImage
+                    = prefix + "cross-fade(url(http://image.zhangxinxu.com/image/study/s/s512/mm1.jpg), url(http://image.zhangxinxu.com/image/study/s/s512/mm3.jpg), "+ value +"%)";
+            });    
+        };
+        funCrossFade();
+        
+        // range控件事件
+        eleCrossFadeRange.addEventListener("change", function() {
+            funCrossFade();    
+        });
+        
+        // ----------------------------分隔线----------------------
+        
+        // 元素们
+        var eleOpacityImage = $("#opacityImage"), eleOpacityRange = $("#rangeOpacity"), eleOpacityValue = $("#valueOpacity");
+        eleOpacityImage.innerHTML = '&lt;img src="http://image.zhangxinxu.com/image/study/s/s512/mm1.jpg" />&lt;img src="http://image.zhangxinxu.com/image/study/s/s512/mm3.jpg" />';
+        
+        var eleImages = eleOpacityImage.getElementsByTagName("img");
+        
+        var funOpacity = function() {
+            var value = eleOpacityRange.value;
+            eleOpacityValue.innerHTML = value;
+            eleImages[1].style.opacity = value / 100;
+        };
+        funOpacity();
+        
+        // range控件事件
+        eleOpacityRange.addEventListener("change", function() {
+            funOpacity();    
+        });
+    } else {
+        alert("叔，虽说国家福利不好，您也不用这么把年纪还出来卖命吧~~");    
+    }
+})();
+            </pre>
+        </div>       
+    </div>
+</div>
+<script>
+(function() {
+	if (typeof window.screenX === "number") {
+		var $ = function(selector) {
+			return document.querySelector(selector);
+		};
+		// 元素们
+		var eleCrossFadeImage = $("#crossFadeImage"), eleCrossFadeRange = $("#rangeCrossFade"), eleCrossFadeValue = $("#valueCrossFade");
+		
+		var funCrossFade = function() {
+			var value = eleCrossFadeRange.value;
+			eleCrossFadeValue.innerHTML = value;
+			["-webkit-", "-moz-", "-ms-", "-o-", ""].forEach(function(prefix) {
+				eleCrossFadeImage.style.backgroundImage
+					= prefix + "cross-fade(url(http://image.zhangxinxu.com/image/study/s/s512/mm1.jpg), url(http://image.zhangxinxu.com/image/study/s/s512/mm3.jpg), "+ value +"%)";
+			});	
+		};
+		funCrossFade();
+		
+		// range控件事件
+		eleCrossFadeRange.addEventListener("change", function() {
+			funCrossFade();	
+		});
+		
+		// ----------------------------分隔线----------------------
+		
+		// 元素们
+		var eleOpacityImage = $("#opacityImage"), eleOpacityRange = $("#rangeOpacity"), eleOpacityValue = $("#valueOpacity");
+		eleOpacityImage.innerHTML = '<img src="http://image.zhangxinxu.com/image/study/s/s512/mm1.jpg" /><img src="http://image.zhangxinxu.com/image/study/s/s512/mm3.jpg" />';
+		
+		var eleImages = eleOpacityImage.getElementsByTagName("img");
+		
+		var funOpacity = function() {
+			var value = eleOpacityRange.value;
+			eleOpacityValue.innerHTML = value;
+			eleImages[1].style.opacity = value / 100;
+		};
+		funOpacity();
+		
+		// range控件事件
+		eleOpacityRange.addEventListener("change", function() {
+			funOpacity();	
+		});
+	} else {
+		alert("叔，虽说国家福利不好，您也不用这么把年纪还出来卖命吧~~");	
+	}
+})();
+</script>
+<script type="text/javascript" src="../js/hl_all.js"></script>
+<script type="text/javascript">
+	DlHighlight.HELPERS.highlightByName("code", "pre");
+</script>
+<div id="footer">
+    Designed &amp; Powerd by <a href="http://www.zhangxinxu.com/">zhangxinxu</a><br />
+    Copyright© 张鑫旭-鑫空间-鑫生活<br>
+    <a href="http://www.miibeian.gov.cn/" target="_blank">鄂ICP备09015569号</a>      
+</div>
+<div id="ad">
+	<script type="text/javascript">	google_ad_client = "pub-0090627341039040";google_ad_slot = "2041257798";google_ad_width = 468;google_ad_height = 60;</script><script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+</div>
+</body>
+</html>

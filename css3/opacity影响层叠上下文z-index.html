@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title>opacity会创建局部层叠上下文</title>
+<style>
+.demo{
+	width:300px;
+	height:300px;
+	margin:auto;
+	text-align:left;
+}
+.a,.b,.c,.d{width:100px;height:100px;}
+.a{opacity:.8;background:#999;}
+.b{position:relative;margin:-70px 0 0 30px;background:#090;}
+.c{position:relative;margin:-70px 0 0 60px;background:#f00;}
+.d{position:absolute;z-index:99;height:50px;background:#090;}
+</style>
+</head>
+<body>
+<div class="demo">
+	<div class="a">a
+		<div class="d">d</div>
+	</div>
+	<div class="b">b</div>
+	<div class="c">c</div>
+</div>
+
+<style>
+.a1,.b1,.c1{width:100px;height:100px;}
+.a1{opacity:.8;background:#999;}
+.b1{margin:-70px 0 0 30px;background:#090;}
+.c1{margin:-70px 0 0 60px;background:#f00;}
+
+</style>
+<div class="demo">
+	<div class="a1">a
+		<div class="d1">d</div>
+	</div>
+	<div class="b1">b</div>
+	<div class="c1">c</div>
+</div>
+
+<p class="copyright">&copy; Copyright <a href="http://www.doyoe.com/" title="飘雨社区">Doyoe.com</a></p>
+<a id="sources" href="http://blog.doyoe.com/" title="前往 CSS探索之旅">CSS探索之旅</a>
+
+</body>
+</html>

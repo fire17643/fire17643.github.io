@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2015 by peunzhang (http://jsbin.com/uGetOJE/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<meta name="author" content="monicaqin">
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<title>css实现两端对齐</title>
+  <style>
+*{margin:0;padding:0;}
+/* 
+ 说明：
+ 1.IE中要实现块内单行两端对齐需要使用其私有属性text-align-last:justify配合，text-align-last 要生效，必须先定义text-align 为justify
+ 2.line-height:0 解决标准浏览器容器底部多余的空白
+*/
+.demo{
+     text-align:justify;
+     text-align-last:justify;
+     line-height:0;
+     height:44px;
+}
+/*
+ 说明：
+ 模块使用[换行符]或[空格符]后，webkit浏览器中会引起最后一个模块有多余空白，使用font-size:0可清除该空格
+*/
+@media all and (-webkit-min-device-pixel-ratio:0){
+.demo{
+     font-size:0;
+}
+}
+ /* 
+ 说明：
+ 1.text-align-last:justify 目前只有IE支持，标准浏览器需要使用 .demo:after 伪类模拟类似效果 
+ 2.opera浏览器需要添加 vertical-align:top 才能完全解决底部多余的空白
+ */
+.demo:after{
+     display:inline-block;
+     overflow:hidden;
+     width:100%;
+     height:0;
+     content:'';
+     vertical-align:top;
+}
+.demo a{
+     width:20%;
+     display:inline-block;
+     height:44px;
+     line-height:44px;
+     text-align:center;
+     border:1px solid #428cc8;
+     color:#666;
+     font-size:16px;
+     margin-bottom:5px;
+     border-radius:3px;
+     background-color:#fefefe;
+     background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0,#fefefe),color-stop(1,#eee));
+     text-decoration:none;
+}
+
+  </style>
+</head>
+<body>
+<p>模块内的元素之间为&nbsp;分隔，只支持webkit和Gecko内核浏览器</p>
+<br />
+<div class="demo"><a class="link" href="#none">10元</a>&nbsp;<a class="link" href="#none">20元</a>&nbsp;<a class="link" href="#none">30元</a>&nbsp;<a class="link" href="#none">50元</a>
+</div>
+<br />
+<p>模块内的元素之间为换行符</p>
+<br />
+<div class="demo">
+    <a class="link" href="#none">10元</a>
+    <a class="link" href="#none">20元</a>
+    <a class="link" href="#none">30元</a>
+    <a class="link" href="#none">50元</a>
+</div>
+<br />
+<p>模块内的元素之间为空格符</p>
+<br />
+<div class="demo">
+<a class="link" href="#none">10元</a> <a class="link" href="#none">20元</a> <a class="link" href="#none">30元</a> <a class="link" href="#none">50元</a>
+</div>
+<br />
+<p>模块内的元素之间为无分隔符，justify不起作用</p>
+<br />
+<div class="demo"><a class="link" href="#none">选项1</a><a class="link" href="#none">选项2</a><a class="link" href="#none">选项3</a><a class="link" href="#none">选项4</a></div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<style>
+@charset "UTF-8";
+.field {
+  position: relative;
+  padding-bottom: 1.875em;
+  margin-bottom: 1.875em;
+  max-width: 20em;
+}
+
+.field__label {
+  display: block;
+  position: absolute;
+  top: 1.25em;
+  font-size: 0.75em;
+  line-height: 1.25em;
+  font-weight: bold;
+  color: #2996cc;
+}
+
+.field__input {
+  position: absolute;
+  display: block;
+  box-sizing: border-box;
+  font-size: 1em;
+  line-height: 1.25em;
+  padding: 0.3125em 0;
+  height: 1.875em;
+  width: 100%;
+  border: 0;
+  outline: none;
+  border-bottom: 0.125em solid #bbb;
+}
+.field__input:valid {
+  position: relative;
+  top: 1.875em;
+  margin-top: -1.875em;
+}
+.field__input:focus {
+  border-bottom-color: #2996cc;
+}
+
+body {
+  padding: 1.875em;
+}
+
+
+</style>
+<div class="field">
+  <label class="field__label" for="form-name">Name</label>
+  <input class="field__input" type="text" required placeholder="Name…" id="form-name">
+</div>
+
+<div class="field">
+  <label class="field__label" for="form-email">Email</label>
+  <input class="field__input" type="email" required placeholder="me@example.com…" id="form-email">
+</div>	
+</body>
+</html>

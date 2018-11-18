@@ -1,0 +1,138 @@
+.um-header {
+	background-color: #188ccc;
+	color: #fff;
+}
+
+.um-page {
+	background-color: #efefef;
+}
+
+form .um-list.um-check-left {
+	background-color: #fff;
+	margin-top: 10px;
+}
+.progress-bar {
+	-webkit-transition: background-color ease .4s;
+	-o-transition: background-color ease .4s;
+	transition: background-color ease .4s;
+}
+.um-check-left .um-list-item.um-list-item-static:after,
+.um-check-left .um-list-item .um-list-item.btn:after {
+	left: 0;
+}
+
+input[type=checkbox] ~ .um-checkbox {
+	border-radius: 0;
+}
+
+.submit {
+	background-color: #188ccc;
+	color: #fff;
+	z-index: 3;
+}
+
+.activity {
+	position: relative;
+	margin-top: 10px;
+	background-color: #fff;
+	padding: 10px 12px;
+	border: 1px solid #ddd;
+}
+
+.activity:before,
+.activity:after {
+	position: absolute;
+	top: -20px;
+	left: 20px;
+	content: "";
+	border: 10px solid transparent;
+}
+
+.activity:before {
+	border-bottom-color: #ddd;
+}
+
+.activity:after {
+	border-bottom-color: #fff;
+	top: -18px;
+}
+
+.activity .up,
+.activity .down {
+	position: relative;
+	padding-left: 18px;
+	background: url(../img/up.gif) left center no-repeat;
+	-webkit-background-size: 18px;
+	background-size: 18px;
+	margin-right: 15px;
+	color: #007aff;
+}
+
+.submit.active:before,
+.activity .up.active:before,
+.activity .down.active:before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -60px;
+	margin-left: -60px;
+	background-color: #007aff;
+	border-radius: 100%;
+	display: inline-block;
+	height: 120px;
+	width: 120px;
+	z-index: 2;
+	-webkit-animation: ball-scale .5s ease-out;
+	animation: ball-scale .5s ease-out;
+}
+
+.submit.active:before {
+	-webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes ball-scale {
+	0% {
+		-webkit-transform: scale(0);
+		transform: scale(0)
+	}
+	100% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+		opacity: 0
+	}
+}
+
+@keyframes ball-scale {
+	0% {
+		-webkit-transform: scale(0);
+		transform: scale(0)
+	}
+	100% {
+		-webkit-transform: scale(1);
+		transform: scale(1);
+		opacity: 0
+	}
+}
+.report {
+	color: #007aff;
+}
+.corp {
+	position: absolute;
+	left: 0;
+	right: 0;
+	font-size: 13px;
+	text-align: center;
+	color: #999;
+	background-color: #efefef;
+}
+.progress {
+	height: 16px;
+}
+.progress-bar {
+	line-height: 16px;
+	font-size: 12px;
+}
+.um-list-item {
+	white-space: normal;
+}

@@ -1,0 +1,1473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0e4ba3eb-0514-4edd-b1c2-426cb7df36f8" name="Default" comment="s">
+      <change afterPath="$PROJECT_DIR$/bag.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bag2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/c1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkImg/Blob.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkImg/FileSaver.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkImg/a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkImg/a.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkImg/d3.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkImg/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkImg/koala.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkImg/koala.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/checkImg/polyfill.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/-webkit-align-content.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/-webkit-align-items.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/-webkit-align-self.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/-webkit-flex-basis.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/-webkit-flex-direction.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/-webkit-flex-grow.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/-webkit-flex-shrink.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/-webkit-flex-wrap.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/-webkit-justify-content.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/3d-cube.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/3d书籍翻页.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/CSS3实现客户端的全文检索.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/IOS-keyboard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/IOS-switch.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/align-content.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/align-items.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/css-box-shadow.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/css3-background-image-cross-fade.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/css3-iphone6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/css3-tips.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/css3扇形菜单.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/css3饼状图旋转.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/diffCSS/margin-top-bottom折叠.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/flex-direction.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/flex-grow.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/full-css3-clock.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/huitailang.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/img/checkbox-background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/input/aswme-form.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/input/aswme-form1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/input/css/text-input-effects.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/input/css/text-input-effects1.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/input/label-input-placeholder.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/input/out-of-range.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/input/text-input-effects.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/input/text-input-effects1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/justify-content.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/opacity影响层叠上下文z-index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/order.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/selector.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/test.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/text-align-justify实现两端对其.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/textarea-resize.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/两端对齐布局兼容实现.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/书页卷起.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/多彩边框.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/常见的几种水平和垂直居中方式.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/文字上右下环绕广告.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/文字聚合散出动画.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/通过锚点实现内容切换效果.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css3/鼠标点击按钮呈现水波扩散效果.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/diffcult-js.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/es6/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/es6/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/es6/math.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/filetransform/javascript的几种使用多行字符串的方式.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/filetransform/json.parse.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/filetransform/如何在Array.forEach的循环里break.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/filetransform/浮点数运算.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/filetransform/自传.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/Filter with Canvas.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/JS代码高亮插件.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/JS另类放大镜.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/about.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/canvas时钟.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/canvas用动画的形式切换图片.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/canvas绘制奥运五环.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/collision-detection.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/eval系列加解密javascript程序.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/fileReader.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/float/弧形排列的可折叠二级导航.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/float/新闻列表模块浮动布局.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/google-clock.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/history-api-demo1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/history-api-demo2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/indefinite-wide-square.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/jQuery和CSS3通过AJAX调用切换页面过渡动画特效.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/jQuery炫酷水波涟漪特效插件.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/js-to-qrcode.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/js全屏右键菜单插件.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/js实现表格排序.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/layout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/layout/mobile上中下布局.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/layout/三列中间自适应布局.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/layout/三列右侧自适应布局.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/layout/三列左侧自适应布局.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/layout/三列等高布局-中间自适应.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/layout/两列右侧自适应布局.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/layout/两列左侧自适应布局.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/layout/全屏自适应布局.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/layout/多种布局.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/layout/底部自适应文档和窗口.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/layout/项目列表间隔.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/line.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/liquid.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/margin-top50.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/meter-progress-keygen.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/summary.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/table导出文件/Blob.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/table导出文件/FileSaver.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/table导出文件/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/table导出文件/jquery.tableExport.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/table导出文件/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/table导出文件/tableExport.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/webDev.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/万能的日期格式化.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/三角边图片切换.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/仿天猫邮寄地址选择浮层.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/仿微博无缝滚动.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/伪3d.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/刮奖效果.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/响应式两栏滚动幻灯片特效.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/将人民币转换为大写形式.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/庆安.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/径向动画菜单及其扩展效果.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/截屏粘贴图片.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/手机摇一摇.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/拖到鼠标写字.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/拖动元素.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/拖拽上传案例.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/摄像头.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/根据Exif信息自动旋转图片.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/模拟打字效果.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/溢出overflow.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/烟花效果.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/白发魔女传之明月天国.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/百叶幻灯片1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/百叶幻灯片2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/html5/颜色选择器.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jsadvance/DI.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jsadvance/border-rotate.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jsadvance/eventHandler.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/jsadvance/functional.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nojQuery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pos.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/answer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/checkanswer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/animations.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/common.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themes/default/app/android/app.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themes/default/app/android/launch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themes/default/app/ios/icon/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themes/default/app/ios/icon/app57.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themes/default/app/ios/icon/app57@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themes/default/app/ios/icon/app60@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themes/default/app/ios/icon/app60@3x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themes/default/app/ios/launch/Contents.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themes/default/app/ios/launch/Default-568h.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themes/default/app/ios/launch/Default.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themes/default/app/ios/launch/Default@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themes/default/app/ios/launch/LaunchImage-700-568h@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themes/default/app/ios/launch/LaunchImage-800-667h@2x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themes/default/app/ios/launch/LaunchImage-800-Portrait-736h@3x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/Italic.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/agenda.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/alarm-clock.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/alert.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/align-center.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/align-justify.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/align-left.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/align-right.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/anchor.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/android.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/angle-double-down.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/angle-double-left.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/angle-double-right.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/angle-double-up.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/angle-down.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/angle-left.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/angle-right.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/angle-up.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/announcement.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/apple.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/archive.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/arrow-circle-down.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/arrow-circle-left.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/arrow-circle-right.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/arrow-circle-up.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/arrow-down.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/arrow-left.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/arrow-right.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/arrow-top-left.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/arrow-top-right.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/arrow-up.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/arrow.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/arrows-corner.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/arrows-horizontal.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/arrows-vertical.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/back-left.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/back-right.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/bag.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/bar-chart-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/bar-chart.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/basketball.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/bell.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/blackboard.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/bolt-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/bolt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/book.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/bookmark-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/bookmark.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/briefcase.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/brush-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/brush.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/calendar.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/camera.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/car.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/check-box.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/check.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/clip.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/clipboard.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/close.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/cloud-down.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/cloud-up.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/cloud.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/comment-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/comment.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/comments-smiley.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/comments.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/control-backward.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/control-eject.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/control-forward.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/control-pause.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/control-play.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/control-record.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/control-shuffle.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/control-skip-backward.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/control-skip-forward.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/control-stop.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/credit-card.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/crown.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/css3.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/cup.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/cut.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/dashboard.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/desktop.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/direction-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/direction.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/download.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/dribbble.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/dropbox-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/dropbox.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/drupal.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/email.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/envelope.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/eraser.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/exchange-vertical.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/export.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/eye.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/face-sad.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/face-smile.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/facebook.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/file.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/files.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/filter.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/flag-alt-2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/flag-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/flag.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/flickr-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/flickr.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/folder.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/fullscreen.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/gallery.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/game.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/gift.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/github.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/google.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/hand-drag.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/hand-open.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/hand-point-down.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/hand-point-left.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/hand-point-right.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/hand-point-up.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/hand-stop.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/harddrive.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/harddrives.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/headphone-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/headphone.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/heart-broken.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/heart.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/help-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/help.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/home.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/html5.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/hummer.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/id-badge.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/image.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/import.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/infinite.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/info-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/info.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/ink-pen.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/instagram.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/joomla.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/jsfiddle.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/key.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layers-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layers.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-accordion-list.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-accordion-merged.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-accordion-separated.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-column2-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-column2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-column3-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-column3.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-column4-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-column4.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-cta-btn-left.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-cta-btn-right.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-cta-center.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-cta-left.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-cta-right.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-grid2-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-grid2-thumb.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-grid2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-grid3-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-grid3.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-grid4-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-grid4.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-line-solid.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-list-large-image.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-list-post.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-list-thumb-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-list-thumb.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-media-center-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-media-center.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-media-left-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-media-left.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-media-overlay-alt-2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-media-overlay-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-media-overlay.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-media-right-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-media-right.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-menu-full.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-menu-separated.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-menu-v.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-menu.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-placeholder.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-sidebar-2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-sidebar-left.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-sidebar-none.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-sidebar-right.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-slider-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-slider.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-tab-min.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-tab-v.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-tab-window.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-tab.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-width-default-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-width-default.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout-width-full.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/layout.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/light-bulb.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/line-dashed.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/line-dotted.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/line-double.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/link.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/linkedin.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/linux.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/list-ol.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/list.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/location-arrow.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/location-pin.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/lock.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/loop.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/magnet.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/map-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/map.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/marker-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/marker.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/medall-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/medall.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/menu-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/menu.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/microphone-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/microphone.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/microsoft-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/microsoft.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/minus.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/mobile.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/money.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/more-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/more.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/mouse-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/mouse.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/music-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/music.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/na.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/new-window.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/notepad.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/package.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/paint-bucket.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/paint-roller.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/palette.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/panel.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/paragraph.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/pencil-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/pencil-alt2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/pencil.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/pie-chart.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/pin-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/pin.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/pin2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/pinterest-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/pinterest.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/plug.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/plus.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/power-off.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/printer.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/pulse.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/quote-left.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/quote-right.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/receipt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/reddit.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/reload.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/rocket.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/rss-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/rss.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/ruler-alt-2.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/ruler-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/ruler-pencil.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/ruler.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/save-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/save.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/search.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/server.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/settings.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/share-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/share.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/sharethis-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/sharethis.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/shield.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/shift-left-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/shift-left.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/shift-right-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/shift-right.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/shine.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/shopping-cart-full.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/shopping-cart.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/shortcode.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/signal.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/skype.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/slice.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/smallcap.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/soundcloud.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/split-h.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/split-v-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/split-v.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/spray.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/stack-overflow.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/stamp.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/star.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/stats-down.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/stats-up.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/support.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/tablet.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/tag.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/target.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/text.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/themify-favicon-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/themify-favicon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/themify-logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/thought.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/thumb-down.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/thumb-up.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/ticket.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/time.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/timer.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/trash.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/trello.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/truck.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/tumblr-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/tumblr.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/twitter-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/twitter.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/underline.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/unlink.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/unlock.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/upload.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/uppercase.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/user.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/vector.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/video-camera.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/video-clapper.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/view-grid.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/view-list-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/view-list.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/vimeo-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/vimeo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/volume.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/wallet.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/wand.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/wheelchair.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/widget-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/widget.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/widgetized.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/window.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/wordpress.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/world.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/write.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/yahoo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/youtube.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/zip.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/zoom-in.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/SVG/zoom-out.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/Themify IconFonts 5-23-2014.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/demo-files/demo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/fonts/themify.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/fonts/themify.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/fonts/themify.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/fonts/themify.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/ie7/ie7.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/ie7/ie7.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/readme.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/themify-icons/themify-icons.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/css/um.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/des/1262925730.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/des/1481934168.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/des/172377302.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/des/42850361.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/des/499575733.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/des/反馈接口.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/des/提交答案接口.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/des/获取题目接口.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/img/Back.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/img/app.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/img/app2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/img/app_salesorder.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/img/app_u8report.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/img/app_weibo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/img/app_weixin.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/img/collapsed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/img/dc.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/img/down-arr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/img/portal.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/img/right-arr.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/img/up.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/js/bind.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/js/checkanswer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/js/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/js/um.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/subject.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/um.css" afterDir="false" />
+    </list>
+    <ignored path="fire17643.github.io.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1987282993">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="4" />
+          <entry key="project.open.time.103" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.783" value="1" />
+          <entry key="project.open.time.85" value="1" />
+          <entry key="project.opened" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="html" value="26" />
+          <entry key="jpg" value="1" />
+          <entry key="js" value="5" />
+          <entry key="vue" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="HTML" value="26" />
+          <entry key="Image" value="1" />
+          <entry key="JavaScript" value="5" />
+          <entry key="Vue.js" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="txt" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PLAIN_TEXT" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="fire17643.github.io" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="397">
+              <caret line="80" column="31" selection-start-line="80" selection-start-column="31" selection-end-line="80" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pos.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="164" column="30" lean-forward="true" selection-start-line="164" selection-start-column="30" selection-end-line="164" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="WARN_ABOUT_CRLF" value="false" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/um/test.html" />
+        <option value="$PROJECT_DIR$/es6/index.html" />
+        <option value="$PROJECT_DIR$/nodejs/file_.js" />
+        <option value="$PROJECT_DIR$/nodejs/import/css.html" />
+        <option value="$PROJECT_DIR$/nodejs/import/footer.html" />
+        <option value="$PROJECT_DIR$/nodejs/import/import.js" />
+        <option value="$PROJECT_DIR$/nodejs/import/header.html" />
+        <option value="$PROJECT_DIR$/nodejs/index.html" />
+        <option value="$PROJECT_DIR$/nodejs/import/index.html" />
+        <option value="$PROJECT_DIR$/nodejs/import.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/checkImg/index.html" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Bundled (Maven 3)" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="width" value="1370" />
+    <option name="height" value="772" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="fire17643.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fire17643.github.io" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542533108642" />
+    <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.JavaScript" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\gitsite\fire17643.github.io\nodejs" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android Application">
+      <module name="" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="true" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnitTestDiscovery" factoryName="JUnit Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNGTestDiscovery" factoryName="TestNG Test Discovery" changeList="All">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="VM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="passParentEnv" value="true" />
+      <setting name="launchBrowser" value="true" />
+      <setting name="launchBrowserUrl" value="" />
+      <setting name="depsClasspath" value="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <module name="" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="false" name="import.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="import.js" working-dir="$PROJECT_DIR$/nodejs">
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0e4ba3eb-0514-4edd-b1c2-426cb7df36f8" name="Default" comment="" />
+      <created>1468633600511</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1468633600511</updated>
+      <workItem from="1468633611900" duration="2215000" />
+      <workItem from="1468659513775" duration="6256000" />
+      <workItem from="1469352047109" duration="606000" />
+      <workItem from="1539503721316" duration="897000" />
+      <workItem from="1539506802325" duration="207000" />
+      <workItem from="1540113915625" duration="2495000" />
+      <workItem from="1540729721543" duration="548000" />
+      <workItem from="1542514502202" duration="256000" />
+      <workItem from="1542514805756" duration="7805000" />
+    </task>
+    <task id="LOCAL-00001" summary="s">
+      <created>1542519099597</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1542519099597</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="21285000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="0" width="1370" height="772" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Build Variants" side_tool="true" />
+      <window_info id="Captures" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20992367" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Palette&#9;" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Image Layers" order="6" />
+      <window_info anchor="bottom" id="Android Profiler" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Logcat" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3286385" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.67189956" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.25508606" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info anchor="right" id="Device File Explorer" side_tool="true" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24961832" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Designer" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="s" />
+    <option name="LAST_COMMIT_MESSAGE" value="s" />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/um/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="38" column="47" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nodejs/file_.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="25" column="51" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular/html/directive color.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nodejs/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="10" lean-forward="true" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nodejs/import.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="49" column="3" lean-forward="true" selection-start-line="49" selection-start-column="3" selection-end-line="49" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/express/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/dist/vue-router-2.0.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-100">
+          <caret line="51" column="21" lean-forward="true" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Polymer/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Polymer/editable-name-tag.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-25">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nodejs/import/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nodejs/import/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="22" selection-start-column="22" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nodejs/import/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/nodejs/import/css.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue+webpack/build/dev-server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="61" column="10" lean-forward="true" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue+webpack/build/build.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="32" column="23" lean-forward="true" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue+webpack/build/webpack.base.conf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="79" column="37" selection-start-line="79" selection-start-column="37" selection-end-line="79" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack/server.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="115" column="22" lean-forward="true" selection-start-line="115" selection-start-column="22" selection-end-line="115" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue+webpack/src/App.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue+webpack/src/views/editTags.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue+webpack/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue+webpack/src/views/notFound.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue+webpack/src/views/tags.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="8" lean-forward="true" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue+webpack/src/views/noPermission.vue">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue+webpack/src/views/tagCustomers.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack/pack.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" column="7" lean-forward="true" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/component/component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="73" column="13" lean-forward="true" selection-start-line="73" selection-start-column="13" selection-end-line="73" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/component/createElement.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="28" column="41" lean-forward="true" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/directive/directive.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1850">
+          <caret line="89" column="6" lean-forward="true" selection-start-line="89" selection-start-column="6" selection-end-line="89" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/filter/filter.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="16" column="36" lean-forward="true" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/transition/transition.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1225">
+          <caret line="84" column="13" lean-forward="true" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/media/58eae89e24b051eef7c4fb2e89361911.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/3_1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="30" column="49" lean-forward="true" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/card.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" column="49" lean-forward="true" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/imporve.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2600">
+          <caret line="191" column="35" lean-forward="true" selection-start-line="191" selection-start-column="35" selection-end-line="191" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/vuex/store.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="28" column="17" lean-forward="true" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/vuex/store.commit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="24" column="6" lean-forward="true" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/vuex/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="29" column="19" lean-forward="true" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/vue-router/嵌套路由.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1075">
+          <caret line="17" column="8" lean-forward="true" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/vue-router/命名路由.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-514" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vue/vue-router/basic.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-589">
+          <caret line="64" column="33" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/survey/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="13" column="34" lean-forward="true" selection-start-line="13" selection-start-column="34" selection-end-line="13" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/c1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="22" column="32" selection-start-line="22" selection-start-column="32" selection-end-line="22" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/es6/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="875">
+          <caret line="35" column="20" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/checkImg/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="86" selection-start-line="86" selection-end-line="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="80" column="31" selection-start-line="80" selection-start-column="31" selection-end-line="80" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="164" column="30" lean-forward="true" selection-start-line="164" selection-start-column="30" selection-end-line="164" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Android</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>fire17643.github.io</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

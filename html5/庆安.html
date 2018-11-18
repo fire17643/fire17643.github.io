@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<style>body{margin:0; overflow:hidden;}</style>
+<script>
+onload = function () {
+var C = Math.cos,
+S = Math.sin,
+w = window,
+d = document.getElementById("canvas"),
+n = 360,
+c = d.getContext("2d");
+c.fillRect(0, 0, d.width = 2000, d.height = 1000);
+c.globalCompositeOperation = "lighter";
+c.lineWidth = .5;
+var st = setInterval(function () {
+if (n >= 3) {
+c.font = ""+Math.ceil(120-n/3)+"px 宋体";
+c.globalAlpha = n / 1000;
+c.strokeStyle = "hsl(" + (n + 110 % 360) + ",99%,50%)";
+x = -n * C(n / 100);
+y = 250 - S(n / 360 ) * n / 2.5;
+c.strokeText("岑安", x + 100, y);
+c.font = ""+n/3+"px Georgia";
+c.strokeText("HTML5", x + 380, y + 255);
+n -= 1;
+} else clearInterval(st);
+}, 16)
+}
+</script>
+</head>
+<body>
+<canvas id="canvas">your browser don't support html canvas!</canvas>
+</body>
+</html>

@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filter with Canvas</title>
+<style>
+    * {margin: 0;padding: 0;}
+
+    .tool-bar {padding: 15px 0;text-align: center;background-color: #fff;border-bottom: 1px solid #ccc;}
+    .tool-bar input {padding: 10px 15px;border: 0;background-color: #28e;border-radius: 3px;color: #fff;font-size: 14px;cursor: pointer;-webkit-transition: background-color .2s ease-out;-o-transition: background-color .2s ease-out;transition: background-color .2s ease-out;}
+    .tool-bar input:hover {background-color: #06c;}
+    .img-cont {padding: 15px 0;text-align: center;}
+</style>
+</head>
+<body>
+    <div class="tool-bar">
+        <input type="button" id="reset" value="原始图片">
+        <input type="button" id="grayscale" value="灰度">
+        <input type="button" id="sepia" value="复古">
+        <input type="button" id="red" value="红色蒙版">
+        <input type="button" id="invert" value="反色">
+        <input type="button" id="brightness" value="亮度">
+        <input type="button" id="opacity" value="半透明">
+    </div>
+    <div id="J_Imgs" class="img-cont">
+        <img src="./imgs/img_01.jpg" alt="" class="J_Filter">
+        <img src="./imgs/img_02.jpg" alt="" class="J_Filter">
+        <img src="./imgs/img_03.jpg" alt="" class="J_Filter">
+    </div>
+
+<script>
+	!function(t){function a(t){this.config=t,this.idNode=document.getElementById(this.config.id)||document.body,this.imgNodes=e.getElementsByClassName(this.config.imgs,this.idNode),this.init()}var e={hasClass:function(t,a){var e=t.className,s=new RegExp("(^|s+)"+a+"(s+|$)","g");return s.test(e)?!0:!1},getElementsByClassName:function(t,a){var s=[];if(document.getElementsByClassName)s=document.getElementsByClassName(t);else for(var i=a.getElementsByTagName("*"),n=i.length,h=0;n>h;h++)e.hasClass(i[h],t)&&s.push(i[h]);return s}};a.prototype={init:function(){this.canvas=this.createCanvas(),this.context=this.canvas.getContext("2d")},createCanvas:function(){var t=document.createElement("canvas");return t.setAttribute("id","ImageFilterCanvas"),t.setAttribute("width",400),t.setAttribute("height",400),t},setBaseImage:function(t,a){var e=this,s=new Image;s.onload=function(){e.canvas.width=s.width,e.canvas.height=s.height,e.context.drawImage(s,0,0),s.setAttribute("src","#"),e[a](t),delete s},s.src=t.getAttribute("src")},doFilter:function(t){for(var a=this.imgNodes,e=a.length,s=0;e>s;s++)a[s].getAttribute("data-src")||a[s].setAttribute("data-src",a[s].getAttribute("src")),this.setBaseImage(a[s],t)},reset:function(){for(var t=this.imgNodes,a=t.length,e=0;a>e;e++)t[e].getAttribute("data-src")&&t[e].setAttribute("src",t[e].getAttribute("data-src"))},grayscale:function(t){for(var a,e=this.context.getImageData(0,0,this.canvas.width,this.canvas.height),s=e.data,i=s.length,n=0;i>n;n+=4)a=(s[n]+s[n+1]+s[n+2])/3,s[n]=a,s[n+1]=a,s[n+2]=a;e.data=s,this.context.putImageData(e,0,0),t.setAttribute("src",this.canvas.toDataURL("image/jpeg"))},sepia:function(t){for(var a=this.context.getImageData(0,0,this.canvas.width,this.canvas.height),e=a.data,s=e.length,i=0;s>i;i+=4){var n=e[i],h=e[i+1],c=e[i+2];e[i]=.393*n+.769*h+.189*c,e[i+1]=.349*n+.686*h+.168*c,e[i+2]=.272*n+.534*h+.131*c}a.data=e,this.context.putImageData(a,0,0),t.setAttribute("src",this.canvas.toDataURL("image/jpeg"))},red:function(t){for(var a=this.context.getImageData(0,0,this.canvas.width,this.canvas.height),e=a.data,s=e.length,i=0;s>i;i+=4){var n=e[i],h=e[i+1],c=e[i+2];e[i]=(n+h+c)/3,e[i+1]=0,e[i+2]=0}a.data=e,this.context.putImageData(a,0,0),t.setAttribute("src",this.canvas.toDataURL("image/jpeg"))},invert:function(t){for(var a=this.context.getImageData(0,0,this.canvas.width,this.canvas.height),e=a.data,s=e.length,i=0;s>i;i+=4){var n=e[i],h=e[i+1],c=e[i+2];e[i]=255-n,e[i+1]=255-h,e[i+2]=255-c}a.data=e,this.context.putImageData(a,0,0),t.setAttribute("src",this.canvas.toDataURL("image/jpeg"))},brightness:function(t){for(var a=this.context.getImageData(0,0,this.canvas.width,this.canvas.height),e=a.data,s=e.length,i=0;s>i;i+=4){var n=e[i],h=e[i+1],c=e[i+2];e[i]=n+20,e[i+1]=h+20,e[i+2]=c+20}a.data=e,this.context.putImageData(a,0,0),t.setAttribute("src",this.canvas.toDataURL("image/jpeg"))},opacity:function(t){for(var a=this.context.getImageData(0,0,this.canvas.width,this.canvas.height),e=a.data,s=e.length,i=0;s>i;i+=4)e[i+3]=.5*e[i+3];a.data=e,this.context.putImageData(a,0,0),t.setAttribute("src",this.canvas.toDataURL("image/jpeg"))}},t.ImageFilter=t.ImageFilter||a}(window);
+</script>
+<script>
+(function(){
+    var reset = document.getElementById("reset"),
+        gray = document.getElementById("grayscale"),
+        sepia = document.getElementById("sepia"),
+        red = document.getElementById("red"),
+        invert = document.getElementById("invert"),
+        brightness = document.getElementById("brightness"),
+        opacity = document.getElementById("opacity");
+
+    // 创建图片滤镜实例
+    var f = new ImageFilter({
+        id: "J_Imgs",
+        imgs: "J_Filter"
+    });
+
+    // 还原原始图片效果
+    reset.onclick = function() {
+        f.reset();
+    }
+
+    // 灰度显示
+    gray.onclick = function() {
+        f.doFilter("grayscale");
+    }
+
+    // 复古效果
+    sepia.onclick = function() {
+        f.doFilter("sepia");
+    }
+
+    // 红色蒙版
+    red.onclick = function() {
+        f.doFilter("red");
+    }
+
+    // 反色
+    invert.onclick = function() {
+        f.doFilter("invert");
+    }
+
+    // 高亮
+    brightness.onclick = function() {
+        f.doFilter("brightness");
+    }
+
+    // 透明度
+    opacity.onclick = function() {
+        f.doFilter("opacity");
+    }
+})();
+</script>
+</body>
+</html>

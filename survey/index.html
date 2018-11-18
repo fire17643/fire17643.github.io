@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>海丁微名片</title>
+		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" href="css/um.css">
+		<link rel="stylesheet" href="css/common.css">
+		<script src="js/bind.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/index.js"></script>
+		<script>$isWeb = true</script>
+		<script>
+			function $pageReady(){
+				alert("webview ready");
+			}
+			
+			$(function() {
+			});
+		</script>
+	</head>
+	<body>
+		<div class="um-page active" id="index">
+			<div class="um-header" >
+				<h3>回答问题</h3>
+			</div>
+			<div class="um-content">
+				<img src="img/dc.jpg" width=0 height=0 class="none" alt="">
+				<div class="mt20">剩余时间：</div>
+				<div class="progress progress-striped">
+					<div class="progress-bar" style="width: 0%;">
+						<span class="count">15秒</span>
+					</div>
+				</div>
+				<form data-um-scope="radioForm" id="form1">
+					<p class="questions mt20" data-um-bindfield="title">《劳动法》规定，国家实行的标准工作时间为劳动者的规定时间不得超过()。(单选题)</p>
+					<span class="none qid" data-um-bindfield="qid"></span>
+					<div class="activity um-box-vc">
+						<span class="up" data-um-bindfield="remark.agree">31</span>
+						<span class="down" data-um-bindfield="remark.against">1</span>
+						<span class="report">举报(<span data-um-bindfield="remark.reported"></span>)</span>
+					</div>
+					<div class="um-list um-list-corner um-check-left" id="danxuan" data-um-scope-break="true">
+						<label class="um-list-item um-list-item-static" data-um-repeat="radioForm.options">
+							<input name="mark" type="radio" value="">
+							<span data-um-bindfield="mark"></span>.<span data-um-bindfield="cont"></span>
+							<span class="um-checkbox um-css3-vc"></span>
+						</label>
+						<!-- <label class="um-list-item um-list-item-static">
+								<input name="um-radio" type="radio" value="">
+								B.7小时<span class="um-checkbox um-css3-vc"></span>
+						</label>-->
+					</div>
+					<div class="btn um-btn mt10 submit">下一题</div>
+				</form>
+				<form action="" data-um-scope="checkboxForm" id="form2">
+					<p class="questions mt20" data-um-bindfield="title">《劳动法》规定，国家实行的标准工作时间为劳动者的规定时间不得超过()。(单选题)</p>
+					<div class="activity um-box-vc">
+						<span class="up" data-um-bindfield="remark.agree">31</span>
+						<span class="down" data-um-bindfield="remark.against">1</span>
+						<span class="report">举报(<span data-um-bindfield="remark.reported"></span>)</span>
+					</div>
+					<span class="none qid" data-um-bindfield="qid"></span>
+					<div class="um-list um-list-corner um-check-left" id="duoxuan" data-um-scope-break="true">
+						<label class="um-list-item um-list-item-static" data-um-repeat="checkboxForm.options">
+							<input name="mark" type="checkbox" value="">
+							<span data-um-bindfield="mark"></span>.<span data-um-bindfield="cont"></span>
+							<span class="um-checkbox um-css3-vc"></span>
+						</label>
+					</div>
+					<div class="btn um-btn mt10 submit">下一题</div>
+				</form>
+
+			</div>
+		</div>
+		<div class="corp um-footer">
+			<p>海丁微名片-点亮你自己</p>
+			<p>关注我请点击：<a href="#" class="um-blue">海丁微名片</a></p>
+		</div>
+	</body>
+</html>

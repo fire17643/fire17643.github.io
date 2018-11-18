@@ -1,0 +1,336 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>弧形排列的可折叠二级导航(完整演示) - 习题与演示 - CSS魔法</title>
+<style>
+/* --------------------------------------------- */
+/** The Beginning **/
+body {
+	font: 12px/1.2 'Microsoft YaHei', Verdana, Arial, Helvetica, sans-serif;
+	color: #ddd;
+	background: black;
+}
+#dv_wrap {
+	margin-top: 30px;
+	height: 570px;
+	background: url(http://www.cssmagic.net/demo/20090215-arc-nav/img/bg-2.jpg) no-repeat right top;
+}
+
+/* --------------------------------------------- */
+/** Head **/
+#dv_head {
+	float: right; _display: inline;
+	padding: 20px 30px 0 0;
+	text-align: right;
+}
+#dv_head h1 {
+	margin-bottom: 20px;
+	font: 700 26px/1.2 'Microsoft YaHei', Verdana, Arial, Helvetica, sans-serif;
+}
+#dv_head a {
+	margin-right: 20px;
+	color: #999;
+}
+#dv_head a:hover {
+	color: #eee;
+}
+/* --------------------------------------------- */
+/** Main **/
+#dv_main {
+	float: right; _display: inline;
+	margin: 230px 30px 0 -200px;
+	padding: 20px 30px;
+	width: 550px;
+	font: 12px/1.6 Verdana, Arial, Helvetica, sans-serif;
+	color: #aaa;
+	background: rgba(0,0,0,0.75);
+	filter: progid:DXImageTransform.Microsoft.Gradient(startColorStr=#c0000000,endColorStr=#c0000000);
+}
+#dv_main p {
+	margin-bottom: 10px;
+	text-indent: 2em;
+	text-align: justify; text-justify: distribute;
+}
+
+
+
+/* --------------------------------------------- */
+/** Nav **/
+#dv_nav {
+	float: left; _display: inline;
+	padding-top: 30px;
+	width: 500px;
+	height: 540px;
+	text-align: right;  /** 各菜单项右对齐 **/
+	background: url(http://www.cssmagic.net/demo/20090215-arc-nav/img/bg-1.jpg) no-repeat;
+}
+#dv_nav h2 {
+	display: none;
+}
+/** 菜单区段间隔 **/
+#ul_nav li {
+	padding-bottom: 24px;  /** 各一级菜单区段之间的间隔 **/
+}
+#ul_nav li li {
+	padding-bottom: 0px;  /** 清除上一条对二级菜单的影响 **/
+}
+
+
+/** 一、二级菜单项基本样式 **/
+/** 让菜单项显示为inline-block，实现右对齐呈现弧形排列。inline当然也是可以右对齐的，但是我们无法扩展它的热区。 **/
+/** 同时对于inline-block，我们可以采用padding的变化来实现hover上浮效果。如果用相对定位，一来消耗资源，二来会闪烁。 **/
+/** 可惜FF 3.0.x支持inline-block还是有些问题，导致hover闪烁，于是动用其私有属性-moz-inline-box。但下划线无法显示，不解。 **/
+#ul_nav h3 span {
+	display: inline-block;  /** WebKit,Op **/
+	display: -moz-inline-box;  /** FF2,FF 3.0.x **/
+	*display: inline-block;  /** 清除前一条的影响 @ IE6,7 **/
+	padding: 3px 14px 0 3px;
+	background: url(http://www.cssmagic.net/demo/20090215-arc-nav/img//menu_arrow.gif) no-repeat right 12px;  /** 小箭头 **/
+	cursor: pointer;
+}
+#ul_nav a {
+	display: inline-block;
+	display: -moz-inline-box;
+	*display: inline-block;
+	padding: 3px 0 0 3px;
+	line-height: 19px;
+	height: 19px;  /** FF2需要它来撑高-moz-inline-box **/
+	color: #999;
+}
+/** 一级菜单项基本样式 **/
+#ul_nav h3 a,
+#ul_nav h3 span {
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 26px;
+	height: 26px;  /** FF2需要它来撑高-moz-inline-box **/
+	color: #aaa;
+}
+
+/** 一、二级菜单项hover样式，一级菜单展开样式 **/
+#ul_nav a:hover {
+	padding: 1px 2px 2px 1px;  /** 由padding来产生hover上浮效果，FF2下还是有闪烁，暂且不管了 **/
+	color: #eee;
+}
+#ul_nav.c1 li.n1 h3 span,
+#ul_nav.c2 li.n2 h3 span,
+#ul_nav.c3 li.n3 h3 span,
+#ul_nav.c4 li.n4 h3 span,
+#ul_nav.c5 li.n5 h3 span,
+#ul_nav h3 span:hover,
+#ul_nav h3 span.hover {
+	padding: 0px 17px 3px 0px;  /** 由padding来产生hover上浮效果，FF2下还是有闪烁，暂且不管了 **/
+	color: #eee;
+	text-decoration: underline;
+	background-position: right -38px;  /** 小箭头跟随上浮 **/
+}
+
+/** 二级菜单项的小装饰 **/
+#ul_nav li li {
+	list-style: inside disc;
+	color: #600;  /** 定义小圆点颜色 **/
+}
+#ul_nav li li a {
+	margin-left: -3px;  /** 拉近小圆点 **/
+	*margin-left: -5px;
+}
+/** 二级菜单间隔 **/
+#ul_nav li li.n1 {margin-top: 6px;}
+#ul_nav li li.n2 {margin-top: 8px;}
+#ul_nav li li.n3 {margin-top: 10px;}
+#ul_nav li li.n4 {margin-top: 12px;}
+#ul_nav li li.n5 {margin-top: 14px;}
+#ul_nav li li.n6 {margin-top: 16px;}
+#ul_nav li li.n7 {margin-top: 18px;}
+#ul_nav li li.n8 {margin-top: 20px;}
+
+
+/** 菜单折叠样式 **/
+#ul_nav li ul {
+	display: none;
+}
+#ul_nav.c1 li.n1 ul,
+#ul_nav.c2 li.n2 ul,
+#ul_nav.c3 li.n3 ul,
+#ul_nav.c4 li.n4 ul,
+#ul_nav.c5 li.n5 ul {
+	display: block;
+}
+
+/* --------------------------------------------- */
+/** Placeholder **/
+#dv_placeholder div {
+	_margin-left: -3px;  /** 应付3px bug @ IE6 **/
+	float: right; _display: inline;
+	clear: right;
+	font: 1px/1 serif;  /** 清除块默认高度 @ IE6 **/
+}
+#dv_placeholder .n1  {width: 185px; height: 10px;}
+#dv_placeholder .n2  {width: 195px; height: 10px;}
+#dv_placeholder .n3  {width: 200px; height: 10px;}
+#dv_placeholder .n4  {width: 205px; height: 10px;}
+#dv_placeholder .n5  {width: 210px; height: 10px;}
+#dv_placeholder .n6  {width: 215px; height: 10px;}
+#dv_placeholder .n7  {width: 220px; height: 10px;}
+#dv_placeholder .n8  {width: 225px; height: 10px;}
+#dv_placeholder .n9  {width: 230px; height: 10px;}
+#dv_placeholder .n10 {width: 235px; height: 10px;}
+#dv_placeholder .n11 {width: 240px; height: 10px;}
+#dv_placeholder .n12 {width: 245px; height: 15px;}
+#dv_placeholder .n13 {width: 250px; height: 10px;}
+#dv_placeholder .n14 {width: 255px; height: 15px;}
+#dv_placeholder .n15 {width: 260px; height: 10px;}
+#dv_placeholder .n16 {width: 265px; height: 15px;}
+#dv_placeholder .n17 {width: 270px; height: 15px;}
+#dv_placeholder .n18 {width: 275px; height: 20px;}
+#dv_placeholder .n19 {width: 280px; height: 20px;}
+#dv_placeholder .n20 {width: 285px; height: 20px;}
+#dv_placeholder .n21 {width: 290px; height: 20px;}
+#dv_placeholder .n22 {width: 295px; height: 25px;}
+#dv_placeholder .n23 {width: 300px; height: 35px;}
+#dv_placeholder .n24 {width: 305px; height: 145px;}
+#dv_placeholder .n25 {width: 300px; height: 30px;}
+#dv_placeholder .n26 {width: 295px; height: 20px;}
+#dv_placeholder .n27 {width: 290px; height: 15px;}
+
+/** The End **/
+/* --------------------------------------------- */
+</style>
+<script>
+	window.onload = function() {
+	fnAddMenuEvent();
+}
+
+
+function fnAddMenuEvent() {
+	var oMenu = document.getElementById('ul_nav');
+	var ao = oMenu.getElementsByTagName('h3');
+	var o;
+	var bIE6 = window.navigator.userAgent.toLowerCase().indexOf('msie 6.')>=0 ? true : false;
+	for (var i=0; i<ao.length; i++) {
+		o = ao[i].getElementsByTagName('span')[0];
+		if (o) {
+			o.onclick = fnSetMenu;
+			if (bIE6) {
+				o.onmouseover = fnSetHover;
+				o.onmouseout = fnClrHover;
+			}
+		}
+	}
+	function fnSetMenu() {
+		var s;
+		var oMenuItem = this.parentNode.parentNode;
+		if (oMenuItem.nodeName.toLowerCase() == 'li') {
+			s = oMenuItem.className.slice(1);
+			if (oMenu.className == 'c'+s) {
+				oMenu.className = '';
+			} else {
+				oMenu.className = 'c' + s;
+				//alert(oMenu.className);
+			}
+		}
+		return false;
+	}
+}
+function fnSetHover() {
+	this.className = 'hover';
+}
+function fnClrHover() {
+	this.className = '';
+}
+</script>
+</head>
+
+<body>
+<div id="dv_wrap" class="w1000">
+	<div id="dv_head">
+		<h1>弧形排列的可折叠二级导航</h1>
+		<a href="http://www.cssmagic.net/">&lt;&lt; 返回首页</a>
+		<a href="http://www.cssmagic.net/demo/20090215-arc-nav/teach.html" target="_blank">教程(布局篇) &gt;&gt;</a>
+	</div>
+	<div id="dv_nav">
+		<h2>导航</h2>
+		<!--=======================================================-->
+		<div id="dv_placeholder">
+			<div class="n1"></div>
+			<div class="n2"></div>
+			<div class="n3"></div>
+			<div class="n4"></div>
+			<div class="n5"></div>
+			<div class="n6"></div>
+			<div class="n7"></div>
+			<div class="n8"></div>
+			<div class="n9"></div>
+			<div class="n10"></div>
+			<div class="n11"></div>
+			<div class="n12"></div>
+			<div class="n13"></div>
+			<div class="n14"></div>
+			<div class="n15"></div>
+			<div class="n16"></div>
+			<div class="n17"></div>
+			<div class="n18"></div>
+			<div class="n19"></div>
+			<div class="n20"></div>
+			<div class="n21"></div>
+			<div class="n22"></div>
+			<div class="n23"></div>
+			<div class="n24"></div>
+			<div class="n25"></div>
+			<div class="n26"></div>
+			<div class="n27"></div>
+		</div>
+		<!--=======================================================-->
+		<ul id="ul_nav">
+			<li class="n1">
+				<h3><span>洗护系列</span></h3>
+				<ul>
+					<li class="n1"><a href="###">赋活水养</a></li>
+					<li class="n2"><a href="###">动感卷曲</a></li>
+					<li class="n3"><a href="###">清衡水润</a></li>
+					<li class="n4"><a href="###">润感去屑</a></li>
+					<li class="n5"><a href="###">质感垂坠</a></li>
+					<li class="n6"><a href="###">炫感彩护</a></li>
+				</ul>
+			</li>
+			<li class="n2">
+				<h3><span>造型系列</span></h3>
+				<ul>
+					<li class="n1"><a href="###">珠光亮泽</a></li>
+					<li class="n2"><a href="###">酷炫凌乱</a></li>
+					<li class="n3"><a href="###">弹性卷曲</a></li>
+					<li class="n4"><a href="###">强力定型</a></li>
+					<li class="n5"><a href="###">垂顺亮直</a></li>
+					<li class="n6"><a href="###">自然线条</a></li>
+					<li class="n7"><a href="###">炫色润发</a></li>
+					<li class="n8"><a href="###">沙龙护理锁水发膜</a></li>
+				</ul>
+			</li>
+			<li class="n3">
+				<h3><a href="###">促销信息</a></h3>
+			</li>
+			<li class="n4">
+				<h3><span>秀发护理小TIPS</span></h3>
+				<ul>
+					<li class="n1"><a href="###">洗发知多少</a></li>
+					<li class="n2"><a href="###">护发怎么办</a></li>
+					<li class="n3"><a href="###">型发知多少</a></li>
+				</ul>
+			</li>
+			<li class="n5">
+				<h3><a href="###">VIDEO</a></h3>
+			</li>
+		</ul>
+	</div>
+	<div id="dv_main">
+		<p>简单解释一下思路。</p>
+		<p>最大的难点就是弧形排列，而且还是动态的、可折叠的。因此，各菜单项的位置不能做死。基本方法还是 CSS 教材中都会讲到的异形文本排版——用多个不同宽度的无语义空元素浮动，占位模拟曲线轮廓，从而限制文本在合理范围内流动。（我认为在这种场合，无语义元素是可以接受的。）</p>
+		<p>此外，还使用了一些小技巧来保证基本的用户体验，比如扩展菜单项热区，避免 hover 跳闪等等。CSS 代码中均有详细注释。</p>
+		<p>最终，无需 JS 进行定位计算，我们完全实现了纯 CSS 定位。同时，菜单项可自由增减，结构代码也清晰严谨。就是这样完美，甚至在古老的 IE6 下，它的表现都十分理想。</p>
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>两列右侧自适应布局</title>
+		<style>
+		/* 全屏自适应布局  */
+		html,body{width:100%;height:100%;overflow:hidden;margin:0;}
+		html{_height:auto;_padding:100px 0 50px;}
+		.g-hd,.g-sd,.g-mn,.g-ft{position:absolute;left:0;}
+		.g-hd,.g-ft{width:100%;}
+		.g-sd,.g-mn{top:100px;bottom:50px;_height:100%;overflow:auto;}
+		.g-hd{top:0;height:100px;}
+		.g-sd{width:300px;}
+		.g-mn{_position:relative;left:300px;right:0;_top:0;_left:0;_margin-left:300px;}
+		.g-ft{bottom:0;height:50px;}
+		</style>
+	</head>
+	<body>
+		<div class="g-hd">
+			
+		</div>
+		<div class="g-sd">
+			
+		</div>
+		<div class="g-mn">
+			
+		</div>
+		<div class="g-ft">
+			
+		</div>
+	</body>
+</html>

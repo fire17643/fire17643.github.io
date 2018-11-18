@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+    <script>
+        (function (widnow) {
+    window.DI = {
+        serviceCache:{},
+        _argumentNames: function (fn) {
+            var ret, methodCode = fn.toString();
+            methodCode.replace(/\((.*?)\)/, function(match, g1) {
+                var argStr = g1.replace(/\s/g, '');
+                ret = argStr.length ? argStr.split(',') : [];
+            });
+            return ret;
+        },
+ 
+        service: function (serviceID, serviceFactory) {
+            this.serviceCache[serviceID] = new serviceFactory();
+            return this;
+        },
+ 
+        controller: function (controllerID, controllerCb) {
+            var controllerCbArgs = this._argumentNames(controllerCb);
+            var dependencies = [], i = 0;
+ 
+            // 根据controllerCbArgs有序填充依赖
+            while (controllerCbArgs[i]) {
+                dependencies.push(this.serviceCache[controllerCbArgs[i]]);
+                i++;
+            }
+ 
+            controllerCb.apply({}, dependencies);
+            return this;
+        }
+    };
+ 
+})(this);
+ 
+// 使用方法：
+DI
+    .service('AT', function () {
+        this.name = 'Alloy Team';
+ 
+        this.concatUs = function () {
+            document.body.innerHTML = 'Email: AlloyTeam@tencent.com';
+        };
+    }).service("TR", function() {
+        alert(123)
+    })
+ 
+    .controller("d", function (AT, TR) {
+        AT.concatUs();
+    });
+    </script>
+</body>
+</html>

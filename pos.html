@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="um.css">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		$(function () {
+            $("#range").on("change", function() {
+            	var current = $("#current").val();
+                var range = $("#range").val();
+                if (current && range) {
+                    $("#result1").val((current * (1 - range / 100)).toFixed(2));
+                    $("#result2").val((current * (1 + range / 100)).toFixed(2));
+                }
+            });
+            $("#current1").on("change", function() {
+            	var initPrice = $("#initPrice").val();
+            	var current1 = $("#current1").val();
+            	if (current1 && initPrice) {
+            		var result = (100 * (current1 - initPrice) / initPrice).toFixed(2)
+            		if (current1 - initPrice > 0) {
+            			result = "+" + result + "%";
+            		} else if (current1 - initPrice == 0){
+            			result = 0;
+            		} else {
+            			result = "-" + result + "%";
+            		}
+                    $("#result3").val(result);
+                }
+            });
+            $("#percent").on("change", function() {
+            	var pers = $(this).val();
+            	if (pers) {
+            		var result = (pers * 100 / 365).toFixed(2);
+                    $("#result4").val(result);
+                }
+            });
+            $("#result4").on("change", function() {
+            	var pers = $(this).val();
+            	if (pers) {
+            		var result = (pers * 365 / 100).toFixed(2);
+                    $("#percent").val(result);
+                }
+            });
+            $("input").on("focus", function() {
+            	$(this).val("");
+            })
+        })
+	</script>
+	<style>
+		.um-list-item-inner {
+			border-bottom: 1px solid #ddd;
+		}
+	</style>
+</head>
+<body>
+<div class="um-page active">
+	<div class="um-header" >
+		<h3>买卖交易</h3>
+	</div>
+	<div class="um-content">
+		<form action="" >
+			<form action="" >
+				<ul class="um-list">
+					<li class="um-list-item">
+						<div class="um-list-item-inner">
+							<div class="um-list-item-left">
+								现价
+							</div>
+							<div class="um-list-item-right">
+								<input type="text" class="form-control" id="current" placeholder="请输入股票现价">
+							</div>
+						</div>
+					</li>
+					<li class="um-list-item">
+						<div class="um-list-item-inner">
+							<div class="um-list-item-left">
+								涨跌幅度（%）：
+							</div>
+							<div class="um-list-item-right">
+								<input type="text" class="form-control" id="range" placeholder="请输入股价涨跌幅">
+							</div>
+						</div>
+					</li>
+				</ul>
+				<div class="um-list">
+					<li class="um-list-item">
+						<div class="um-list-item-inner">
+							<div class="um-list-item-left">
+								挂单买价<img src="img/icons8-down-arrow-48.png" width="26" alt=""> ：
+							</div>
+							<div class="um-list-item-right">
+								<input type="text" id="result1" disabled class="form-control" id="current1">
+							</div>
+						</div>
+					</li>
+					<li class="um-list-item">
+						<div class="um-list-item-inner">
+							<div class="um-list-item-left">
+								挂单卖价<img src="img/icons8-up-48.png" width="26" alt="">：
+							</div>
+							<div class="um-list-item-right">
+								<input type="text" id="result2" disabled class="form-control">
+							</div>
+						</div>
+					</li>
+				</div>
+				<div class="tc" id="count">
+					<!-- <div id="count" class="btn um-btn-danger btn-inline">计算挂单买价</div> -->
+				</div>
+				<ul class="um-list">
+					<li class="um-list-item">
+						<div class="um-list-item-inner">
+							<div class="um-list-item-left">
+								初始价：
+							</div>
+							<div class="um-list-item-right">
+								<input type="text" class="form-control" id="initPrice" placeholder="请输入股票初始价">
+							</div>
+						</div>
+					</li>
+					<li class="um-list-item">
+						<div class="um-list-item-inner">
+							<div class="um-list-item-left">
+								现价：
+							</div>
+							<div class="um-list-item-right">
+								<input type="text" class="form-control" id="current1" placeholder="请输入现价">
+							</div>
+						</div>
+					</li>
+					<li class="um-list-item">
+						<div class="um-list-item-inner">
+							<div class="um-list-item-left">
+								涨跌幅：
+							</div>
+							<div class="um-list-item-right">
+								<input type="text" id="result3" disabled class="form-control">
+							</div>
+						</div>
+					</li>
+				</ul>
+				<ul class="um-list">
+					<li class="um-list-item">
+						<div class="um-list-item-inner">
+							<div class="um-list-item-left">
+								年化率(%)：
+							</div>
+							<div class="um-list-item-right">
+								<input type="text" class="form-control" id="percent" placeholder="请输入年化率">
+							</div>
+						</div>
+					</li>
+					<li class="um-list-item">
+						<div class="um-list-item-inner">
+							<div class="um-list-item-left">
+								万几：
+							</div>
+							<div class="um-list-item-right">
+								<input type="text" id="result4" class="form-control" placeholder="请输入万化率">
+							</div>
+						</div>
+					</li>
+				</ul>
+			</form>
+		</form>
+	</div>
+</div>
+</body>
+</html>

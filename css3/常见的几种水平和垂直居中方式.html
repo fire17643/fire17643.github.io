@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+常见的几种水平和垂直居中实现方式
+<style>
+.center-box{
+			position:absolute;
+			left:0;
+			right:0;
+			top:0;
+			bottom:0;
+			margin:auto;
+			width:500px;
+			height:300px;
+			background: red;
+		}
+	.pr{position:relative;}
+	.parent{background: #4ededa;overflow:auto;width:100%;height:300px;}
+        .center-box{
+			position:absolute;
+			left:0;
+			right:0;
+			top:0;
+			bottom:0;
+			margin:auto;
+			width:300px;
+			height:200px;
+                        background:#A2A8AF;
+		}
+        .center-box2{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		width: 300px;
+		height: 200px;
+		margin-top: -100px;
+		margin-left: -150px;
+                background:#123;
+	}
+        .center-box3{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%,-50%);
+                width: 300px;
+		height: 200px;
+                background:#123;
+	}
+        .parent4{
+		background: #4ededa;
+		vertical-align: middle;
+		display: table-cell;
+		width:400px;
+		height:250px;
+	}
+	.center-box4{
+		width: 300px;
+		height: 200px;
+		margin:0 auto;
+		background: #123;
+	}
+        .center-box5{
+		width: 300px;
+		height: 200px;
+		background: #123;
+		display: inline-block;
+		vertical-align: middle;
+	}
+        .parent5{
+		text-align: center;
+		height:300px;
+		background: rgb(112, 112, 139);
+	}
+        .parent5:after{
+		content: '';
+		height: 100%;
+		margin-left: -0.25em;
+		width: 0px;
+		display: inline-block;
+		vertical-align: middle;
+	}
+        .parent6{
+		background: rgb(142, 158, 192);
+		width: 100%;
+		height: 300px;
+		margin: 0 auto;
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-box-align: center;
+		-moz-box-align: center;
+		-ms-flex-align: center;
+		-webkit-align-items: center;
+		align-items: center;
+		-webkit-box-pack: center;
+		-moz-box-pack: center;
+		-ms-flex-pack: center;
+		-webkit-justify-content: center;
+		justify-content: center;
+	}
+        .center-box6{
+		width: 300px;
+		height: 200px;
+		background: #A44F4F;
+	}
+</style>
+<h2>1.设置外层div相对定位，内层div绝对定位</h2>
+如<div class="pr parent"><div class="center-box"></div></div>
+<h2>2.margin 负值</h2>
+这可能是最常见的方式了，如果知道了确切的尺寸，把margin设置为宽高的一半，同时top: 50% left:50% 就能居中了
+缺点：
+不适合响应式布局；不能设置百分比的宽高和 min-/max-；
+内容可能会溢出容器；
+必须考虑padding的影响或者使用 box-sizing: border-box；
+<div class="pr parent"><div class="center-box2"></div></div>
+
+<h2>3.css3 - Transforms</h2>
+<div class="pr parent"><div class="center-box3"></div></div>
+<h2>4.table-cell</h2>
+<div class="pr parent4"><div class="center-box4"></div></div>
+<h2>5.Inline-block</h2>
+<div class="pr parent5"><div class="center-box5">OMG, I’M CENTERED 
+Inline-Block.OMG, I’M CENTERED 
+Inline-Block.</div></div>
+<h2>6.css3 Flexbox</h2>
+<div class="pr parent6"><div class="center-box6">OMG, I’M CENTERED 
+Inline-Block.OMG, I’M CENTERED Box.</div></div>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+		<meta content="yes" name="apple-mobile-web-app-capable">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta content="telephone=no" name="format-detection">
+		<meta content="email=no" name="format-detection">
+		<meta content="lvzei" name="author">
+		<meta content="www.css3china.com" name="Copyright">
+		<title>三栏等高布局中间列优先加载</title>
+		<style type="text/css">
+		/*****基本重置样式文件*****/
+		html, body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td{margin:0;padding:0;}
+		html, body{height:100%;line-height:22px;color:#333;-webkit-text-size-adjust:none;}
+		body{height:100%;background:#fff;min-width:600px;font:16px '微软雅黑',Arial,Helvetica,sans-serif;}
+		img, a img, input{vertical-align:middle;}
+		img, a img, button {border:0;cursor:pointer;}
+		input, textarea{outline:none;-moz-outline:none;}
+		table, td ,th, tr{border-collapse:collapse;border:0;}
+		ul, ol, li{list-style:none;}
+		h1,h2,h3,h4,h5,h6{font-size:12px;}
+		a{color:#333333;text-decoration:underline;}
+		/*****清除浮动*****/
+		.cf:after{content:".";display:block;height:0;clear:both;visibility:hidden;font-size:0;}
+		.cf{display: inline-table;}
+		* html .cf{height:1%;}
+		.cf{display: block;}
+		/*****头脚****/
+		header, footer{height:44px;background:#555555;line-height:44px;text-align:center;color:#FFFFFF;}
+		/*****三栏布局*****/
+		.main_1{background:#666666;padding-right:170px;}
+		.main_1 .main_2{background:#666666;padding-left:180px;}
+		.main_1 .main_3{background:#999;position:relative;}
+		.content, .aside_l, .aside_r{height:100%;float:left;position:relative;text-align:center;}
+		.aside_l, .aside_r{line-height:50px;}
+		/*****中间列*****/
+		.content{width:100%;}
+		.content ul{padding:10px;font-size:14px;line-height:22px;}
+		/*****左栏*****/
+		.aside_l{width:180px;left:-100%;margin-left:-180px;}
+		/*****右栏*****/
+		.aside_r{width:170px;margin-right:-170px;}
+		</style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<!--头部 start-->
+		<header>header</header>
+		<!--头部 end-->
+		<!--主体内容 start-->
+		<div class="main_1">
+			<div class="main_2">
+				<div class="main_3 cf">
+					<!--中间列 start-->
+					<section class="content">
+						<ul>
+							<li class="">
+								<a href="#">测试内容www.css3china.com</a>
+							</li>
+							<li class="">
+								<a href="#">测试内容www.css3china.com</a>
+							</li>
+							<li class="">
+								<a href="#">测试内容www.css3china.com</a>
+							</li>
+							<li class="">
+								<a href="#">测试内容www.css3china.com</a>
+							</li>
+							<li class="">
+								<a href="#">测试内容www.css3china.com</a>
+							</li>
+							<li class="">
+								<a href="#">测试内容www.css3china.com</a>
+							</li>
+							<li class="">
+								<a href="#">测试内容www.css3china.com</a>
+							</li>
+							<li class="">
+								<a href="#">测试内容www.css3china.com</a>
+							</li>
+							<li class="">
+								<a href="#">测试内容www.css3china.com</a>
+							</li>
+							<li class="">
+								<a href="#">测试内容www.css3china.com</a>
+							</li>
+							<li class="">
+								<a href="#">测试内容www.css3china.com</a>
+							</li>
+							<li class="">
+								<a href="#">测试内容www.css3china.com</a>
+							</li>
+							<li class="">
+								<a href="#">测试内容www.css3china.com</a>
+							</li>
+							<li class="">
+								<a href="#">测试内容www.css3china.com</a>
+							</li>
+							<li class="">
+								<a href="#">测试内容www.css3china.com</a>
+							</li>
+							<li class="">
+								<a href="#">测试内容www.css3china.com</a>
+							</li>
+							<li class="">
+								<a href="#">测试内容www.css3china.com</a>
+							</li>
+							<li class="">
+								<a href="#">测试内容www.css3china.com</a>
+							</li>
+						</ul>
+					</section>
+					<!--中间列 end-->
+					<!--左侧边栏 start-->
+					<aside class="aside_l">
+						aside_l
+					</aside>
+					<!--左侧边栏 end-->
+					<!--右侧边栏 start-->
+					<aside class="aside_r">
+						aside_r
+					</aside>
+					<!--右侧边栏 end-->
+				</div>
+			</div>
+		</div>
+		<!--主体内容 end-->
+		<!--底部导航版权 start-->
+	<footer>footer</footer>
+	<!--底部导航版权 end-->
+</div>
+</body>
+</html>

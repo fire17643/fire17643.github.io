@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title> 通过锚点实现内容切换效果 </title>
+    <style type="text/css">
+    *{margin:0;padding:0;}
+	body{font:12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;}
+    ul, ol {list-style: none; }
+    a {text-decoration: none; }
+    a:hover {text-decoration:underline; }
+    img {border:0;}
+	
+	.section{width:350px; margin:0 auto; }
+	
+	#content-slider{border:1px solid #666;height:200px;width:350px; margin-top:50px;}
+	#content-slider-inside{height:200px;overflow:hidden; }
+	#content-slider-inside li{background-color:#ccc;height:200px;width:350px;text-align:center;font-size:100px;line-height:200px;color:#666;}
+	
+	#navigation {margin: 10px 0 0 0;float: right;}
+	#navigation li {border:solid 1px #ccc; float:left;width:20px;height:20px;line-height:20px;text-align:center;margin-left:5px;}
+	#navigation li a, #navigation li a:link, #navigation li a:visited {color: #666;display: block;height:20px;}
+	#navigation li a:hover, #navigation li a:focus, #navigation li a:active {background:#666;color:#fff;}
+	
+
+</style>
+</head>
+
+<body>
+
+    <div class="section">
+        <div id="content-slider">
+            <ul id="content-slider-inside">
+                <li id="one">1</li>
+                <li id="two">2</li>
+                <li id="three">3</li>
+                <li id="four">4</li>
+                <li id="five">5</li>
+            </ul>
+        </div>
+        
+        <ul id="navigation">
+            <li><a href="#one">1</a></li>
+            <li><a href="#two">2</a></li>
+            <li><a href="#three">3</a></li>
+            <li><a href="#four">4</a></li>
+            <li><a href="#five">5</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>

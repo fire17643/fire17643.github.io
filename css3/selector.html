@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<link rel="stylesheet" type="text/css" href="test.css" media="screen and (max-width:500px)" />
+	</head>
+	<body>
+		<style type="text/css">
+		div {
+			/* -webkit-columns:100px 3;
+			columns:100px 3;
+			-webkit-column-count:3;
+			-moz-column-count:3; 
+			-webkit-column-gap:30px; Safari and Chrome
+			column-gap:30px;-webkit-column-rule:4px outset #ff0000;
+			-webkit-column-fill:auto; */
+text-align: center;
+width: 400px;
+height: 600px;
+background: -o-linear-gradient(30deg, #ace, #f96);
+background: -o-linear-gradient(30deg, #ace, #f96);
+background: linear-gradient(0deg, #ace, #f96);
+background: -webkit-linear-gradient(right, rgba(255,255,255,0), rgba(255,255,255,1)),url(http://f.hiphotos.baidu.com/image/pic/item/c8177f3e6709c93dbdb1d4609d3df8dcd00054e2.jpg) no-repeat;
+background: -o-linear-gradient(right, rgba(255,255,255,0), rgba(255,255,255,1)),url(http://f.hiphotos.baidu.com/image/pic/item/c8177f3e6709c93dbdb1d4609d3df8dcd00054e2.jpg);
+		background: url(http://f.hiphotos.baidu.com/image/pic/item/c8177f3e6709c93dbdb1d4609d3df8dcd00054e2.jpg);
+background-image: radial-gradient(80% 20% at 30% 60%, hsla(120,70%,60%,.9),hsla(360,60%,60%,.9));
+background-image: -moz-radial-gradient(80% 20% at 30% 60%, hsla(120,70%,60%,.9),hsla(360,60%,60%,.9));
+}
+
+		h1,img{
+			max-width: 100%;
+			-webkit-box-reflect:right 0 url(http://f.hiphotos.baidu.com/image/pic/item/c8177f3e6709c93dbdb1d4609d3df8dcd00054e2.jpg);
+			-webkit-box-reflect: right 0 url(http://cdn.w3cplus.com/sites/default/files/blogs/2014/1405/css-masking.png);
+			-ms-box-reflect: right 0 url(http://cdn.w3cplus.com/sites/default/files/blogs/2014/1405/css-masking.png);
+			box-reflect: right 0 url(http://cdn.w3cplus.com/sites/default/files/blogs/2014/1405/css-masking.png);
+		}
+		.box-reflect {
+  margin: 10px auto;
+  width: 200px;
+}
+.box-reflect:after {  
+    content: "";  
+    display: block;  
+    background: -moz-element(#moz-reflect) no-repeat;  
+    width: auto;  
+    height: 200px;  
+    -moz-transform: scaleY(-1);  
+}  
+</style>
+<div class="box-reflect" id="moz-reflect"><img src="http://cdn.w3cplus.com/sites/default/files/blogs/2014/1405/box-reflect.jpg" alt="" height="200" /></div>
+	<img src="http://c.hiphotos.baidu.com/image/pic/item/09fa513d269759ee7fd6ba5cb0fb43166c22dfa7.jpg" alt="">
+	<h1>倒影文字</h1>
+	<!-- <img width="100" src="http://f.hiphotos.baidu.com/image/pic/item/c8177f3e6709c93dbdb1d4609d3df8dcd00054e2.jpg" alt="">
+	<img width="100" src="http://f.hiphotos.baidu.com/image/pic/item/b3b7d0a20cf431ad2e7efd304936acaf2edd980f.jpg" alt=""> -->
+	</body>
+	</html>	

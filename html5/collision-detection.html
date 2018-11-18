@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>impact demo</title>
+	<script src="http://s0.kuaizhan.com/res/skin/js/lib/jquery-2.0.3.min.js"></script>
+	<style type="text/css">
+	*{
+		margin:0;
+		padding:0;
+	}
+	.el1,.el2{
+		width:100px;
+		height: 100px;
+		position: absolute;
+		opacity: 0.7;
+		border-radius: 4px;
+	}
+	.el1{
+		background: #92B901;
+		position:relative;
+		animation:myfirst 5s;
+		-moz-animation:myfirst 5s;
+		-webkit-animation:myfirst 5s;
+		-webkit-animation-iteration-count: infinite;
+		 -moz-animation-iteration-count: infinite;
+	}
+	.el2{
+		background: #ff9900;
+		left: 200px;
+		top:200px;
+	}
+	@keyframes myfirst
+	{
+	0%   {background:red; left:0px; top:0px;}
+	25%  {background:yellow; left:200px; top:0px;}
+	50%  {background:blue; left:200px; top:200px;}
+	75%  {background:green; left:0px; top:200px;}
+	100% {background:red; left:0px; top:0px;}
+	}
+	@-moz-keyframes myfirst /* Firefox */
+	{
+	0%   {background:red; left:0px; top:0px;}
+	25%  {background:yellow; left:200px; top:0px;}
+	50%  {background:blue; left:200px; top:200px;}
+	75%  {background:green; left:0px; top:200px;}
+	100% {background:red; left:0px; top:0px;}
+	}
+	@-webkit-keyframes myfirst /* Safari and Chrome */
+	{
+	0%   {background:red; left:0px; top:0px;}
+	25%  {background:yellow; left:200px; top:0px;}
+	50%  {background:blue; left:200px; top:200px;}
+	75%  {background:green; left:0px; top:200px;}
+	100% {background:red; left:0px; top:0px;}
+	}
+	@-o-keyframes myfirst /* Opera */
+	{
+	0%   {background:red; left:0px; top:0px;}
+	25%  {background:yellow; left:200px; top:0px;}
+	50%  {background:blue; left:200px; top:200px;}
+	75%  {background:green; left:0px; top:200px;}
+	100% {background:red; left:0px; top:0px;}
+	}
+	.text{
+		width:100%;
+		height: 40px;
+		position: absolute;
+		font-size: 12px;
+		bottom: 0px;
+		text-align: center;
+	}
+	.wrap{
+		width: 300px;
+		height: 300px;
+		margin: 100px auto;
+		position: relative;
+		border: #ccc 1px solid;
+		border-radius: 4px;
+		box-shadow: #ccc 0px 0px 4px;
+		padding: 2px;
+	}
+	.red{
+		color: #ff3300;
+	}
+	</style>
+</head>
+<body>
+<div class="wrap">
+    <div class="el1" draggable="true" ondragstart="check();" ></div>
+    <div class="el2" draggable="true"></div>
+    <div class="text">目前没有碰撞...</div>
+ </div>
+ <script type="text/javascript">
+    var $el1 = $('.el1');
+    var $el2 = $('.el2');
+    var $text = $('.text');
+    var el1 = $el1[0];
+    var el2 = $el2[0];
+    var sta = setInterval('check()', 10);
+    function check(){
+    	console.log(1);
+    	if(impact(el1, el2)){
+    		console.log(2)
+    			 $text.addClass('red');
+    			 $text.html('碰撞进行中！');
+    		}else{
+    			console.log(3)
+    			$text.removeClass('red');
+    			$text.html('目前没有碰撞...');
+    		}
+    }
+    function impact(el1, el2) {
+        var e1 = {
+            x: getDefaultStyle(el1, 'left'),
+            y: getDefaultStyle(el1, 'top'),
+            w: getDefaultStyle(el1, 'width'),
+            h: getDefaultStyle(el1, 'height')
+        }
+        var e2 = {
+            x: getDefaultStyle(el2, 'left'),
+            y: getDefaultStyle(el2, 'top'),
+            w: getDefaultStyle(el2, 'width'),
+            h: getDefaultStyle(el2, 'height')
+        }
+        var px, py;
+        px = e1.x <= e2.x ? e2.x : e1.x;
+        py = e1.y <= e2.y ? e2.y : e1.y;
+        if (px >= e1.x && px <= e1.x + e1.w && py >= e1.y && py <= e1.y + e1.h && px >= e2.x && px <= e2.x + e2.w && py >= e2.y && py <= e2.y + e2.h) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    function getDefaultStyle(obj, attribute) {
+        return parseInt(obj.currentStyle ? obj.currentStyle[attribute] : document.defaultView.getComputedStyle(obj, false)[attribute]);
+    }
+ </script>
+</body>
+</html>

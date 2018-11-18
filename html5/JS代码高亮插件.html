@@ -1,0 +1,343 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JS代码高亮插件</title>
+</head>
+<body>
+<style>
+	/* default style */
+h2 {
+  font-weight: normal;
+  font-family: '\5fae\8f6f\96c5\9ed1', 'microsoft yahei', '\5b8b\4f53', sans-serif;
+  font-size: 16px;
+}
+pre.colorCode {
+  margin: 0;
+  padding: 8px 10px;
+  line-height: 1.5;
+  font-size: 14px;
+  border-radius: 4px;
+  background-color: #272822;
+  color: #ffffff;
+}
+/* classes for html */
+span.html_tag {
+  color: #f92672;
+}
+span.html_prop {
+  color: #a6e22e;
+}
+span.html_propval {
+  color: #e6db74;
+}
+span.html_note {
+  color: #75715e;
+}
+/* classes for css */
+span.css_tag {
+  color: #d92731;
+}
+span.css_selector {
+  color: #7fe22e;
+}
+span.css_prop {
+  color: #66d9ef;
+}
+span.css_propval {
+  color: #ae81ff;
+}
+span.css_unit {
+  color: #f92672;
+}
+span.css_string {
+  color: #3da3ef;
+}
+span.css_note {
+  color: #75715e;
+}
+/* classes for js */
+span.js_keyword {
+  color: #66d9ef;
+}
+span.js_internal {
+  color: #d92731;
+}
+span.js_number {
+  color: #ae81ff;
+}
+span.js_string {
+  color: #c8db74;
+}
+span.js_note {
+  color: #75715e;
+}
+</style>
+<div class="box">
+  <h2 class="demotitle">1、无格式化显示源代码</h2>
+  <pre class="colorCode">
+    <a href="#" target="_blank">
+        <span><!--这里是HTML注释--><b>这里直接显示源代码</b>
+            <input type="text" name="" value="测试" disaled readonly>
+        </span>  
+    </a>
+    <style>
+    /* css format */ body {margin: 0;padding: 0;}
+    .class, div.class {color: #fff;}
+    #demo-1 {background-color: #f00;}
+    #demo div .demo p div.test {float: left;}
+    </style>
+    <script>
+      /* js format */
+      var note = '字符串混格式化成什么样呢？';
+      var n = 10;
+      new function() {
+          do break; while(typeof delete this); 
+          for(var a;void 0;) continue 
+          if (null) with(0) 
+          try{ 
+              switch(1 in 1 instanceof 1) { 
+                  case false: 
+                  default: throw true 
+              } 
+          }catch(a){}finally{}else return  //console.log("去掉注释可以运行到这里") 
+      };
+    </script>
+  </pre>
+  <h2 class="demotitle">2、格式化html、css、js显示代码</h2>
+	<pre class="colorCode" format="html,css,js" style="margin-top: 10px;">
+    <a href="#" target="_blank">
+        <span><!--这里是HTML注释--><b>这里直接显示源代码</b>
+            <input type="text" name="" value="测试" disaled readonly>
+        </span>  
+    </a>
+    <style>
+    /* css format */
+    body {margin: 0;padding: 0;}
+    .class, div.class {color: #fff;}
+    #demo-1 {
+        background-color: #f00;
+    }
+    #demo div .demo p div.test {
+        float: left;
+    }
+    </style>
+    <script>
+      /* js format */
+      var note = '字符串混格式化成什么样呢？';
+      var n = 10;
+      new function() {
+          do break; while(typeof delete this); 
+          for(var a;void 0;) 
+              continue 
+          if (null) 
+              with(0) 
+          try{ 
+              switch(1 in 1 instanceof 1) { 
+                  case false: 
+                  default: throw true 
+              } 
+          }catch(a){}finally{}else return  //console.log("去掉注释可以运行到这里") 
+      };
+    </script>
+	</pre>
+  <h2 class="demotitle">3、格式化css显示代码</h2>
+  <pre class="colorCode" format="css" style="margin-top: 10px;">
+    /* css format */
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    .class, div.class {
+        color: #fff;
+    }
+    #demo-1 {
+        background-color: #f00;
+    }
+    #demo div .demo div.test {
+        float: left;
+    }
+    .a .b .c {
+        font-size: 12px;
+    }
+  </pre>
+  <h2 class="demotitle">4、格式化js显示代码</h2>
+  <pre class="colorCode" format="js" style="margin-top: 10px;">
+    /* js format */
+    var note = '字符串混格式化成什么样呢？';
+    var n = 10;
+    new function() {
+        do break; while(typeof delete this); 
+        for(var a;void 0;) 
+            continue 
+        if (null) 
+            with(0) 
+        try{ 
+            switch(1 in 1 instanceof 1) { 
+                case false: 
+                default: throw true 
+            } 
+        }catch(a){}finally{}else return  //console.log("去掉注释可以运行到这里") 
+    };
+  </pre>
+</div>
+<script>
+	(function(){
+	"use strict";
+	function CC(){}
+	window.CC = CC;
+	//创建默认配置，全局，可供外部修改
+	CC.cfg = {
+		codeBox: "pre.colorCode"
+	};
+	CC.regs = {
+		html: {
+			blank: /(^\s+)|(\s+$)/g,
+			tag: /(\&lt;\/?)([a-zA-Z]+)/g,
+			prop: /\s+([a-zA-Z]+)\="(<|")/g,
+			propval: /\="(\S+)"/g,
+			notestart: /\&lt;\!--/g,
+			noteend: /--\&gt;/g
+		},
+		css: {
+			style: /(^|\n)([\w\-_\.#\s,]+)(?=\{)/g,
+			tag: /(^|\n|\s+)([a-zA-Z]+)/g,
+			clsorid: /([\.#][\w\-]+)/g,
+			prop: /(^|\n|\s+|\{|;)([a-zA-Z\-]+)(?=\s?:)/g,
+			propval: /(:\s?)([\w\-:\/#@\.]+)(;?)/g,
+			notestart: /\/\*/g,
+			noteend: /\*\//g
+		},
+		js: {
+			keyword: /(new|do|break|while|typeof|delete|for|continue|if|with|try|switch|in|instanceof|case|default|throw|catch|finally|else|return)(?=;|\s|\(|\{|\}|\:)/g,
+			number: /(\d+|false|true|null)/g,
+			notestart: /\/\*/g,
+			noteend: /\*\//g,
+			noteline: /(\/\/.+)(?=\n)/g
+		}
+	};
+	CC.colorCode = function(){
+		this.cs = CC.cfg;
+		this._init();
+	};
+	CC.colorCode.prototype = {
+		_hasClass: function(node, cls){
+			var reg = new RegExp("(^|\\s+)" + cls + "(\\s+|$)", "g");
+			if(reg.test(node.className)){
+				reg.lastIndex = 0;
+				return true;
+			}
+			return false;
+		},
+		_getNodes: function(){
+			var _this = this, selector = _this.cs.codeBox.split("."), tagName = selector[0], tagClass = selector[1];
+			var allTags = document.getElementsByTagName(tagName), len = allTags.length;
+			var arr = [];
+			if(len <= 0){return false;}
+			for(var i = 0; i < len; i++){
+				if(_this._hasClass(allTags[i], tagClass)){
+					arr.push(allTags[i]);
+				}
+			}
+			_this.cs = arr;
+			if(arr.length > 0){
+				return true;
+			}else{
+				return false;
+			}
+		},
+		_formart: function(txt){
+			var reg = /^(\s+)/g, str = '';
+			if(reg.test(txt)){
+				str = RegExp.$1;
+				reg.lastIndex = 0;
+				txt = txt.replace(CC.regs.html.blank, "").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(new RegExp("\\n(?:" + str + ")", "g"), "\n");
+			}
+			return txt;
+		},
+		_addHtmlColor: function(txt){
+			txt = txt.replace(CC.regs.html.propval, function(){
+				return '=\"<span class="html_propval">' + arguments[1] + '</span>\"';
+			}).replace(CC.regs.html.prop, function(){
+				return ' <span class="html_prop">' + arguments[1] + '</span>="' + arguments[2];
+			}).replace(CC.regs.html.tag, function(){
+				return arguments[1] + '<span class="html_tag">' + arguments[2] + '</span>';
+			}).replace(CC.regs.html.notestart, function(){
+				return '<span class="html_note">' + arguments[0];
+			}).replace(CC.regs.html.noteend, function(){
+				return arguments[0] + '</span>';
+			});
+			return txt;
+		},
+		_addCssColor: function(txt){
+			txt = txt.replace(CC.regs.css.style, function(){
+				var str = arguments[0];
+				str = str.replace(CC.regs.css.tag, function(){
+					return arguments[1] + '<span class="css_tag">' + arguments[2] +'</span>';
+				}).replace(CC.regs.css.clsorid, function(){
+					return '<span class="css_selector">' + arguments[1] +'</span>';
+				});
+				return str;
+			}).replace(CC.regs.css.prop, function(){
+				return arguments[1] + '<span class="css_prop">' + arguments[2] +'</span>';
+			}).replace(CC.regs.css.propval, function(){
+				return arguments[1] + '<span class="css_propval">' + arguments[2] +'</span>' + arguments[3];
+			}).replace(CC.regs.css.notestart, function(){
+				return '<span class="css_note">' + arguments[0];
+			}).replace(CC.regs.css.noteend, function(){
+				return arguments[0] + '</span>';
+			});
+			return txt;
+		},
+		_addJsColor: function(txt){
+			txt = txt.replace(CC.regs.js.keyword, function(){
+				return '<span class="js_internal">' + arguments[1] + '</span>';
+			}).replace(CC.regs.js.number, function(){
+				return '<span class="js_number">' + arguments[1] + '</span>';
+			}).replace(CC.regs.js.notestart, function(){
+				return '<span class="js_note">' + arguments[0];
+			}).replace(CC.regs.js.noteend, function(){
+				return arguments[0] + '</span>';
+			}).replace(CC.regs.js.noteline, function(){
+				return '<span class="js_note">' + arguments[1] + '</span>';
+			});
+			return txt;
+		},
+		_setCodeColor: function(){
+			var _this = this, len = _this.cs.length, txt = '';
+			for(var i = 0; i < len; i++){
+				var format = _this.cs[i].getAttribute("format");
+				txt = _this.cs[i].innerHTML;
+				txt = _this._formart(txt);
+				if(format && format.indexOf("html") !== -1){
+					txt = _this._addHtmlColor(txt);
+				}
+				if(format && format.indexOf("css") !== -1){
+					txt = _this._addCssColor(txt);
+				}
+				if(format && format.indexOf("js") !== -1){
+					txt = _this._addJsColor(txt);
+				}
+				_this.cs[i].innerHTML = txt;
+			}
+		},
+		_init: function(){
+			var _this = this;
+			var nodes = _this._getNodes();
+			if(nodes){
+				_this._setCodeColor();
+			}else{
+				return false;
+			}
+		}
+	};
+})();
+</script>
+<script>
+(function(){
+  var cc = new CC.colorCode();
+})();
+</script>
+</body>
+</html>

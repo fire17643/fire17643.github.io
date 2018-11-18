@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body {
+			-webkit-backface-visibility: hidden;
+		}
+		.wrap {
+			width: 300px;
+			height: 300px;
+			border-radius: 50%;
+			position: relative;
+			overflow: hidden;
+			margin: 40px auto;
+			-webkit-transform: translate3d(0,0,0);
+			transform: translate3d(0,0,0);
+		}
+		.item {
+			width: 150px;
+			height: 150px;
+			overflow: hidden;
+			position: relative;
+			display: inline-block;
+			float: left;
+		}
+		.cube1,.cube2,.cube3,.cube4 {
+			position: absolute;
+			background-color: #007aff;
+			width: 400px;
+			height: 400px;
+			-webkit-transform: rotate(-90deg);
+			transform: rotate(-90deg);
+			-webkit-animation: rotate .5s linear both;
+		}
+		.cube1{
+			bottom: 0;
+			right: 0;
+			-webkit-animation-delay: .5s;
+			-webkit-transform-origin: right bottom;
+			background-color: green;
+		}
+		.cube2 {
+			bottom: 0;
+			left: 0;
+			-webkit-animation-delay: 1s;
+			-webkit-transform-origin: left bottom;
+			background-color: yellow;
+		}
+		.cube3 {
+			right: 0;
+			top: 0;
+			-webkit-animation-delay: 2s;
+			-webkit-animation-duration: 1.5s;
+			-webkit-transform-origin: right top;
+			-webkit-animation-timing-function: cubic-bezier(.09,1.6,.08,.04);
+			background-color: #6ff;
+		}
+		.cube4 {
+			top: 0;
+			left: 0;
+			-webkit-animation-delay: 1.5s;
+			-webkit-transform-origin: top left;
+			background-color: orange;
+		}
+		@-webkit-keyframes rotate {
+			to {
+				transform: rotate(0);
+			}
+		}
+		.inner {
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-left: -50px;
+			margin-top: -50px;
+			z-index: 2;
+			border-radius: 50%;
+			background-image:-webkit-gradient( linear, left top, right top, color-stop(0, #f22), color-stop(0.15, #f2f), color-stop(0.3, #22f), color-stop(0.45, #2ff), color-stop(0.6, #2f2),color-stop(0.75, #2f2), color-stop(0.9, #ff2), color-stop(1, #f22) );color:transparent;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="inner"></div>
+		<div class="item">
+			<div class="cube1"></div>
+		</div>
+		<div class="item">
+			<div class="cube2"></div>
+		</div>
+		<div class="item">
+			<div class="cube3"></div>
+		</div>
+		<div class="item">
+			<div class="cube4"></div>
+		</div>
+	</div>
+</body>
+</html>

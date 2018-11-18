@@ -1,0 +1,59 @@
+{
+  "status": 200,
+  "data": [
+    {
+      "qid": 0,
+      "title": "员工离职久后通知人力资源部？(单选题)",
+      "type": 0,
+      "chose": "A",
+      "answer": "A",
+      "access": "false",
+      "tips": "见用友人力资源条例第091条"
+    },
+    {
+      "qid": 1,
+      "title": "用人单位招用劳动者时不得有以下哪种行为？(多选题)",
+      "type": 1,
+      "chose": "ABC",
+      "answer": "ABC",
+      "access": "true",
+      "tips": "见用友人力资源条例第321条"
+    },
+    {
+      "qid": 0,
+      "title": "国家法律规定劳动者每日工作时间不得超过()？(单选题)",
+      "type": 0,
+      "chose": "C",
+      "answer": "C",
+      "access": "false",
+      "tips": "见用友人力资源条例第032条"
+    },
+    {
+      "qid": 0,
+      "title": "员工离职久后通知人力资源部？(单选题)",
+      "type": 0,
+      "chose": "A",
+      "answer": "A",
+      "access": "false",
+      "tips": "见用友人力资源条例第091条"
+    },
+    {
+      "qid": 1,
+      "title": "用人单位招用劳动者时不得有以下哪种行为？(多选题)",
+      "type": 1,
+      "chose": "ABC",
+      "answer": "ABC",
+      "access": "true",
+      "tips": "见用友人力资源条例第321条"
+    },
+    {
+      "qid": 0,
+      "title": "国家法律规定劳动者每日工作时间不得超过()？(单选题)",
+      "type": 0,
+      "chose": "C",
+      "answer": "C",
+      "access": "false",
+      "tips": "见用友人力资源条例第032条"
+    }
+  ]
+}

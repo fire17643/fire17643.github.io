@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>canvas math</title>
+		<meta name="author" content="hongru.chen" />
+		<style>
+		body {margin:0; background:#000;}
+		canvas {display:block; margin: 10px auto;}
+		</style>
+		<script>
+		var AmazingLine = function () {
+		var init = function (n, i, config) {
+		window[n] = this;
+		this.n = n;
+		var canvas = document.getElementById(i),
+		ctx = this.ctx = canvas.getContext('2d');
+		this.t = 0;
+		this.r = config.radius || 300;
+		this.draw();
+		}
+		init.prototype = {
+		draw : function () {
+		var _this = this;
+		this.ctx.fillRect(0, 0, 600, 600);
+		this.ctx.translate(300, 300);
+		for (var i=0; i<45; i++) {
+		for (var j=-45; j<=45; j+=15) {
+		setTimeout(new Function(this.n+'.drawLine('+j+')'), 50*this.t)
+		this.t ++;
+		}
+		}
+		},
+		drawLine : function (i) {
+		this.ctx.beginPath();
+		this.ctx.moveTo(0, this.r);
+		var r = Math.PI/180 * i, x = (this.r * Math.sin(r)) / Math.sin(Math.PI/2 - r)*r;
+		this.ctx.lineTo(x, Math.sin(x));
+		this.ctx.strokeStyle='rgb('+Math.ceil(Math.random()*255)+','+Math.ceil(Math.random()*255)+','+Math.ceil(Math.random()*255)+')';
+		this.ctx.lineWidth=.5;
+		this.ctx.stroke();
+		this.ctx.rotate(Math.PI/360 * 30);
+		}
+		}
+		return init;
+		}();
+	</script></head>
+	<body>
+		<canvas id="canvas" width="600" height="600">Your Broswer don't support html5 canvas!</canvas>
+		<script>
+		new AmazingLine('_mytest', 'canvas', {radius: 300})
+	</script></body>
+</html>

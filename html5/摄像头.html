@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="run">开启网络摄像头</button><Br/>
+<video id="webcam"></video>
+<script>
+window.onload = function(){
+
+	navigator.getUserMedia || (navigator.getUserMedia = navigator.mozGetUserMedia || navigator.webkitGetUserMedia || navigator.msGetUserMedia);
+	if (!navigator.getUserMedia) {
+		return;
+	}
+
+var btn = document.getElementById('run');
+btn.onclick = startWebcam;
+
+function startWebcam(e) {
+    navigator.getUserMedia({
+        video: true,
+        audio: true
+    }, onSuccess, onError);
+
+    function onSuccess(stream) {
+
+        var video = document.getElementById('webcam');
+
+        if (window.URL) {
+            video.src = window.URL.createObjectURL(stream);
+        } else {
+            video.src = stream;
+        }
+
+        video.autoplay = true;
+        //or video.play();
+    }
+
+    function onError() {}
+	}
+}
+
+
+
+</script>
+</body>
+</html>

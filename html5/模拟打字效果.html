@@ -1,0 +1,67 @@
+
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>超逼真的控制台打字jQuery特效|DEMO_jQuery之家-自由分享jQuery、html5、css3的插件库</title>
+	<style type="text/css">
+		body {
+			width: 100%;
+			margin: 0px;
+			font-family: 'Helvetica Neue';
+			background-color: #020202;
+		}
+
+		.terminal {
+			width: 60%;
+			font-size: 26px;
+			color: #00fd55;
+			letter-spacing: 2px;
+			position: absolute;
+			top: 50%;
+			left: 20%;
+		}
+
+		.terminal::before {
+			content: ">";
+			margin-right: 10px;
+		}
+
+	</style>
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="htmleaf-container">
+		<div class="terminal"></div>
+	</div>
+	
+	<script src="http://libs.useso.com/js/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')</script>
+	<script>
+	(function($){
+var a = '@-webkit-keyframes b { 0% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 1; } } @-moz-keyframes b { 0% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 1; } } @keyframes b { 0% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 1; } } ';var c;var d;var e = "";var f;var k;var o;$.fn.typewriting = function(g,h,i){this.text("A");var j=this.height();this.text("");d=0;e=g;f=$.extend({typing_interval:150,blink_interval:"0.7s",cursor_color:"black"},h);k=i;var l='.typingCursor::after{content:"";width:10px;height:'+j+'px;margin-left:5px;display:inline-block;vertical-align:bottom;background-color:'+f.cursor_color+';-webkit-animation:b '+f.blink_interval+' infinite;-moz-animation:b '+f.blink_interval+' infinite;animation:b '+f.blink_interval+' infinite;}';$('head').append('<style type="text/css">'+a+l+'</style>');c=this.addClass("typingCursor");mm();};$.fn.rewrite=function(g,i){d=0;e=g;k=i;mm();};function mm(){if(d<=e.length){var n=getText();if(n.slice(-1)=="<")o=true;if(n.slice(-1)==">")o=false;c.html(n);if(o)mm();else setTimeout(function(){mm();},f.typing_interval);}else{if(k)k();}}function getText(){var p=e.slice(0,d);d++;return p;}
+}(jQuery));</script>
+	<script type="text/javascript">
+		$(document).ready( function(){
+			setTimeout( function(){
+				$('.terminal').typewriting( "Hello World", {
+					"typing_interval": 200,
+					"blink_interval": "1s",
+					"cursor_color": "#00fd55"
+				}, function() {
+					console.log( "END" );
+				});
+				setTimeout( function(){
+					$('.terminal').rewrite( "This is TypeWriting.js", function(){
+						console.log( "END, 2." );
+					});
+				}, 3300);
+			}, 1000);
+		});
+	</script>
+</body>
+</html>
