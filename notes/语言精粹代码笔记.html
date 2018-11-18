@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    var supports = (function () {
+        var div = document.createElement('div'),
+                vendors = 'Khtml Ms O Moz Webkit'.split(' '),
+                len = vendors.length;
+        return function (prop) {
+            if (prop in div.style) return true;
+            prop = prop.replace(/^[a-z]/, function (val) {
+                return val.toUpperCase();
+            });
+            while (len--) {
+                if (vendors[len] + prop in div.style) {
+// browser supports box-shadow. Do what you need.
+// Or use a bang (!) to test if the browser doesn't.
+                    return true;
+                }
+            }
+            return false;
+        };
+    })();
+    if (supports('textShadow')) {
+        document.documentElement.className += ' textShadow';
+    }
+    if (supports('boxSizing')) {
+        document.documentElement.className += ' boxSizing';
+    }
+
+
+    var data = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
+    if (!Array.prototype.shuffle) {
+        Array.prototype.shuffle = function() {
+            for(var j, x, i = this.length; i;
+                j = parseInt(Math.random() * i), x = this[--i], this[i] = this[j], this[j] = x);
+            return this;
+        };
+    }
+    alert(data.shuffle());
+    var data = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
+    if (!Array.prototype.shuffle) {
+        Array.prototype.shuffle = function() {
+            this.sort(0.5-Math.Random())
+        };
+    }
+    alert(data.shuffle());
+
+    var a = [-3,-1,0,1,3,5,7,9], b = [-4,-2,0,2,3,4,5,6,7,8];
+    function merge(a,b){
+        var x= a.concat(b);
+        return x.sort(function(c,d){
+            return c-d;
+        })
+    }
+    merge(a,b);
+
+    var a = 1;
+    var obj = { b : 2 };
+    var fn = function() {};
+    fn.c = 3;
+    function test(x, y, z) {
+        x = 4;
+        y.b = 5;
+        z.c = 6;
+        return z;
+    }
+    test(a, obj, fn);
+    alert(a, obj.b ,fn.c);
+
+/*    var o = {a:1,e:{b:2,c:{d:1}}};
+    function s(o){
+       var arr=[];
+        (function(){
+            for(var i in o){
+                arr.push(i);
+                if(o[i]["constructor"] === Object){
+                    arguments.callee(o[i]);
+                }
+            }
+        }());
+        return arr;
+    }
+    s(o);
+    alert(arr);*/
+
+
+    function upfire(s){
+        var a= s.slice(0,1).toUpperCase()+ s.slice(1);
+        return a;
+    }
+    upfire("sdffggg")
+
+    var fade=function(node){
+        var level = 1;
+        var step=function(){
+            var hex = level.toString(16);
+            node.style.backgroundColor = "#ffff" + hex + hex;
+            if(level < 15){
+                setTimeout(step,100);
+                level++;
+            }
+        }
+        setTimeout(step,100);
+    }
+    fade(document.body);
+Function.prototype.method=function(name,fun){
+    if(!this.prototype[name]) {
+        this.prototype[name] = fun;
+    }
+    return this;
+}
+Function.method('curry',function(){
+    var slice=Array.prototype.slice,
+        args=slice.apply(arguments),
+        that=this;
+    console.log(arguments);
+    return function(){
+        console.log(arguments);
+        return that.apply(null,args.concat(slice.apply(arguments)));
+    }
+})
+function add(a){
+    return function(b){
+        return (a+b);
+    }
+}
+console.log(add.curry(1)(2)(3),(new add.curry(2,3)));
+
+var fibonacci = function() {
+    var memerni = [0,1];
+    return function(n){
+        if(typeof memerni[n]== 'undefined'){
+            memerni[n] = fibonacci(n-1) + fibonacci(n-2);
+        }
+        // fibonacci[n] = fibonacci[n-1] + fibonacci[n-2];
+        return memerni[n];
+    }
+}();
+fibonacci(5);
+
+    var menorizer = function(memerni,fundamental) {
+        var shell = function(n) {
+            if(typeof memerni[n]== 'undefined'){
+                memerni[n] = fundamental(shell,n);
+            }
+            return memerni[n];
+        }
+        return shell;
+    }
+    var f=menorizer([0,1],function(shell,n){
+        return shell(n-1)+shell(n-2);
+    })
+    var fa = menorizer([1,1],function(shell,n) {
+        return n*shell(n-1);
+    })
+    console.log(f(7),fa(4));
+    Object.prototype.beget = function(f) {
+        var fo = function(){}
+        fo.prototype = new f();
+        return fo;
+    }
+    Function.prototype.inherit = function(f) {
+        this.prototype = new f();
+        return this;
+    }
+    Function.method("new",function() {
+        // 创建新对象，他继承自构造函数的原型对象
+        var that = Object.beget(this.prototype);
+        // 调用构造器函数，绑定this到新对象上
+        var other = this.apply(that,arguments);
+        // 如果他的返回值不是对象，则返回新对象
+        return (typeof other == "object"&&other)||that;
+    })
+
+    var mammal = function(spec) {
+        var that = {};
+        that.getname= function(){
+            return spec.name;
+        }
+        that.say = function() {
+            return spec.saying||'';
+        };
+        return that;
+    }
+
+    var cat = function(spec) {
+        spec.saying = "meal";
+        var that = mammal(spec);
+        that.please = function() {
+            console.log("please");
+        }
+        return that;
+    }
+    var cc=cat({name:"juntaomeishu"});
+
+    Object.method("surper",function(name) {
+        var that = this,method=that[name];
+        return function(){
+            return method.apply(that,arguments);
+        }
+    })
+
+    Array.method("reduce",function(f,value) {
+        for(var i = 0;i<this.length;i++){
+            value=f(this[i],value);
+        }
+        return value;
+    })
+
+    ["bb",23,1,55,31,9,"fg","","ad"].sort(function(a,b) {
+        if(a===b){
+            return 0;
+        }
+        if(typeof a ==typeof b){
+            return a>b?1:-1;
+        }
+       return typeof a<typeof b?-1:1;
+    });
+
+    // 数组在其他帧被创建,下面的检测更可靠
+    if(arr && typeof arr =='object'&&typeof arr.length=='number'&&!arr.propertyIsEnumerable('length'))
+</script>
+</body>
+</html>

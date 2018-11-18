@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        p {
+            width: 200px;
+            height: 100px;
+            background: #245aff;
+        }
+    </style>
+</head>
+
+<body>
+<p id="p"></p>
+<script type="text/javascript" language="JavaScript">
+    /**
+ * Created by Administrator on 2014/11/23.
+ */
+ function clone(object) {
+    function F() {}
+    F.prototype = object;
+    return new F;
+}
+var Person = {
+  name: 'default name',
+  getName: function() {
+    return this.name;
+  }
+};
+
+var reader = clone(Person);
+reader.name = 'John Smith';
+alert(Person.getName());
+
+function User(propert) {
+    for (var i in propert) {
+        (function (whitch) {
+            var p = i;
+            whitch["get" + p] = function () {
+                return propert[p];
+            }
+            whitch["set" + p] = function (value) {
+                propert[p] = value;
+            }
+        })(this)
+    }
+}
+var user = new User({name: "俊涛", age: 23});
+// console.log(user.getname());
+
+
+/*
+*  javascript大师Douglas Crockford的类式继承
+*  */
+Function.prototype.method = function (name, func) {
+    this.prototype[name] = func;
+    return this;
+};
+
+Function.method('inherits', function (parent) {
+    var depth = 0;
+    var proto = this.prototype = new parent();
+    this.method('uber', function uber(name) {
+        var func;
+        var ret;
+        var v = parent.prototype;
+        if (depth) {
+            console.log(d)
+            for (var i = d; i > 0; i += 1) {
+                v = v.constructor.prototype;
+            }
+            func = v[name];
+        } else {
+            func = proto[name];
+            if (func == this[name]) {
+                func = v[name];
+            }
+        }
+        depth += 1;
+        ret = func.apply(this, Array.prototype.slice.apply(arguments, [1]));
+
+        depth -= 1;
+        return ret;
+    });
+    return this;
+});
+Function.method('swiss', function (parent) {
+    for (var i = 1; i < arguments.length; i += 1) {
+        var name = arguments[i];
+        this.prototype[name] = parent.prototype[name];
+    }
+    return this;
+});
+function Person(name) {
+    this.name = name;
+
+}
+
+// 给Person增加一个方法
+Person.method('getName', function () {
+    return this.name;
+});
+
+// 再声明一个对象
+function User(name, age) {
+    this.name = name;
+    this.age = age;
+    this.sayHello = function () {
+        return name;
+    }
+}
+
+// 让Person继承User
+User.inherits(Person);
+
+// 就可以用User的sayHello方法了
+User.method("getAge", function () {
+    return this.age;
+})
+var per = new User("俊涛", 23);var a=0;
+console.log("name:"+per.sayHello() + "\nage:" + per.getAge(),this);
+
+
+    /*
+     * 获取指定元素ele样式name值
+     * */
+    function getStyle(ele, name) {
+        if (ele && ele.style[name])
+            return ele.style.name;
+        // IE方法
+        else if (ele.currentStyle)
+            return ele.currentStyle[name];
+        // w3c方法，如果存在的话
+        else if (document.defaultView && document.defaultView.getComputedStyle) {
+            name = name.replace(/([A-Z])/g, "-$1").toLowerCase();
+            var s = document.defaultView.getComputedStyle(ele, "");
+            return s && s.getPropertyValue(name);
+        } else
+            return null;
+    }
+    //alert(getStyle(document.getElementsByTagName("p")[0], "display"));
+
+    /*
+     *
+     * 获取元素位置,pageY同下*/
+    function pageX(elem) {
+        return elem.offsetParent ? elem.offsetLeft + pageX(elem.offsetParent) : elem.offsetLeft;
+    }
+
+    /*
+     *
+     * 获取相对于父元素位置*/
+    function parentX(elem) {
+        return elem.parentNode == elem.offsetParent ? elem.offsetLeft : pageX(elem) - pageX(elem.parentNode)
+    }
+
+    function posX(elem) {
+        return parseInt(getStyle(elem, "left"));
+    }
+
+    function resetCSS(elem, prop) {
+        var oldstyle = {};
+        for (var i in prop) {
+            old[i] = elem.style[i];// getstyle更好点？
+            elem.style[i] = prop[i];
+        }
+        return oldstyle;
+    }
+    /*
+     * 获取光标的水平位置，垂直位置同*/
+    function getX(e) {
+        return e.pageX || e.clientX + document.body.scrollLeft;// IE7/8报错，不支持e.pageX
+    }
+    document.body.onmousedown = function (event) {
+        // document.write(getX(event));
+    }
+
+    /*
+     * 获取鼠标相对于event的Target的X位置*/
+    function getElementX(e) {
+        return (e && e.layerX) || window.event.offsetX;
+    }
+    /*
+     * 确定滚动条位置*/
+    function scrollX() {
+        return self.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft;
+    }
+
+    /*
+     * 获取视口高度*/
+    function getWindowHeight() {
+        return self.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    }
+
+    // addEvent dean.edwards.name/Weblog/2005/10/add-event/#comment2580
+    // JSUNIT http://jsunit.net/documentation/installing/
+    // 动画工具 可研究源码 http://mootools.net/core
+    // 拖放元素 https://github.com/aboodman/dom-drag
+
+    /*
+    * 数据串行化*/
+    function serialize(a) {
+        var s = [];
+        //若传入的是数组，假定是表单元素的数组
+        // 串行化表单元素
+        if(a.constructor == Array) {
+            for( var i = 0;i< a.length) {
+                s.push(a[i].name + "="+encodeURIComponent(a[i].value));
+            }
+        }else{
+            for(var j in a){
+                s.push(j+"="+encodeURIComponent(a[j]));
+            }
+        }
+        return s.join(&);
+    }
+
+    /*
+    * 发送get请求*/
+    var xhr=new XMLHttpRequest();
+    xml.open("GET",url+serialize(data),true);
+    xhr.send();
+    /*
+    * 发送post请求*/
+    xhr.open("POST",url,true);
+    xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+    //保证浏览器发送的串行化数据长度正确
+    // 基于Mozilla的浏览器有时处理这个会碰到问题
+
+    // 设置超时
+    var timeOut = 5000,requestDone=false;
+    setTimeout(function(){
+        requestDone = true;
+    },timeOut);
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState == 4&&!requestDone){
+            // ####
+            //避免内存泄露
+            xhr = null;
+        }
+    }
+    xml.send(serialize(data));
+
+    // javascript 1.6新增的关于数组的
+    var arr = [2,1,6,4];
+    arr.forEach(function(){});
+    // 对数组每一个元素调用一个函数，当所有元素都大于2时才返回true
+    arr.every(function(num){
+        return num > 2;// false
+    })
+    // 对数组每一个元素调用一个函数，其中有一个大于2就会返回true
+    arr.some(function(num){
+        return num > 2;// true
+    })
+    arr.filter(function(num){
+        return num>2;//[6,4]
+    })
+    arr.map(function(num){
+        return num+1;//[3,4,7,5]
+    })
+   </script>
+</body>
+</html>

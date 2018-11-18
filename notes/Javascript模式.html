@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+	// 不要使用var a = b = 0;等同于var a = (b = 0)	
+
+	/*删除变量 */
+	var global_var = 1;
+	    global_no_var = 2;
+	    (function(){
+	    	global_from_fun = 3;
+	    }())
+	delete global_var;// false
+	delete global_no_var; // true
+	delete global_from_fun;// true
+
+	// for(var i,len=arr.length;i<len;i++){}
+	   /*for (var i in obj) {
+		 if (obj.hasOwnProperty(i)){}
+	   }*/
+	for(var i=0;i<9;i++) if(i>5){
+		console.log(i)
+	}
+
+	/* 处理数字 */
+	parseInt(09,10);
+	+"09";
+	Number("08");
+
+	function Person() {
+		this.name = "巨涛";
+	}
+	Person.time = "2014/12/12";
+	Person.prototype.age = 23;
+	var p2 = new Person();
+	    console.log(p2)
+
+	/* 自调用构造函数 */
+	function Waffle(){
+		if(!this instanceof Waffle){ // 或者将Waffle换成argument.callee
+			return new Waffle();
+		}
+		this.taste="yummy";
+	}
+
+	Object.prototype.toString.call([]) === "[object Array]"
+
+	try{
+		throw {
+			name:"errorType",
+			message:"invalid",
+			extra:"something"
+		}
+	}catch(e){
+		alert(e.name);
+	}
+
+	function outFun() {
+		function innerFun() {
+			alert("innerFun");
+		}
+	}
+	innerFun();
+
+	if(1){
+		function innerFun() {
+			alert("innerFun");
+		}
+	}else{
+		function innerFun() {
+			alert("eee");
+		}
+	}innerFun();
+	innerFun.name // innerFun
+	innerFun.length // innerFun
+	innerFun.constructor.name // 'Function'
+
+	/*  利用闭包存储私有数据 */
+	var setup = function () {
+		var count = 0;
+		return function () {
+			return ++count ;
+		}
+	}
+	var next = setup();
+	next();
+	next();
+
+	/* 自定义函数 ，设置只执行一次的函数 */
+	var truble = function () {
+		alert("fire first");
+		truble = function () {
+			alert("fire second");
+		}
+	}
+	truble.property = "被重定义丢失的属性";
+	var prank = truble;
+	truble();
+	prank.property;
+	truble();
+	prank.property
+
+	/* 即时函数参数 和返回值*/
+	(function(globle,time){
+		console.log(globle,time);
+	}(this,new Data()))
+
+	({
+		name : "huangzhiwen"
+	}).name
+
+
+	/* 以下代码避免每次调用utils.addListener都去检查一次 */
+	var utils = {
+		addListener :null
+	}
+	if(typeof window.addEventListener === 'function') {
+		utils.addListener = function (el, type, fn) {
+			el.addEventListener(type, fn, false);
+		}
+	}else if(typeof document.attachEvent === 'function') {
+		utils.addListener = function (el, type, fn) {
+			el.attachEvent('on'+type, fn);
+		}
+	}else{
+		utils.addListener = function (el, type, fn) {
+			el['on'+type] = fn;
+		}
+	}
+
+
+	/* 缓存函数返回值  */
+	function myFun (param) {
+		// var cachekey = JSON.stringify([].prototype.slice.call(arguments));
+		if(!myFun.cache[param]) {
+			var result = {};
+			// 开销很大的操作
+			myFun.cache[param] = result;
+		}
+		return myFun.cache[param];
+	}
+	myFun.cache = {};
+	myFun(123);
+
+	
+	var add = function (x) {
+		return function(y){
+			return x + y;
+		}
+	}
+	add.call(null,2);
+	add.call(null,3);
+
+	/* curry化函数 */
+	function calucate(x, y) {
+		return x + y;
+	}
+	function currize(fn) {
+		var slice = [].prototype.slice;
+		arg = slice.call(arguments,1);
+		return function () {
+			var args = slice.call(arguments);
+			args = arg.concat(args);
+			return fn.apply(null,args);
+		}
+	}
+	currize(calucate,5,6)();
+	currize(calucate,5)(6);
+
+	/* 命名空间模式 */
+	var MYAPP = MYAPP || {};
+	MYAPP.namespace = function (ns) {
+		var parts = ns.split("."),
+			parent = MYAPP,
+			i;
+		if(parts[0] == "MYAPP") {
+			parts = parts.slice(1);
+		}
+		for(var i = 0; i < parts.length; i+=1) {
+			if(typeof parent[parts[i]] === "undefined") {
+				parent[parts[i]] = {};
+			}
+			parent = parent[parts[i]];
+		}
+		return parent;
+	}
+	MYAPP.namespace("fire.uid.name");
+MYAPP.fire.uid.name;
+
+
+	/* 私有性失效 */
+	function Gadget(){
+		this.specs = 23;
+		var _specs = {
+			name : "俊涛",
+			age :23
+		}
+		// 公有函数
+		this.getSpecs = function (){
+			// 返回了一个引用的specs对象
+			return _specs;
+		}
+	}
+	// 常用属性和方法添加到构造函数的prototype中
+	Gadget.prototype = (function(){
+		var browser = "mobile webkit";
+		return {
+			constructor:Gadget,
+			getBrowser:function() {
+				return browser;
+			}
+		}
+	}())
+	var toy = new Gadget();
+	   specs = toy.getSpecs();
+	   // 用户可以修改看起来是隐藏和私有的specs对象
+	   specs.name = "褚涛";
+	   toy.getSpecs(); // 变成褚涛
+	   toy.getBrowser();
+	   var ss = new Gadget();
+	   ss.getSpecs();
+
+
+	/* 沙箱模式 */
+	function Sandbox () {
+		var args = Array.prototype.slice.call(arguments),
+			callback = args.pop(),
+			modules = (args[0] && typeof args[0] === 'string') ? args : args[0],
+			i;
+		if(!(this instanceof Sandbox)) {
+			return new Sandbox(modules,callback);
+		}
+		this.a = 1;
+		this.b = 2;
+		if(!modules || modules === "*") {
+			modules = [];
+			for(i in Sandbox.modules) {
+				if(Sandbox.modules.hasOwnProperty(i)){
+					modules.push(i);
+				}
+			}
+		}
+		for(i = 0; i < modules.length; i+=1) {
+			Sandbox.modules[modules[i]](this);
+		}
+		callback(this);
+	}
+	Sandbox.prototype = {
+		name:"My Application",
+		version:"1.0",
+		getName:function(){
+			return this.name;
+		}
+	}
+	Sandbox.modules = {};
+	Sandbox.modules.dom = function (box) {
+		box.getElement = function () {};
+		box.getStyle = function () {};
+		box.foo = "baz";
+	}
+	Sandbox.modules.event = function (box) {
+		box.attachEvent = function () {};
+		box.dettachEvent = function () {};
+	}
+	Sandbox.modules.ajax = function () {
+		box.makeReq = function () {}
+	}
+	new Sandbox('ajax',function(this){
+		console.log(this);
+	})
+
+	// 静态方法 fun.set(不需要实例化)和原型方法fun.prototype.set
+
+
+	/* 通过特权方法公开静态私有属性 */
+
+	var Gadget = (function() {
+		var counter = 0,newGadget;
+		newGadget = function () {
+			counter +=1;
+		}
+		newGadget.prototype.getCount = function () {
+			return counter;
+		}
+		return newGadget;
+	}())
+	var iphone =new Gadget();
+	iphone.getCount();
+	var ipod =new Gadget();
+	ipod.getCount();
+
+
+	/* 链模式 */
+	var obj = {
+		value:1,
+		get:function(){
+			// .....
+			return this;
+		},
+		set:function(){
+			// ....
+			return this;
+		}
+	}
+	obj.set().get().value;
+
+	/* 原 型继承和call继承的差异 */
+	function Article() {
+		this.tags = ["html","js"];
+	}
+	var article = new Article();
+
+	function Blog() {}
+	Blog.prototype = article;
+
+	function Page(){
+		Article.call(this);
+	}
+	
+	var blog = new Blog();
+	var page = new Page();
+
+	article.hasOwnProperty("tags")//true
+	blog.hasOwnProperty("tags") // false
+	page.hasOwnProperty("tags") // true
+	// 子对象blog修改了tags属性，也会修改父对象article ,page则不会，他是独立创建了一个副本
+	blog.tags.push("css");
+	page.tags.push("php");
+	article.tags.join(", ");// html, js, css
+
+	/* 临时构造函数 和超类  圣杯模式*/
+	function inherit(child, parent) {
+		// 创建临时(代理)构造函数
+		var F = function () {};
+		F.prototype = parent.prototype;
+		child.prototype = new F();
+		child.suber = parent.prototype;
+		/* 重置构造函数指针 */
+		child.prototype.constructor = child;
+	}
+	// 升级版 避免每次需要继承时都创建临时构造函数
+	var inherit = (function(){
+		var F = function(){};
+		return function (child,parent) {
+			F.prototype = parent.prototype;
+			child.prototype = new F();
+			child.suber = parent.prototype;
+			/* 重置构造函数指针 */
+			child.prototype.constructor = child;
+		}
+	}())
+
+	/*模拟类的实现*/
+	var klass = function (Parent, props) {
+		var Child, F, i;
+		Child = function () {
+			if(Child.suber && Child.suber.hasOwnProperty("__construct")) {
+				Child.suber.__construct.apply(this,arguments);
+			}
+			if(Child.prototype.hasOwnProperty("__construct")) {
+				Child.prototype.__construct.apply(this, arguments);
+			}
+		};
+
+		Parent = Parent ||Object;
+		F = function () {};
+		F.prototype = Parent.prototype;
+		Child.prototype = new F();
+		Child.suber = Parent.prototype;
+		Child.prototype.constructor = Child;
+		for ( i in props) {
+			if(props.hasOwnProperty(i)) {
+				Child.prototype[i] = props[i];
+			}
+		}
+		return Child;
+	}
+	var Man = klass(null,{
+		__construct:function(what){
+			console.log("Man's constructor");
+			this.name = what;
+		},
+		getName:function (){
+			return this.name;
+		}
+	})
+	var first = new Man("adam");
+	first.getName();
+
+	var SuperMan = klass(Man,{
+		__construct:function(what){
+			console.log("superMan's constructor");
+		},
+		getName:function(){
+			var name = SuperMan.suber.getName.call(this);
+			return "I'm " + name;
+		}
+	})
+
+	var clark = new SuperMan("clark kent");
+	clark.getName();
+
+
+	/* 原型继承模式 */
+	function object(o) {
+		function F(){}
+		F.prototype = o;
+		return new F();
+	}
+	// 同 Object.create(parent,{age:{value:23}});
+
+	/* 对象通过引用传递会导致浅复制出现意外 以下是深度复制方法 */
+	function extendDeep(parent, child) {
+		var i,
+		tostr = Object.prototype.toString,
+		astr = "[object Array]";
+		child = child || {};
+		for (i in parent) {
+			if(parent.hasOwnProperty(i)) {
+				if(typeof parent[i] === "object") {
+					child[i] = (tostr.call(parent[i]) === astr) ?[] : {};
+					extendDeep(parent[i], child[i]);
+				}else{
+					child[i] = parent[i];
+				}
+			}
+		}
+		return child;
+	}
+
+
+	/* 单体模式 #1 静态属性中的实例 */
+	function Universe() {
+		if(typeof Universe.instance === 'object') {
+			return Universe.instance;
+		}
+		// 正常进行的代码 ...
+		this.start_time = 0;
+		Universe.instance = this;
+		return this;
+	}
+	var un1 = new Universe();
+	var un2 = new Universe();
+	un1 === un2;
+
+	/* 单体模式 #2 闭包中的实例 */
+	function Universe() {
+		// 缓存实例
+		var instance;
+		// 重写构造函数
+		Universe = function () {
+			return instance;
+		}
+		// 保留原型属性
+		Universe.prototype = this;
+		instance = new Universe();
+
+		// 重置构造函数指针
+		instance.constructor = Universe;
+
+		// 所有功能
+		instance.start_time = 0;
+		return instance;
+	}
+
+	/* 单体模式 #3 即时函数的实例 */
+	var Universe;
+	(function(){
+		var instance;
+		Universe = function Universe() {
+			if(instance) {
+				return instance;
+			}
+			instance = this;
+
+			this.start_time = 0;
+		}
+	}())
+
+
+	function CarMaker(){}
+	CarMaker.prototype.drive=function(){
+		return "I have "+this.doors + " doors";
+	}
+	CarMaker.factory = function(type) {
+		var constr = type,
+		newcar;
+		if(typeof CarMaker[constr] !=='function') {
+			throw{
+				name:"error",
+				message:constr+"don't exist"
+			};
+		}
+		if(typeof CarMaker[constr].prototype.drive !=='function') {
+			CarMaker[constr].prototype = new CarMaker();
+		}
+		newcar = new CarMaker[constr]();
+		return newcar;
+
+	}
+	CarMaker.Compact = function(){
+		this.doors=4;
+	}
+	CarMaker.Convertible = function(){
+		this.doors=2;
+	}
+	CarMaker.SUV=function(){
+		this.doors=24;
+	}
+	var corolla = CarMaker.factory("Compact");
+	var solstice = CarMaker.factory("Convertible");
+	var cherokee = CarMaker.factory("SUV");
+	corolla.drive();
+	solstice.drive();
+	cherokee.drive();
+
+	/* 迭代器模式 */
+	var  agg = (function(){
+		var index = 0,
+		data=[1,2,3,4],
+		length=data.length;
+		return {
+			next:function(){
+				var element;
+				if(!this.hasNext()){
+					return null;
+				}
+
+				element = data[index];
+				index++;
+				return element;
+			},
+			hasNext:function(){
+				return index<length;
+			},
+			// 重置指针到0
+			rewind:function(){
+				index = 0;
+			},
+			current:function(){
+				return data[index];
+			}
+		}
+	}());
+
+	/* 装饰模式 */
+function Sale(price) {  
+    this.price = price || 100;  
+}  
+Sale.prototype.getPrice = function() {  
+    return this.price;  
+}; 
+Sale.decorators = {};
+Sale.decorators.fedtax = {  
+    getPrice: function() {  
+        var price = this.uber.getPrice();  
+        price += price * 5 / 100;  
+        return price;  
+    }  
+};  
+Sale.decorators.quebec = {  
+    getPrice: function() {  
+        var price = this.uber.getPrice();  
+        price += price * 7.5 / 100;  
+        return price;  
+    }  
+};  
+Sale.decorators.money = {  
+    getPrice: function() {  
+        return "$" + this.uber.getPrice().toFixed(2);  
+    }  
+};  
+Sale.decorators.cdn = {   
+    getPrice: function() {   
+        return "CDN$ " + this.uber.getPrice().toFixed(2);   
+    }  
+};  
+Sale.prototype.decorate = function(decorator) {  
+    var F = function() {},  
+    overrides = this.constructor.decorators[decorator],  
+    i,  
+    newobj;  
+    F.prototype = this;  
+    newobj = new F();  
+    newobj.uber = F.prototype;  
+    for (i in overrides) {  
+        if (overrides.hasOwnProperty(i)) {  
+            newobj[i] = overrides[i];  
+        }  
+    }  
+    return newobj;  
+};  
+var sale = new Sale(100); // the price is 100 dollars  
+sale.decorate('fedtax'); // add federal tax  
+sale.decorate('quebec'); // add provincial tax  
+sale.decorate('money'); // format like money  
+sale.getPrice(); // "$112.88" 
+
+
+function Sale(price) {  
+    this.price = (price > 0) ? price : 100;  
+    this.decorators_list = [];  
+}  
+Sale.decorators = {};  
+Sale.decorators.fedtax = {  
+    getPrice: function(price) {  
+        return price + price * 5 / 100;  
+    }  
+};  
+Sale.decorators.quebec = {  
+    getPrice: function(price) {  
+        return price + price * 7.5 / 100;  
+    }  
+};  
+Sale.decorators.money = {  
+    getPrice: function(price) {  
+        return "$" + price.toFixed(2);  
+    }  
+};  
+Sale.prototype.decorate = function(decorator) {  
+    this.decorators_list.push(decorator);  
+};  
+Sale.prototype.getPrice = function() {  
+    var price = this.price,  
+    i, max = this.decorators_list.length,  
+    name;  
+    for (i = 0; i < max; i += 1) {  
+        name = this.decorators_list[i];  
+        price = Sale.decorators[name].getPrice(price);  
+    }  
+    return price;  
+};  
+var sale = new Sale(100); // the price is 100 dollars  
+sale.decorate('fedtax'); // add federal tax  
+sale.decorate('quebec'); // add provincial tax  
+sale.decorate('money'); // format like money  
+sale.getPrice(); // "$112.88" 
+
+
+
+/* 策略模式 */
+var validator = {  
+   // all available checks  
+   types: {},  
+   // error messages in the current  
+   // validation session  
+   messages: [],  
+   // current validation config  
+   // name: validation type  
+   config: {},  
+   // the interface method  
+   // `dataìs key => value pairs  
+   validate: function(data) {  
+       var i, msg, type, checker, result_ok;  
+       // reset all messages  
+       this.messages = [];  
+       for (i in data) {  
+           if (data.hasOwnProperty(i)) {  
+               type = this.config[i];  
+               checker = this.types[type];  
+               if (!type) {  
+                   continue; // no need to validate  
+               }  
+               if (!checker) { // uh-oh  
+                   throw {  
+                       name: "ValidationError",  
+                       message: "No handler to validate type " + type  
+                   };  
+               }  
+               result_ok = checker.validate(data[i]);  
+               if (!result_ok) {  
+                   msg = "Invalid value for *" + i + "*, " + checker.instructions;  
+                   this.messages.push(msg);  
+               }  
+           }  
+       }  
+       return this.hasErrors();  
+   },  
+   // helper  
+   hasErrors: function() {  
+       return this.messages.length !== 0;  
+   }  
+}; 
+// checks for non-empty values  
+validator.types.isNonEmpty = {  
+    validate: function(value) {  
+        return value !== "";  
+    },  
+    instructions: "the value cannot be empty"  
+};  
+// checks if a value is a number  
+validator.types.isNumber = {  
+    validate: function(value) {  
+        return ! isNaN(value);  
+    },  
+    instructions: "the value can only be a valid number, e.g. 1, 3.14 or 2010"  
+};  
+// checks if the value contains only letters and numbers  
+validator.types.isAlphaNum = {  
+    validate: function(value) {  
+        return ! /[â-z0-9]/i.test(value);  
+    },  
+    instructions: "the value can only contain characters and numbers, no special symbols"  
+};  
+validator.config = {  
+    first_name: 'isNonEmpty',  
+    age: 'isNumber',  
+    username: 'isAlphaNum'  
+}; 
+var data = {  
+    first_name: "Super",  
+    last_name: "Man",  
+    age: "unknown",  
+    username: "o_O"  
+}; 
+validator.validate(data);  
+if (validator.hasErrors()) {  
+    console.log(validator.messages.join("\n"));  
+}  
+
+/* 中介者模式 */
+function Player(name) {
+  this.points = 0;
+  this.name = name;
+}
+Player.prototype.play = function () {
+  this.points += 1;
+  mediator.played();
+};
+var scoreboard = {
+  // 显示内容的容器
+  element: document.getElementById('results'),
+  // 更新分数显示
+  update: function (score) {
+    var i,
+    msg = '';
+    for (i in score) {
+      if (score.hasOwnProperty(i)) {
+        msg += '<p><strong>' + i + '</strong>: ';
+        msg += score[i];
+        msg += '</p>';
+      }
+    }
+    this.element.innerHTML = msg;
+  }
+};
+var mediator = {
+  // 所有的player
+  players: {
+  },
+  // 初始化
+  setup: function () {
+    var players = this.players;
+    players.home = new Player('Home');
+    players.guest = new Player('Guest');
+  },
+  // play以后，更新分数
+  played: function () {
+    var players = this.players,
+    score = {
+      Home: players.home.points,
+      Guest: players.guest.points
+    };
+    scoreboard.update(score);
+  },
+  // 处理用户按键交互
+  keypress: function (e) {
+    e = e || window.event; // IE
+    if (e.which === 49) { // 数字键 "1"
+      mediator.players.home.play();
+      return;
+    } 
+    if (e.which === 48) { // 数字键 "0"
+      mediator.players.guest.play();
+      return;
+    }
+  }
+};
+// go!
+mediator.setup();
+window.onkeypress = mediator.keypress;
+// 30秒以后结束
+setTimeout(function () {
+  window.onkeypress = null;
+  console.log('Game over!');
+}, 30000);
+
+
+/*
+ * js 观察者模式 又称 订阅/发布模式
+ * 通过创建“可观察”对象，当发生一个感兴趣的事件时可将该事件通告给
+ * 所有观察者，从而形成松耦合
+*/
+// 通用的发布者
+var publisher = {
+  subscribers: {
+    any: [
+    ] // 事件类型： 订阅者
+  },
+  // 将订阅者提供的调用方法添加到subscribers 订阅的事件数组中
+  subscribe: function (fn, type) {
+    type = type || 'any';
+    if (typeof this.subscribers[type] === 'undefined') {
+      this.subscribers[type] = [
+      ];
+    }
+    this.subscribers[type].push(fn);
+  },
+  // 删除订阅者
+  unsubscribe: function (fn, type) {
+    this.visitSubscribers('unsubscribe', fn, type);
+  },
+  // 循环遍历subscribers中每个元素，并调用他们所提供的方法
+  publish: function (publication, type) {
+    this.visitSubscribers('publish', publication, type);
+  },
+  // helper
+  visitSubscribers: function (action, arg, type) {
+    var pubtype = type || 'any',
+    subscribers = this.subscribers[pubtype],
+    i,
+    max = subscribers.length;
+    for (i = 0; i < max; i += 1) {
+      if (action === 'publish') {
+        // 调用订阅者订阅该事件所提供的方法
+        subscribers[i](arg);
+      } else {
+        // 找到当前订阅事件中提供的方法，并删除
+        if (subscribers[i] === arg) {
+          subscribers.splice(i, 1);
+        }
+      }
+    }
+  }
+};
+// 转化为通用发布者
+function makePublisher(o) {
+  var i;
+  // 将通用发布者的方法复制到o对象中
+  for (i in publisher) {
+    if (publisher.hasOwnProperty(i) && typeof publisher[i] === 'function') {
+      o[i] = publisher[i];
+    }
+  }
+  // 引用类型单独赋值
+  o.subscribers = {
+    any: [
+    ]
+  };
+}
+// 实现paper 对象，他所做的就是发布日刊和月刊
+
+var paper = {
+  daily: function () {
+    this.publish('今个有重要新闻');
+  },
+  monthly: function () {
+    this.publish('每月调查', 'monthly');
+  }
+};
+// 将paper构造为一个发布者
+makePublisher(paper);
+// 订阅者对象joe,该对象有2个方法
+var joe = {
+  drinkCoffee: function (paper) {
+    console.log('开始阅读' + paper);
+  },
+  sundayPreNap: function (monthly) {
+    console.log('关于失眠阅读这里' + monthly);
+  }
+};
+// 订阅者1
+function subscriberFunc1(arg) {
+  console.log('又是一个订阅者1：' + arg);
+}
+// 订阅者2
+
+function subscriberFunc2(arg) {
+  console.log('又是一个订阅者2：' + arg);
+}
+// 订阅者3
+
+function subscriberFunc3(arg) {
+  console.log('又是一个订阅者3：' + arg);
+}
+// joe向paper订阅
+
+paper.subscribe(joe.drinkCoffee);
+paper.subscribe(joe.sundayPreNap, 'monthly');
+// 订阅者1，2向paper订阅
+paper.subscribe(subscriberFunc1, 'monthly');
+paper.subscribe(subscriberFunc2, 'monthly');
+paper.subscribe(subscriberFunc3);
+paper.unsubscribe(subscriberFunc3);
+// paper开始发布日刊 和 月刊
+paper.daily();
+paper.monthly();
+console.log('转换分割线======================================================');
+// // 将任意一个订阅者变成发布者比如joe,可以在微博上发布状态更新
+makePublisher(joe);
+joe.weibo = function (msg) {
+  this.publish(msg);
+};
+// paper(订阅者)决定读取weibo信息，则需要提供一个读取方法
+paper.readWeibo = function (info) {
+  console.log('重大新闻' + info);
+};
+// paper向joe订阅
+joe.subscribe(paper.readWeibo);
+// joe发布微博信息
+joe.weibo('今日头条，你全家都是假日办！');
+
+
+
+
+
+
+
+
+
+// DESIGN PATTERNS
+
+// OBSERVER - PUBLISHER/SUSCRIBER - Custom events (others than the browser ones)
+// * Promote loose coupling
+// * An object subscribe to another object's specific activity and gets notified
+
+// PUBLISHER - OBSERVABLE
+// SUBSCRIBER - OBSERVER
+
+// publish - fire
+// subscribe - on
+// unsubscribe - remove
+
+var publisher = {
+    subscribers: {
+        any: []
+    },
+    on: function (type, fn, context) {
+        type = type || 'any';
+        fn = typeof fn === "function" ? fn : context[fn];
+        
+        if (typeof this.subscribers[type] === "undefined") {
+            this.subscribers[type] = [];
+        }
+        this.subscribers[type].push({fn: fn, context: context || this});
+    },
+    remove: function (type, fn, context) {
+        this.visitSubscribers('unsubscribe', type, fn, context);
+    },
+    fire: function (type, publication) {
+        this.visitSubscribers('publish', type, publication);
+    },
+    visitSubscribers: function (action, type, arg, context) {
+        var pubtype = type || 'any',
+            subscribers = this.subscribers[pubtype],
+            i,
+            max = subscribers ? subscribers.length : 0;
+            
+        for (i = 0; i < max; i += 1) {
+            if (action === 'publish') {
+                subscribers[i].fn.call(subscribers[i].context, arg);
+            } else {
+                if (subscribers[i].fn === arg && subscribers[i].context === context) {
+                    subscribers.splice(i, 1);
+                }
+            }
+        }
+    }
+};
+
+
+function makePublisher(o) {
+    var i;
+    for (i in publisher) {
+        if (publisher.hasOwnProperty(i) && typeof publisher[i] === "function") {
+            o[i] = publisher[i];
+        }
+    }
+    o.subscribers = {any: []};
+}
+
+var game = {
+    
+    keys: {},
+
+    addPlayer: function (player) {
+        var key = player.key.toString().charCodeAt(0);
+        this.keys[key] = player;
+    },
+
+    handleKeypress: function (e) {
+        e = e || window.event; // IE
+        if (game.keys[e.which]) {
+            game.keys[e.which].play();
+        }
+    },
+    
+    handlePlay: function (player) {
+        var i, 
+            players = this.keys,
+            score = {};
+        
+        for (i in players) {
+            if (players.hasOwnProperty(i)) {
+                score[players[i].name] = players[i].points;
+            }
+        }
+        this.fire('scorechange', score);
+    }
+};
+
+function Player(name, key) {
+    this.points = 0;
+    this.name = name;
+    this.key  = key;
+    this.fire('newplayer', this);
+}
+
+Player.prototype.play = function () {
+    this.points += 1;
+    this.fire('play', this);
+};
+
+var scoreboard = {
+    
+    element: document.getElementById('results'),
+    
+    update: function (score) {
+        
+        var i, msg = '';
+        for (i in score) {
+            if (score.hasOwnProperty(i)) {
+                msg += '<p><strong>' + i + '<\/strong>: ';
+                msg += score[i];
+                msg += '<\/p>';
+            }
+        }
+        this.element.innerHTML = msg;
+    }
+};
+
+
+makePublisher(Player.prototype);
+makePublisher(game);
+
+Player.prototype.on("newplayer", "addPlayer", game);
+Player.prototype.on("play",      "handlePlay", game);
+
+game.on("scorechange", scoreboard.update, scoreboard);
+
+window.onkeypress = game.handleKeypress;
+
+
+var playername, key;
+while (1) {
+    playername = prompt("Add player (name)");
+    if (!playername) {
+        break;
+    }
+    while (1) {
+        key = prompt("Key for " + playername + "?");
+        if (key) {
+            break;
+        }
+    }
+    new Player(playername,  key);    
+}
+
+document.creatDocumentFragment();
+
+/* 灯塔模式 */
+// 向服务器发送信息，收集用户统计信息 适用于IE
+var preload;
+if(/*@cc_on!@*/false){ // 使用条件注释的IE 嗅探
+	new Img().src = file;
+}else{
+	var obj = document.createElement("object"),
+		obj.data = "preload.js";
+	obj.width=0;
+	obj.height=0;
+	document.body.appendChild(obj);
+}
+/* 合并文件 ，减少http请求开销 */
+document.documentElement.firstChild.appendChild(script);
+document.getElementsByTagName('head')[0].appendChild(script);
+document.body
+
+var first_script = document.getElementsByTagName('script')[0];
+first_script.parentNode.insertBefore(script,first_script);
+
+function require(file, callback) {
+	var script = document.getElementsByTagName("script")[0],
+		newjs = document.createElement("script");
+		// IE 
+		newjs.onreadystatechange = function () {
+			if (newjs.readyState === 'loaded' || newjs.readyState === 'complete') {
+				newjs.onreadystatechange = null;
+				callback();
+			}
+		}
+		// 其他
+		newjs.onload = function () {
+			callback();
+		}
+		newjs.src =file;
+		script.parentNode.insertBefore(newjs,script);
+}
+require("http://www.git-scm.com/assets/jquery-1.7.1.min-be9a6d736d84f3afff832c45505a93ae.js", function(){
+	alert("OK");
+})
+</script>
+</body>
+</html>
